@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features — T3rnel Browser (84 tools)</title>
+<meta name="description" content="Full feature reference: CSS inspection, full-page screenshots, Markdown viewer, page audit, code export, agent safety and the encrypted vault.">
+<meta name="keywords" content="CSS inspector features, full page screenshot extension, markdown viewer chrome, playwright export, cypress export, prompt injection, DOM compression, delta snapshots">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/features.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T3rnel Browser">
+<meta property="og:title" content="Features — T3rnel Browser (84 tools)">
+<meta property="og:description" content="Full feature reference: CSS inspection, full-page screenshots, Markdown viewer, page audit, code export, agent safety and the encrypted vault.">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/features.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Features — T3rnel Browser (84 tools)">
+<meta name="twitter:description" content="Full feature reference: CSS inspection, full-page screenshots, Markdown viewer, page audit, code export, agent safety and the encrypted vault.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html" aria-current="page">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
+  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome</a>
+</header>
+<main id="main">
+
+<section>
+  <h1>Features</h1>
+  <p class="lead">Eight feature areas, 84 tools. Everything below is in the shipped build.</p>
+  
+<article class="feature" id="css">
+  <h3>CSS inspection</h3>
+  <p class="lead">Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.</p>
+  <ul><li>Walks the real cascade through <code>document.styleSheets</code> rather than dumping <code>getComputedStyle</code>, which flattens <code>%</code>, <code>em</code>, <code>rem</code> and <code>vh</code> to pixels and breaks responsiveness the moment you paste it.</li><li>Strips declarations overridden later in the cascade, drops browser defaults, collapses longhand to shorthand where safe, and deduplicates.</li><li>Collects matching <code>:hover</code>, <code>:focus</code>, <code>:active</code>, <code>::before</code>, <code>::after</code> and <code>::placeholder</code> rules, plus <code>@media</code> blocks and referenced <code>@keyframes</code>.</li><li>Copies as plain CSS, Tailwind, styled-components, Emotion, CSS Modules, SCSS, or JSX inline styles.</li><li>Reports a partial result honestly. A cross-origin stylesheet throws on <code>cssRules</code>; the output names the sheets it could not read instead of returning a rule count that looks complete and is not.</li></ul>
+  <p class="tools"><span>Tools</span> <code>browser_css_scan</code> <code>browser_css_copy</code> <code>browser_css_edit</code> <code>browser_css_extract</code> <code>browser_css_unused</code></p>
+</article>
+<article class="feature" id="screenshots">
+  <h3>Full-page screenshots</h3>
+  <p class="lead">One click, the whole page, stitched — and it handles the real web rather than the ideal one.</p>
+  <ul><li>Snapshots the scroll position first and restores it at the end, including when the capture fails part-way.</li><li>Injects a capture stylesheet that disables animations and transitions, so frames are stable rather than smeared.</li><li>Detects fixed and sticky elements by computed position and hides all but their first-viewport occurrence, so a sticky header appears once instead of every 800 pixels.</li><li>Pre-scrolls the full height to trigger lazy loading and <code>IntersectionObserver</code> content, then returns to the top.</li><li>Dismisses cookie banners and overlay modals heuristically, with an undo so nothing you wanted captured disappears silently.</li><li>Captures at <code>devicePixelRatio</code> through a token-bucket limiter that stays inside Chrome's <code>captureVisibleTab</code> rate limit, then stitches on an <code>OffscreenCanvas</code>.</li><li>Annotate, crop, and export as PNG, JPG, WebP or paginated PDF.</li></ul>
+  <p class="tools"><span>Tools</span> <code>browser_fullpage_capture</code> <code>browser_screenshot_annotate</code> <code>browser_screenshot_crop</code> <code>browser_screenshot_export</code> <code>browser_screenshot_history</code></p>
+</article>
+<article class="feature" id="markdown">
+  <h3>Markdown viewer</h3>
+  <p class="lead">Read <code>.md</code> files as documents, including the ones your agent just wrote.</p>
+  <ul><li>GitHub Flavored Markdown: tables, task lists, footnotes, strikethrough, autolinks.</li><li>Mermaid diagrams and LaTeX math rendered inline.</li><li>Sticky auto-generated table of contents with scroll-spy; light, dark and sepia themes.</li><li>Side-by-side diff between two Markdown documents.</li><li>Renders straight from the clipboard, which is the fastest way to read assistant output.</li><li>Sanitises strictly. Markdown is untrusted input, and a viewer with a scripting hole inside an extension is a serious problem — scripts, event-handler attributes and <code>javascript:</code> URLs are removed, and a payload corpus in the test suite proves it.</li></ul>
+  <p class="tools"><span>Tools</span> <code>browser_md_view</code> <code>browser_md_diff</code></p>
+</article>
+<article class="feature" id="audit">
+  <h3>Page audit and link checking</h3>
+  <p class="lead">Accessibility, spelling and links — reported honestly, including what could not be checked.</p>
+  <ul><li>Flags missing alt text, heading-hierarchy skips, unlabelled form controls and ARIA misuse.</li><li>Link checking distinguishes three outcomes rather than two: reachable, verifiably broken, and answered-but-unreadable.</li><li>That third state is not a hedge. A cross-origin response is opaque to the browser — <code>status</code> reads as 0 whatever the server returned. Calling opaque "fine" marks every dead external link healthy; calling it "broken" marks every healthy one dead. Neither is a link check.</li></ul>
+  <p class="tools"><span>Tools</span> <code>browser_audit</code> <code>browser_check_links</code> <code>browser_check_spelling</code></p>
+</article>
+<article class="feature" id="codegen">
+  <h3>Record, replay and code export</h3>
+  <p class="lead">Click through a flow once. Get a maintainable test that runs in your CI without this extension.</p>
+  <ul><li>Generates ranked candidate selectors per element: <code>data-testid</code> beats <code>id</code> beats ARIA role plus accessible name beats a CSS path.</li><li>Scores each candidate for fragility — depth, index-dependence, hash-like class names — and warns inline when the best available option is brittle. That warning is the difference between a suite that survives a refactor and one that does not.</li><li>Exports to Playwright, Puppeteer, Cypress and Selenium.</li><li>Generated code waits on conditions. It never sleeps for a guessed number of milliseconds, and a test asserts that no <code>waitForTimeout</code> appears in the output.</li></ul>
+  <p class="tools"><span>Tools</span> <code>browser_record_start</code> <code>browser_record_stop</code> <code>browser_record_list</code> <code>browser_record_events</code> <code>browser_record_replay</code> <code>browser_codegen_start</code> <code>browser_codegen_stop</code> <code>browser_codegen_export</code> <code>browser_codegen_status</code></p>
+</article>
+<article class="feature" id="agent">
+  <h3>Agent safety</h3>
+  <p class="lead">The part that justifies the price: a valve between a language model and your logged-in browser.</p>
+  <ul><li><strong>An approval gate that refuses.</strong> High-risk tools return <code>APPROVAL_REQUIRED</code> naming the exact action requested. Nothing runs until you approve, and an approval covers one action — not every future one.</li><li><strong>Credential redaction that stays useful.</strong> Password and token-like values never reach the model, but the field's length does, so an agent can confirm a fill landed without seeing the value. Redaction that hides everything makes verification impossible, and an agent that cannot verify retries and double-submits.</li><li><strong>Prompt-injection flagging with coverage.</strong> Page text is scanned for instruction-override patterns and reported as suspected, along with how many characters were examined. A clean verdict over zero characters reads exactly like a passing scan, so the two are never conflated.</li><li><strong>Delta snapshots.</strong> After the first snapshot, only the structural difference is sent. This is where the token bill actually goes.</li><li><strong>Time travel.</strong> Every step keeps a compressed DOM snapshot, console and network deltas, and the exact tool arguments. When a run goes wrong at step 42, scrub to 41.</li></ul>
+  <p class="tools"><span>Tools</span> <code>browser_firewall_check</code> <code>browser_firewall_set_policy</code> <code>browser_firewall_get_policy</code> <code>browser_dom_compress</code> <code>browser_dom_delta</code> <code>browser_timetravel_snapshot</code> <code>browser_timetravel_list</code> <code>browser_timetravel_inspect</code> <code>browser_timetravel_export</code></p>
+</article>
+<article class="feature" id="vault">
+  <h3>Encrypted identity vault</h3>
+  <p class="lead">Per-site credentials, encrypted on your device, never written in the clear.</p>
+  <ul><li>AES-256-GCM with a key derived from your master passphrase.</li><li>A wrong passphrase fails the authentication tag and is refused, rather than returning plausible garbage.</li><li>Every vault operation is high risk and gated: a write can overwrite a live credential and a delete destroys the only copy, so neither is treated as safer than a read.</li></ul>
+  <p class="tools"><span>Tools</span> <code>browser_vault_save</code> <code>browser_vault_load</code> <code>browser_vault_list</code> <code>browser_vault_delete</code></p>
+</article>
+</section>
+</main>
+<footer class="site">
+  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+</footer>
+</body>
+</html>

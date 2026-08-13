@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T3rnel Browser — DevTools you can talk to, and an agent runway you can trust</title>
+<meta name="description" content="Inspect CSS, capture full-page screenshots, read Markdown, and expose 84 tools over MCP so your AI agent drives the browser you are already signed into. All local.">
+<meta name="keywords" content="CSS inspector, copy CSS, full page screenshot, markdown viewer, MCP server, AI browser automation, visual regression, developer tools, Chrome extension">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T3rnel Browser">
+<meta property="og:title" content="T3rnel Browser — DevTools you can talk to, and an agent runway you can trust">
+<meta property="og:description" content="Inspect CSS, capture full-page screenshots, read Markdown, and expose 84 tools over MCP so your AI agent drives the browser you are already signed into. All local.">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="T3rnel Browser — DevTools you can talk to, and an agent runway you can trust">
+<meta name="twitter:description" content="Inspect CSS, capture full-page screenshots, read Markdown, and expose 84 tools over MCP so your AI agent drives the browser you are already signed into. All local.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"T3rnel Browser","applicationCategory":"DeveloperApplication","operatingSystem":"Chrome, Brave, Edge, Opera, Chromium, Firefox","softwareVersion":"1.0.0","description":"A web development toolkit that inspects and automates web pages, exposing 84 tools over the Model Context Protocol.","url":"https://t3ratech.github.io/t3rnel-browser-plugin","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"29.99","priceCurrency":"USD"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
+  <nav aria-label="Primary"><a href="index.html" aria-current="page">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
+  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome</a>
+</header>
+<main id="main">
+
+<section class="hero">
+  <p class="eyebrow">Version 1.0.0 · 84 tools · no servers</p>
+  <h1>DevTools you can talk to,<br>and an agent runway you can trust.</h1>
+  <p class="lead">Inspect and copy CSS from any element. Capture full-page screenshots that handle sticky headers and lazy loading. Read Markdown as a document. Then hand the wheel to your AI assistant over MCP — driving the browser you are <em>already signed into</em>, with a human able to see and stop what it does.</p>
+  <p class="cta"><a class="button" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome — free</a> <a class="button ghost" href="manual.html">Read the manual</a></p>
+  <p class="fine">Free tier is genuinely useful forever. Pro is $29.99 once, three activations, no subscription.</p>
+</section>
+
+<section>
+  <h2>Why this exists</h2>
+  <div class="cols">
+    <div>
+      <h3>The automation layer is not the moat</h3>
+      <p>Chrome DevTools MCP, Playwright MCP, mcp-chrome and Browser Use are free, well funded and good. We are not going to out-free Google and Microsoft, and we do not pretend to.</p>
+    </div>
+    <div>
+      <h3>The moat is the human loop</h3>
+      <p>Free tools hand a language model a firehose and hope. T3rnel puts a valve on it: credentials redacted before they reach the model, high-risk actions that stop and ask, and a timeline you can scrub backwards when a run goes wrong.</p>
+    </div>
+    <div>
+      <h3>Your real browser, your real sessions</h3>
+      <p>No separate automation browser, no re-authenticating, no automation flags. The agent works in the profile you are already logged into — which is the honest version of the capability other tools chase with fingerprint spoofing.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What you get</h2>
+  <div class="grid">
+    <a class="tile" href="features.html#css"><h3>CSS inspection</h3><p>Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.</p></a><a class="tile" href="features.html#screenshots"><h3>Full-page screenshots</h3><p>One click, the whole page, stitched — and it handles the real web rather than the ideal one.</p></a><a class="tile" href="features.html#markdown"><h3>Markdown viewer</h3><p>Read <code>.md</code> files as documents, including the ones your agent just wrote.</p></a><a class="tile" href="features.html#audit"><h3>Page audit and link checking</h3><p>Accessibility, spelling and links — reported honestly, including what could not be checked.</p></a><a class="tile" href="features.html#codegen"><h3>Record, replay and code export</h3><p>Click through a flow once. Get a maintainable test that runs in your CI without this extension.</p></a><a class="tile" href="features.html#agent"><h3>Agent safety</h3><p>The part that justifies the price: a valve between a language model and your logged-in browser.</p></a><a class="tile" href="features.html#vault"><h3>Encrypted identity vault</h3><p>Per-site credentials, encrypted on your device, never written in the clear.</p></a>
+  </div>
+</section>
+
+<section class="callout">
+  <h2>On claims</h2>
+  <p>Every feature on this site is shipped in the build you download, and each one has a test that fails if the claim stops being true. Where a capability has a real limit — a cross-origin stylesheet the browser will not let us read, a link status it will not let us see, a licence check a determined user can patch — this site says so on the page for that feature rather than in a footnote.</p>
+  <p>The security controls are described as mitigations, not guarantees. A tool that overstates its protection is worse than one that has none, because someone will rely on it.</p>
+</section>
+</main>
+<footer class="site">
+  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+</footer>
+</body>
+</html>

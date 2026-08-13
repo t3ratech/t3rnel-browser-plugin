@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare — T3rnel Browser vs other MCP browser tools</title>
+<meta name="description" content="Feature-by-feature comparison of T3rnel Browser against Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use, CSS Scan and full-page screenshot extensions.">
+<meta name="keywords" content="chrome devtools mcp alternative, playwright mcp comparison, mcp-chrome vs, browser use alternative, css scan alternative, gofullpage alternative">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T3rnel Browser">
+<meta property="og:title" content="Compare — T3rnel Browser vs other MCP browser tools">
+<meta property="og:description" content="Feature-by-feature comparison of T3rnel Browser against Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use, CSS Scan and full-page screenshot extensions.">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compare — T3rnel Browser vs other MCP browser tools">
+<meta name="twitter:description" content="Feature-by-feature comparison of T3rnel Browser against Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use, CSS Scan and full-page screenshot extensions.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html" aria-current="page">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
+  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome</a>
+</header>
+<main id="main">
+
+<section>
+  <h1>Comparison</h1>
+  <p class="lead">Verified against publicly documented behaviour as of 13 August 2026.</p>
+
+  <h2>Versus MCP browser automation tools</h2>
+  
+<div class="scroll">
+<table class="compare">
+  <thead><tr><th></th><th class="us">T3rnel</th><th>Chrome DevTools MCP</th><th>Playwright MCP</th><th>mcp-chrome</th><th>Browser Use</th><th>Browser MCP</th><th>Nanobrowser</th><th>Agent Browser</th><th>Stagehand</th></tr></thead>
+  <tbody><tr><th scope="row">Your existing profile</th><td class="us">Yes</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><th scope="row">Logged-in sessions work</th><td class="us">Yes</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><th scope="row">Real browser fingerprint</th><td class="us">Yes</td><td>Automation flags</td><td>Automation flags</td><td>Yes</td><td>Automation flags</td><td>Yes</td><td>Yes</td><td>Automation flags</td><td>Automation flags</td></tr><tr><th scope="row">Tool count</th><td class="us">84</td><td>~26</td><td>~25</td><td>~20</td><td>~15</td><td>11</td><td>~10</td><td>~15</td><td>~10</td></tr><tr><th scope="row">CDP trusted input</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Contenteditable editors</th><td class="us">Yes</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Credential redaction</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Approval gate that refuses</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Prompt-injection flagging</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Delta snapshots</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Time-travel timeline</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Export Playwright/Cypress code</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">CSS inspection</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Human-facing GUI</th><td class="us">Side panel</td><td>CLI</td><td>CLI</td><td>Minimal</td><td>Library</td><td>Minimal</td><td>Side panel</td><td>CLI</td><td>Library</td></tr><tr><th scope="row">Local-only</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Optional cloud</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Cloud option</td></tr><tr><th scope="row">Price</th><td class="us">Free + $29.99</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free + paid cloud</td></tr><tr><th scope="row">Licence</th><td class="us">Proprietary</td><td>Apache-2.0</td><td>Apache-2.0</td><td>MIT</td><td>MIT</td><td>Proprietary</td><td>Apache-2.0</td><td>MIT</td><td>MIT</td></tr></tbody>
+</table>
+</div>
+
+  <div class="callout">
+    <h3>The honest read</h3>
+    <p>T3rnel does not beat these on being free, and never will — several are backed by Google and Microsoft, and they are good. It beats them on three things: a human can watch and stop what happens, credentials do not leak into a context window, and the agent does not have to re-authenticate into a fresh browser because it is already in yours.</p>
+    <p>If all you need is scripted automation in a throwaway browser, use Playwright MCP. It is excellent and it is free.</p>
+  </div>
+
+  <h2>Versus CSS inspection tools</h2>
+  <div class="scroll">
+  <table class="compare">
+    <thead><tr><th></th><th class="us">T3rnel Pro</th><th>CSS Scan</th><th>CSS Peeper</th><th>VisBug</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Hover inspect and copy</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Partial</td></tr>
+      <tr><th scope="row">Pseudo-classes, media queries, keyframes</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Authored unit preservation</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Tailwind conversion</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">styled-components / Emotion / JSX output</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Honest partial reporting on cross-origin sheets</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Full-page screenshots and annotation</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Visual regression testing</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Test code export</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">AI agent control</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Price</th><td class="us">$29.99 one-time</td><td>~$100–120 lifetime</td><td>Free</td><td>Free</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Versus screenshot extensions</h2>
+  <div class="scroll">
+  <table class="compare">
+    <thead><tr><th></th><th class="us">T3rnel</th><th>GoFullPage</th><th>Awesome Screenshot</th><th>Fireshot</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Full-page stitched capture</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><th scope="row">Sticky header pinning</th><td class="us">Yes</td><td>Partial</td><td>Partial</td><td>Partial</td></tr>
+      <tr><th scope="row">Cookie banner auto-dismiss</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Blur / redact</th><td class="us">Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+      <tr><th scope="row">Visual regression baselines</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Programmatic capture for agents</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Local-only, no account</th><td class="us">Yes</td><td>Yes</td><td>Account for cloud</td><td>Yes</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — T3rnel Browser</title>
+<meta name="description" content="T3rnel Browser collects no data. This policy states exactly what is stored, where, and the only three situations in which the extension makes an outbound request.">
+<meta name="keywords" content="T3rnel Browser privacy policy, chrome extension privacy, no telemetry">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T3rnel Browser">
+<meta property="og:title" content="Privacy policy — T3rnel Browser">
+<meta property="og:description" content="T3rnel Browser collects no data. This policy states exactly what is stored, where, and the only three situations in which the extension makes an outbound request.">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy policy — T3rnel Browser">
+<meta name="twitter:description" content="T3rnel Browser collects no data. This policy states exactly what is stored, where, and the only three situations in which the extension makes an outbound request.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html" aria-current="page">Privacy</a></nav>
+  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome</a>
+</header>
+<main id="main">
+
+<section>
+  <h1>Privacy policy</h1>
+  <p class="fine">Last updated 13 August 2026.</p>
+
+  <h2>The short version</h2>
+  <p>T3rnel Browser collects nothing. There is no account, no analytics, no telemetry, no error reporting and no tracking. We do not have a server that receives your browsing data, because we did not build one.</p>
+
+  <h2>What is stored, and where</h2>
+  <p>Everything the extension saves is stored locally in your browser, on your device:</p>
+  <ul>
+    <li>Settings and approval policies</li>
+    <li>Screenshot history and visual regression baselines</li>
+    <li>Recorded sessions and generated test code</li>
+    <li>Vault entries, encrypted with a key derived from your master passphrase — the plaintext is never written</li>
+    <li>Your licence entitlement, if you buy Pro</li>
+  </ul>
+  <p>None of it is transmitted anywhere. Uninstalling the extension removes it.</p>
+
+  <h2>When the extension makes a network request</h2>
+  <p>Three situations, all of them either initiated by you or obvious from the feature:</p>
+  <table>
+    <thead><tr><th>Situation</th><th>Where it goes</th><th>What is sent</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Activating a Pro licence</td>
+        <td><code>t3rnel-license.t3ratech.workers.dev</code></td>
+        <td>Your licence key and a public key identifying the installation. Once, when you activate. The free tier never contacts it, and after activation your licence is verified offline.</td>
+      </tr>
+      <tr>
+        <td>Checking links on a page</td>
+        <td>The links on the page you asked to check</td>
+        <td>An HTTP HEAD request. Only when you run the link checker.</td>
+      </tr>
+      <tr>
+        <td>Optional AI analysis or cloud transcription</td>
+        <td>The endpoint you configured</td>
+        <td>The page data or audio for that request, with your own API key. Off unless you turn it on and supply a key.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>That is the complete list. The inspection and automation features — CSS, screenshots, Markdown, network and console capture, DOM snapshots, agent tools — send nothing anywhere.</p>
+
+  <h2>Payments</h2>
+  <p>Payment is handled by PayNow. We never see or store your payment details. Our server stores a one-way hash of your licence key, a hash of your email, and a fingerprint of each activated installation's public key. It stores no raw licence key after you collect it, no payment credential and no browsing data.</p>
+
+  <h2>Permissions</h2>
+  <p>The extension requests the minimum at install and asks for anything else at the moment you first use the feature that needs it, with an explanation. Declining is safe: the feature reports what it needed, and everything else keeps working. See the <a href="manual.html#permissions">manual</a> for the full table.</p>
+
+  <h2>Children</h2>
+  <p>T3rnel Browser is a developer tool and is not directed at children under 13.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the revision date above changes with it and the change is recorded in the <a href="changelog.html">changelog</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Email <a href="mailto:t3rnel@agentmail.to">t3rnel@agentmail.to</a>.</p>
+</section>
+</main>
+<footer class="site">
+  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+</footer>
+</body>
+</html>
