@@ -39,12 +39,12 @@
   </ol>
 
   <h2>Permissions</h2>
-  <p>Installing grants six permissions — <code>activeTab</code>, <code>alarms</code>, <code>scripting</code>, <code>sidePanel</code>, <code>storage</code>, <code>tabs</code> — and access to <code>127.0.0.1</code> only, which reaches the optional local daemon and nothing on the web.</p>
+  <p>Installing grants seven permissions — <code>activeTab</code>, <code>alarms</code>, <code>debugger</code>, <code>scripting</code>, <code>sidePanel</code>, <code>storage</code>, <code>tabs</code> — and access to <code>127.0.0.1</code> only, which reaches the optional local daemon and nothing on the web.</p>
+  <p><code>debugger</code> is declared at install because Chrome does not allow it to be optional. Nothing attaches a debugger session until you start network capture, console capture or PDF export, and Chrome shows its own banner on the tab whenever one is active.</p>
   <p>Everything else is requested the first time you use the feature that needs it, with an explanation shown before the browser's own prompt:</p>
   <table>
     <thead><tr><th>Permission</th><th>Requested when</th></tr></thead>
     <tbody>
-      <tr><td><code>debugger</code></td><td>You enable network capture, console capture, PDF export or trusted keyboard input. Chrome shows a banner on the tab while it is active.</td></tr>
       <tr><td>Site access</td><td>You inspect or automate a site. Grant one origin or all sites — your choice.</td></tr>
       <tr><td><code>downloads</code></td><td>You export a capture or generated test code.</td></tr>
       <tr><td><code>history</code>, <code>bookmarks</code></td><td>You enable history or bookmark search. Read-only.</td></tr>
