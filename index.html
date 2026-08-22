@@ -3,21 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T3rnel Browser — DevTools you can talk to, and an agent runway you can trust</title>
-<meta name="description" content="Inspect CSS, capture full-page screenshots, read Markdown, and expose 84 tools over MCP so your AI agent drives the browser you are already signed into. All local.">
+<title>T3rnel Browser — DevTools you can talk to</title>
+<meta name="description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 87 MCP tools in the browser you already use. All local.">
 <meta name="keywords" content="CSS inspector, copy CSS, full page screenshot, markdown viewer, MCP server, AI browser automation, visual regression, developer tools, Chrome extension">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
+<!--
+  The site has exactly one language and one region. Declaring that explicitly, with a
+  matching x-default, is what stops a crawler guessing at regional variants that do not
+  exist; a self-referential hreflang is valid and is the correct form for a single-locale
+  site. It must agree with the canonical above or both are ignored.
+-->
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
-<meta property="og:title" content="T3rnel Browser — DevTools you can talk to, and an agent runway you can trust">
-<meta property="og:description" content="Inspect CSS, capture full-page screenshots, read Markdown, and expose 84 tools over MCP so your AI agent drives the browser you are already signed into. All local.">
+<meta property="og:title" content="T3rnel Browser — DevTools you can talk to">
+<meta property="og:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 87 MCP tools in the browser you already use. All local.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/">
+<!--
+  Without og:image a shared link renders as a bare line of text. Every social platform
+  and every chat client reads this tag, and an absolute URL is required: a relative path
+  resolves against the crawler, not against the page, so it silently fetches nothing.
+  1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
+  sizes get cropped differently by each network.
+-->
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 86 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="T3rnel Browser — DevTools you can talk to, and an agent runway you can trust">
-<meta name="twitter:description" content="Inspect CSS, capture full-page screenshots, read Markdown, and expose 84 tools over MCP so your AI agent drives the browser you are already signed into. All local.">
+<meta name="twitter:title" content="T3rnel Browser — DevTools you can talk to">
+<meta name="twitter:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 87 MCP tools in the browser you already use. All local.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"T3rnel Browser","applicationCategory":"DeveloperApplication","operatingSystem":"Chrome, Brave, Edge, Opera, Chromium, Firefox","softwareVersion":"1.0.0","description":"A web development toolkit that inspects and automates web pages, exposing 84 tools over the Model Context Protocol.","url":"https://t3ratech.github.io/t3rnel-browser-plugin","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"29.99","priceCurrency":"USD"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"T3rnel Browser","applicationCategory":"DeveloperApplication","operatingSystem":"Chrome, Brave, Edge, Opera, Chromium, Firefox","softwareVersion":"1.1.0","description":"A web development toolkit that inspects and automates web pages, exposing 87 tools over the Model Context Protocol.","url":"https://t3ratech.github.io/t3rnel-browser-plugin","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"29.99","priceCurrency":"USD"}],"publisher":{"@type":"Organization","name":"T3raTech Solutions (Pvt) Ltd","url":"https://t3ratech.co.zw","sameAs":["https://t3ratech.co.zw","https://github.com/t3ratech","https://www.linkedin.com/company/144492015","https://x.com/t3ratech","https://www.facebook.com/t3ratech","https://t3rnel.gumroad.com"]}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -29,7 +49,7 @@
 <main id="main">
 
 <section class="hero">
-  <p class="eyebrow">Version 1.0.0 · 84 tools · no servers</p>
+  <p class="eyebrow">Version 1.1.0 · 87 tools · no servers</p>
   <h1>DevTools you can talk to,<br>and an agent runway you can trust.</h1>
   <p class="lead">Inspect and copy CSS from any element. Capture full-page screenshots that handle sticky headers and lazy loading. Read Markdown as a document. Then hand the wheel to your AI assistant over MCP — driving the browser you are <em>already signed into</em>, with a human able to see and stop what it does.</p>
   <p class="cta"><a class="button" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome — free</a> <a class="button ghost" href="manual.html">Read the manual</a></p>
@@ -68,8 +88,9 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.0</strong> — 87 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>

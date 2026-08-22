@@ -4,17 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy — T3rnel Browser</title>
-<meta name="description" content="T3rnel Browser collects no data. This policy states exactly what is stored, where, and the only three situations in which the extension makes an outbound request.">
+<meta name="description" content="T3rnel Browser collects no data. What is stored, where it lives, and the only three cases where it makes a network request.">
 <meta name="keywords" content="T3rnel Browser privacy policy, chrome extension privacy, no telemetry">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
+<!--
+  The site has exactly one language and one region. Declaring that explicitly, with a
+  matching x-default, is what stops a crawler guessing at regional variants that do not
+  exist; a self-referential hreflang is valid and is the correct form for a single-locale
+  site. It must agree with the canonical above or both are ignored.
+-->
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Privacy policy — T3rnel Browser">
-<meta property="og:description" content="T3rnel Browser collects no data. This policy states exactly what is stored, where, and the only three situations in which the extension makes an outbound request.">
+<meta property="og:description" content="T3rnel Browser collects no data. What is stored, where it lives, and the only three cases where it makes a network request.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
+<!--
+  Without og:image a shared link renders as a bare line of text. Every social platform
+  and every chat client reads this tag, and an absolute URL is required: a relative path
+  resolves against the crawler, not against the page, so it silently fetches nothing.
+  1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
+  sizes get cropped differently by each network.
+-->
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 86 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Privacy policy — T3rnel Browser">
-<meta name="twitter:description" content="T3rnel Browser collects no data. This policy states exactly what is stored, where, and the only three situations in which the extension makes an outbound request.">
+<meta name="twitter:description" content="T3rnel Browser collects no data. What is stored, where it lives, and the only three cases where it makes a network request.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 
@@ -87,8 +107,9 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.0</strong> — 87 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>

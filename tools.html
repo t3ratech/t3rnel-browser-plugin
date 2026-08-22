@@ -3,18 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MCP tool reference — all 84 tools</title>
-<meta name="description" content="Complete reference for the 84 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
+<title>MCP tool reference — all 87 tools</title>
+<meta name="description" content="Complete reference for the 87 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
 <meta name="keywords" content="MCP tools list, browser automation tools, model context protocol browser, MCP server chrome extension">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
+<!--
+  The site has exactly one language and one region. Declaring that explicitly, with a
+  matching x-default, is what stops a crawler guessing at regional variants that do not
+  exist; a self-referential hreflang is valid and is the correct form for a single-locale
+  site. It must agree with the canonical above or both are ignored.
+-->
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
-<meta property="og:title" content="MCP tool reference — all 84 tools">
-<meta property="og:description" content="Complete reference for the 84 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
+<meta property="og:title" content="MCP tool reference — all 87 tools">
+<meta property="og:description" content="Complete reference for the 87 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
+<!--
+  Without og:image a shared link renders as a bare line of text. Every social platform
+  and every chat client reads this tag, and an absolute URL is required: a relative path
+  resolves against the crawler, not against the page, so it silently fetches nothing.
+  1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
+  sizes get cropped differently by each network.
+-->
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 86 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MCP tool reference — all 84 tools">
-<meta name="twitter:description" content="Complete reference for the 84 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
+<meta name="twitter:title" content="MCP tool reference — all 87 tools">
+<meta name="twitter:description" content="Complete reference for the 87 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 
@@ -30,9 +50,9 @@
 
 <section>
   <h1>MCP tool reference</h1>
-  <p class="lead">All 84 tools, generated from the extension's registry. This list and the store listing cannot disagree — both are produced from the same source.</p>
+  <p class="lead">All 87 tools, generated from the extension's registry. This list and the store listing cannot disagree — both are produced from the same source.</p>
   <div class="toolgrid">
-    <code>browser_health</code><code>browser_list_tabs</code><code>browser_navigate</code><code>browser_close_tab</code><code>browser_switch_tab</code><code>browser_back</code><code>browser_forward</code><code>browser_reload</code><code>browser_wait</code><code>browser_read_page</code><code>browser_snapshot</code><code>browser_click</code><code>browser_fill</code><code>browser_hover</code><code>browser_type</code><code>browser_press</code><code>browser_select</code><code>browser_scroll</code><code>browser_screenshot</code><code>browser_evaluate</code><code>browser_network_start</code><code>browser_network_stop</code><code>browser_network_list</code><code>browser_console_start</code><code>browser_console_stop</code><code>browser_console_list</code><code>browser_pdf</code><code>browser_upload</code><code>browser_detect_editor</code><code>browser_history_search</code><code>browser_bookmarks_search</code><code>browser_downloads_list</code><code>browser_download_cancel</code><code>browser_audit</code><code>browser_check_links</code><code>browser_check_spelling</code><code>browser_visual_capture_baseline</code><code>browser_visual_compare</code><code>browser_visual_diff</code><code>browser_record_start</code><code>browser_record_stop</code><code>browser_record_list</code><code>browser_record_events</code><code>browser_record_replay</code><code>browser_css_scan</code><code>browser_css_copy</code><code>browser_css_edit</code><code>browser_css_extract</code><code>browser_css_unused</code><code>browser_inspect_start</code><code>browser_inspect_stop</code><code>browser_inspect_mode</code><code>browser_inspect_status</code><code>browser_fullpage_capture</code><code>browser_screenshot_annotate</code><code>browser_screenshot_crop</code><code>browser_screenshot_export</code><code>browser_screenshot_history</code><code>browser_md_view</code><code>browser_md_diff</code><code>browser_vault_save</code><code>browser_vault_load</code><code>browser_vault_list</code><code>browser_vault_delete</code><code>browser_codegen_start</code><code>browser_codegen_stop</code><code>browser_codegen_export</code><code>browser_codegen_status</code><code>browser_dom_compress</code><code>browser_dom_delta</code><code>browser_firewall_set_policy</code><code>browser_firewall_check</code><code>browser_firewall_get_policy</code><code>browser_shadow_start</code><code>browser_shadow_stop</code><code>browser_shadow_compare</code><code>browser_license_check</code><code>browser_license_activate</code><code>browser_timetravel_snapshot</code><code>browser_timetravel_list</code><code>browser_timetravel_inspect</code><code>browser_timetravel_export</code><code>browser_manifest_generate</code><code>browser_manifest_validate</code>
+    <code>browser_health</code><code>browser_list_tabs</code><code>browser_navigate</code><code>browser_close_tab</code><code>browser_switch_tab</code><code>browser_back</code><code>browser_forward</code><code>browser_reload</code><code>browser_wait</code><code>browser_read_page</code><code>browser_snapshot</code><code>browser_click</code><code>browser_fill</code><code>browser_hover</code><code>browser_type</code><code>browser_press</code><code>browser_select</code><code>browser_scroll</code><code>browser_screenshot</code><code>browser_evaluate</code><code>browser_network_start</code><code>browser_network_stop</code><code>browser_network_list</code><code>browser_console_start</code><code>browser_console_stop</code><code>browser_console_list</code><code>browser_pdf</code><code>browser_upload</code><code>browser_detect_editor</code><code>browser_history_search</code><code>browser_bookmarks_search</code><code>browser_downloads_list</code><code>browser_download_cancel</code><code>browser_audit</code><code>browser_check_links</code><code>browser_check_spelling</code><code>browser_visual_capture_baseline</code><code>browser_visual_compare</code><code>browser_visual_diff</code><code>browser_record_start</code><code>browser_record_stop</code><code>browser_record_list</code><code>browser_record_events</code><code>browser_record_replay</code><code>browser_css_scan</code><code>browser_css_copy</code><code>browser_css_edit</code><code>browser_css_extract</code><code>browser_css_unused</code><code>browser_inspect_start</code><code>browser_inspect_stop</code><code>browser_inspect_mode</code><code>browser_inspect_status</code><code>browser_fullpage_capture</code><code>browser_screenshot_annotate</code><code>browser_screenshot_crop</code><code>browser_screenshot_export</code><code>browser_screenshot_history</code><code>browser_md_view</code><code>browser_md_diff</code><code>browser_vault_save</code><code>browser_vault_load</code><code>browser_vault_list</code><code>browser_vault_delete</code><code>browser_codegen_start</code><code>browser_codegen_stop</code><code>browser_codegen_export</code><code>browser_codegen_status</code><code>browser_dom_compress</code><code>browser_dom_delta</code><code>browser_firewall_set_policy</code><code>browser_firewall_check</code><code>browser_firewall_get_policy</code><code>browser_shadow_start</code><code>browser_shadow_stop</code><code>browser_shadow_compare</code><code>browser_license_check</code><code>browser_license_activate</code><code>browser_license_collect</code><code>browser_license_recover</code><code>browser_license_release</code><code>browser_timetravel_snapshot</code><code>browser_timetravel_list</code><code>browser_timetravel_inspect</code><code>browser_timetravel_export</code><code>browser_manifest_generate</code><code>browser_manifest_validate</code>
   </div>
   <h2>Risk tiers</h2>
   <p>Every tool carries a risk classification that drives the approval gate.</p>
@@ -48,8 +68,9 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.0</strong> — 87 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>

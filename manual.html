@@ -7,14 +7,34 @@
 <meta name="description" content="How to install T3rnel Browser, connect it to an MCP client, grant permissions, activate Pro, and use each feature.">
 <meta name="keywords" content="T3rnel Browser manual, MCP client setup, claude desktop MCP, chrome extension install, licence activation">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/manual.html">
+<!--
+  The site has exactly one language and one region. Declaring that explicitly, with a
+  matching x-default, is what stops a crawler guessing at regional variants that do not
+  exist; a self-referential hreflang is valid and is the correct form for a single-locale
+  site. It must agree with the canonical above or both are ignored.
+-->
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/manual.html">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/manual.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Manual — installing, connecting and using T3rnel Browser">
 <meta property="og:description" content="How to install T3rnel Browser, connect it to an MCP client, grant permissions, activate Pro, and use each feature.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/manual.html">
+<!--
+  Without og:image a shared link renders as a bare line of text. Every social platform
+  and every chat client reads this tag, and an absolute URL is required: a relative path
+  resolves against the crawler, not against the page, so it silently fetches nothing.
+  1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
+  sizes get cropped differently by each network.
+-->
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 86 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Manual — installing, connecting and using T3rnel Browser">
 <meta name="twitter:description" content="How to install T3rnel Browser, connect it to an MCP client, grant permissions, activate Pro, and use each feature.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 
@@ -39,7 +59,8 @@
   </ol>
 
   <h2>Permissions</h2>
-  <p>Installing grants seven permissions — <code>activeTab</code>, <code>alarms</code>, <code>debugger</code>, <code>scripting</code>, <code>sidePanel</code>, <code>storage</code>, <code>tabs</code> — and access to <code>127.0.0.1</code> only, which reaches the optional local daemon and nothing on the web.</p>
+  <p>Installing grants eight permissions — <code>activeTab</code>, <code>alarms</code>, <code>debugger</code>, <code>downloads</code>, <code>nativeMessaging</code>, <code>scripting</code>, <code>sidePanel</code>, <code>storage</code> and <code>tabs</code> — and access to <code>127.0.0.1</code> only, which reaches the optional local daemon and nothing on the web.</p>
+  <p><code>downloads</code> and <code>nativeMessaging</code> are declared at install because neither can work as an optional grant. <code>downloads</code> needs the gesture that the capture requesting it has already spent, and <code>nativeMessaging</code> is opened by the service worker at startup, where there is no gesture to spend at all. <code>nativeMessaging</code> lets the extension talk to a local companion program you install yourself, and to nothing else; with no such program installed it does nothing.</p>
   <p><code>debugger</code> is declared at install because Chrome does not allow it to be optional. Nothing attaches a debugger session until you start network capture, console capture or PDF export, and Chrome shows its own banner on the tab whenever one is active.</p>
   <p>Everything else is requested the first time you use the feature that needs it, with an explanation shown before the browser's own prompt:</p>
   <table>
@@ -53,16 +74,18 @@
   <p>Declining is safe. The tool returns a <code>PERMISSION_REQUIRED</code> error naming what it needed and why, and every other feature keeps working.</p>
 
   <h2>Connect an MCP client</h2>
-  <p>Add the native messaging host to your client's configuration. For a Claude Desktop-style config:</p>
+  <p>Install the MCP Session Bridge, register its native messaging host once, and add it to your client's configuration. For a Claude Desktop-style config:</p>
+  <pre><code>npm install -g @t3rnel/mcp-session-bridge
+mcp-session-bridge --install</code></pre>
   <pre><code>{
   "mcpServers": {
-    "t3rnel-browser": {
-      "command": "node",
-      "args": ["/absolute/path/to/mcp-host.js"]
+    "t3rnel-session": {
+      "command": "mcp-session-bridge"
     }
   }
 }</code></pre>
-  <p>The extension then exposes all 84 tools. Calls arriving this way are treated as untrusted: high-risk tools stop and ask before they run.</p>
+  <p>The extension then exposes all 87 tools against the tabs you are already signed into. Calls arriving this way are treated as untrusted: high-risk tools stop and ask before they run.</p>
+  <p>The bridge is free and needs no licence of its own. Without the extension installed it falls back to a standalone automation browser, which needs no licence either — set <code>T3RNEL_SESSION_MODE=standalone</code> to force that mode. The Pro tools remain gated by your T3rnel Browser licence in both cases.</p>
 
   <h2>The approval gate</h2>
   <p>By default, high-risk tools — clicking, filling, typing, evaluating JavaScript, uploading, and every vault operation — require your approval when the caller is an MCP client. The agent receives a refusal naming the exact action, for example:</p>
@@ -95,8 +118,9 @@ browser_click (selector=#place-order).</code></pre>
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.0</strong> — 87 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>

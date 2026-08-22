@@ -4,17 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Compare — T3rnel Browser vs other MCP browser tools</title>
-<meta name="description" content="Feature-by-feature comparison of T3rnel Browser against Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use, CSS Scan and full-page screenshot extensions.">
+<meta name="description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use and CSS Scan, feature by feature.">
 <meta name="keywords" content="chrome devtools mcp alternative, playwright mcp comparison, mcp-chrome vs, browser use alternative, css scan alternative, gofullpage alternative">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
+<!--
+  The site has exactly one language and one region. Declaring that explicitly, with a
+  matching x-default, is what stops a crawler guessing at regional variants that do not
+  exist; a self-referential hreflang is valid and is the correct form for a single-locale
+  site. It must agree with the canonical above or both are ignored.
+-->
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Compare — T3rnel Browser vs other MCP browser tools">
-<meta property="og:description" content="Feature-by-feature comparison of T3rnel Browser against Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use, CSS Scan and full-page screenshot extensions.">
+<meta property="og:description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use and CSS Scan, feature by feature.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
+<!--
+  Without og:image a shared link renders as a bare line of text. Every social platform
+  and every chat client reads this tag, and an absolute URL is required: a relative path
+  resolves against the crawler, not against the page, so it silently fetches nothing.
+  1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
+  sizes get cropped differently by each network.
+-->
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 86 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Compare — T3rnel Browser vs other MCP browser tools">
-<meta name="twitter:description" content="Feature-by-feature comparison of T3rnel Browser against Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use, CSS Scan and full-page screenshot extensions.">
+<meta name="twitter:description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use and CSS Scan, feature by feature.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 
@@ -37,7 +57,7 @@
 <div class="scroll">
 <table class="compare">
   <thead><tr><th></th><th class="us">T3rnel</th><th>Chrome DevTools MCP</th><th>Playwright MCP</th><th>mcp-chrome</th><th>Browser Use</th><th>Browser MCP</th><th>Nanobrowser</th><th>Agent Browser</th><th>Stagehand</th></tr></thead>
-  <tbody><tr><th scope="row">Your existing profile</th><td class="us">Yes</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><th scope="row">Logged-in sessions work</th><td class="us">Yes</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><th scope="row">Real browser fingerprint</th><td class="us">Yes</td><td>Automation flags</td><td>Automation flags</td><td>Yes</td><td>Automation flags</td><td>Yes</td><td>Yes</td><td>Automation flags</td><td>Automation flags</td></tr><tr><th scope="row">Tool count</th><td class="us">84</td><td>~26</td><td>~25</td><td>~20</td><td>~15</td><td>11</td><td>~10</td><td>~15</td><td>~10</td></tr><tr><th scope="row">CDP trusted input</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Contenteditable editors</th><td class="us">Yes</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Credential redaction</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Approval gate that refuses</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Prompt-injection flagging</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Delta snapshots</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Time-travel timeline</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Export Playwright/Cypress code</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">CSS inspection</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Human-facing GUI</th><td class="us">Side panel</td><td>CLI</td><td>CLI</td><td>Minimal</td><td>Library</td><td>Minimal</td><td>Side panel</td><td>CLI</td><td>Library</td></tr><tr><th scope="row">Local-only</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Optional cloud</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Cloud option</td></tr><tr><th scope="row">Price</th><td class="us">Free + $29.99</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free + paid cloud</td></tr><tr><th scope="row">Licence</th><td class="us">Proprietary</td><td>Apache-2.0</td><td>Apache-2.0</td><td>MIT</td><td>MIT</td><td>Proprietary</td><td>Apache-2.0</td><td>MIT</td><td>MIT</td></tr></tbody>
+  <tbody><tr><th scope="row">Your existing profile</th><td class="us">Yes</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><th scope="row">Logged-in sessions work</th><td class="us">Yes</td><td>No</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr><tr><th scope="row">Real browser fingerprint</th><td class="us">Yes</td><td>Automation flags</td><td>Automation flags</td><td>Yes</td><td>Automation flags</td><td>Yes</td><td>Yes</td><td>Automation flags</td><td>Automation flags</td></tr><tr><th scope="row">Tool count</th><td class="us">87</td><td>~26</td><td>~25</td><td>~20</td><td>~15</td><td>11</td><td>~10</td><td>~15</td><td>~10</td></tr><tr><th scope="row">CDP trusted input</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Contenteditable editors</th><td class="us">Yes</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Credential redaction</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Approval gate that refuses</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Prompt-injection flagging</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Delta snapshots</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Time-travel timeline</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Export Playwright/Cypress code</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">CSS inspection</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><th scope="row">Human-facing GUI</th><td class="us">Side panel</td><td>CLI</td><td>CLI</td><td>Minimal</td><td>Library</td><td>Minimal</td><td>Side panel</td><td>CLI</td><td>Library</td></tr><tr><th scope="row">Local-only</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Optional cloud</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Cloud option</td></tr><tr><th scope="row">Price</th><td class="us">Free + $29.99</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free</td><td>Free + paid cloud</td></tr><tr><th scope="row">Licence</th><td class="us">Proprietary</td><td>Apache-2.0</td><td>Apache-2.0</td><td>MIT</td><td>MIT</td><td>Proprietary</td><td>Apache-2.0</td><td>MIT</td><td>MIT</td></tr></tbody>
 </table>
 </div>
 
@@ -85,8 +105,9 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.0.0</strong> — 84 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.0</strong> — 87 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>
