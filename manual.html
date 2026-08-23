@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 86 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Manual — installing, connecting and using T3rnel Browser">
 <meta name="twitter:description" content="How to install T3rnel Browser, connect it to an MCP client, grant permissions, activate Pro, and use each feature.">
@@ -44,7 +44,7 @@
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
   <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html" aria-current="page">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
-  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome</a>
+  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install — free</a>
 </header>
 <main id="main">
 
@@ -53,10 +53,22 @@
 
   <h2>Install</h2>
   <ol>
-    <li>Install from the <a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a>.</li>
+    <li>Install from the <a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a>. The same package
+      installs on Brave, Edge and Chromium.</li>
     <li>Pin the toolbar icon. Clicking it opens the side panel, which is the main surface.</li>
     <li>Nothing else is required. The free tier works immediately with no account.</li>
   </ol>
+
+  <h2 id="browsers">Which browsers, and what differs</h2>
+  <p>The extension is built for six browsers from one source. They are not equivalent, and
+    the differences are in the browser rather than the extension — an API a browser does not
+    implement is a feature that cannot exist there.</p>
+  <table>
+    <thead><tr><th>Browser</th><th>Status</th><th>Notes</th></tr></thead>
+    <tbody><tr><td><strong>Chrome</strong></td><td>Supported</td><td>Tested on Chrome for Testing 152.</td></tr><tr><td><strong>Brave</strong></td><td>Supported</td><td>Tested on Brave 148.</td></tr><tr><td><strong>Edge</strong></td><td>Supported</td><td>Tested on Edge 153.</td></tr><tr><td><strong>Chromium</strong></td><td>Supported</td><td>Tested on the current Chromium build.</td></tr><tr><td><strong>Opera</strong></td><td>Partly supported</td><td>No side panel: Opera implements neither sidePanel nor sidebarAction. The popup and the tools work; the docked panel cannot open.</td></tr><tr><td><strong>Firefox</strong></td><td>Partly supported</td><td>Manifest V3 with a sidebar. No debugger API, so network capture, console capture and PDF export are unavailable.</td></tr><tr><td><strong>Safari</strong></td><td>Planned</td><td>Manifest V3 is generated; the bundle is built with safari-web-extension-converter and distributed through the Mac App Store.</td></tr></tbody>
+  </table>
+  <p class="fine">Every row marked Supported is covered by an automated suite that drives the
+    real docked side panel in that browser on every release.</p>
 
   <h2>Permissions</h2>
   <p>Installing grants eight permissions — <code>activeTab</code>, <code>alarms</code>, <code>debugger</code>, <code>downloads</code>, <code>nativeMessaging</code>, <code>scripting</code>, <code>sidePanel</code>, <code>storage</code> and <code>tabs</code> — and access to <code>127.0.0.1</code> only, which reaches the optional local daemon and nothing on the web.</p>
@@ -75,7 +87,7 @@
 
   <h2>Connect an MCP client</h2>
   <p>Install the MCP Session Bridge, register its native messaging host once, and add it to your client's configuration. For a Claude Desktop-style config:</p>
-  <pre><code>npm install -g @t3rnel/mcp-session-bridge
+  <pre><code>npm install -g @t3ratech/mcp-session-bridge
 mcp-session-bridge --install</code></pre>
   <pre><code>{
   "mcpServers": {
@@ -84,7 +96,7 @@ mcp-session-bridge --install</code></pre>
     }
   }
 }</code></pre>
-  <p>The extension then exposes all 87 tools against the tabs you are already signed into. Calls arriving this way are treated as untrusted: high-risk tools stop and ask before they run.</p>
+  <p>The extension then exposes all 98 tools against the tabs you are already signed into. Calls arriving this way are treated as untrusted: high-risk tools stop and ask before they run.</p>
   <p>The bridge is free and needs no licence of its own. Without the extension installed it falls back to a standalone automation browser, which needs no licence either — set <code>T3RNEL_SESSION_MODE=standalone</code> to force that mode. The Pro tools remain gated by your T3rnel Browser licence in both cases.</p>
 
   <h2>The approval gate</h2>
@@ -118,7 +130,7 @@ browser_click (selector=#place-order).</code></pre>
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.1.0</strong> — 87 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>

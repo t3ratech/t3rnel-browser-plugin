@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MCP tool reference — all 87 tools</title>
-<meta name="description" content="Complete reference for the 87 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
-<meta name="keywords" content="MCP tools list, browser automation tools, model context protocol browser, MCP server chrome extension">
+<title>T3rnel Browser — 98 MCP tools and install guide</title>
+<meta name="description" content="T3rnel Browser exposes 98 browser automation tools over MCP. Install the Chrome extension and the free MCP Session Bridge, then drive your logged-in browser with Claude, Cursor or Windsurf.">
+<meta name="keywords" content="MCP tools list, T3rnel Browser, browser automation tools, model context protocol browser, MCP Session Bridge install, chrome extension AI">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -17,8 +17,8 @@
 <link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
-<meta property="og:title" content="MCP tool reference — all 87 tools">
-<meta property="og:description" content="Complete reference for the 87 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
+<meta property="og:title" content="T3rnel Browser — 98 MCP tools and install guide">
+<meta property="og:description" content="T3rnel Browser exposes 98 browser automation tools over MCP. Install the Chrome extension and the free MCP Session Bridge, then drive your logged-in browser with Claude, Cursor or Windsurf.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
@@ -30,10 +30,10 @@
 <meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 86 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MCP tool reference — all 87 tools">
-<meta name="twitter:description" content="Complete reference for the 87 browser automation tools T3rnel Browser exposes over the Model Context Protocol.">
+<meta name="twitter:title" content="T3rnel Browser — 98 MCP tools and install guide">
+<meta name="twitter:description" content="T3rnel Browser exposes 98 browser automation tools over MCP. Install the Chrome extension and the free MCP Session Bridge, then drive your logged-in browser with Claude, Cursor or Windsurf.">
 <meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
@@ -44,15 +44,46 @@
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
   <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html" aria-current="page">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
-  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Add to Chrome</a>
+  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install — free</a>
 </header>
 <main id="main">
 
+<section class="hero">
+  <h1>T3rnel Browser — 98 MCP tools for your real browser</h1>
+  <p class="lead">
+    T3rnel Browser is a Chrome, Brave, Edge and Chromium extension that turns any tab into an agentic surface. It exposes 98 browser-automation tools over the Model Context Protocol, so Claude, Cursor, Windsurf and any MCP client can read the page you are already signed into — with a human approval gate for high-risk actions.
+  </p>
+  <p>
+    Inspect CSS with hover-and-copy, capture full-page screenshots, convert pages to Markdown, record and replay interactions, run page audits, manage an encrypted local vault, and drive the browser through MCP — all without shipping session cookies to a cloud browser.
+  </p>
+
+  <h2>Install the extension</h2>
+  <p class="fine">Free from the Chrome Web Store. Brave, Edge and Chromium use the same package; Firefox and Opera are partly supported.</p>
+  <p>
+    <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install T3rnel Browser — free</a>
+  </p>
+
+  <h2>Add the MCP Session Bridge</h2>
+  <p class="fine">The bridge is free. It serves the 98 <code>session_*</code> tools over stdio to any MCP client. Extension mode reaches your authenticated tabs through the T3rnel Browser extension; standalone mode launches its own browser and needs no extension or licence.</p>
+  <pre class="mcp-install"><code>npm install -g @t3ratech/mcp-session-bridge
+mcp-session-bridge --install</code></pre>
+
+  <h2>Configure your MCP client</h2>
+  <pre class="mcp-install"><code>{
+  "mcpServers": {
+    "t3rnel-session": {
+      "command": "mcp-session-bridge",
+      "env": { "T3RNEL_SESSION_MODE": "auto" }
+    }
+  }
+}</code></pre>
+</section>
+
 <section>
-  <h1>MCP tool reference</h1>
-  <p class="lead">All 87 tools, generated from the extension's registry. This list and the store listing cannot disagree — both are produced from the same source.</p>
+  <h2>MCP tool reference</h2>
+  <p class="lead">All 98 tools, generated from the extension's registry. This list and the store listing cannot disagree — both are produced from the same source.</p>
   <div class="toolgrid">
-    <code>browser_health</code><code>browser_list_tabs</code><code>browser_navigate</code><code>browser_close_tab</code><code>browser_switch_tab</code><code>browser_back</code><code>browser_forward</code><code>browser_reload</code><code>browser_wait</code><code>browser_read_page</code><code>browser_snapshot</code><code>browser_click</code><code>browser_fill</code><code>browser_hover</code><code>browser_type</code><code>browser_press</code><code>browser_select</code><code>browser_scroll</code><code>browser_screenshot</code><code>browser_evaluate</code><code>browser_network_start</code><code>browser_network_stop</code><code>browser_network_list</code><code>browser_console_start</code><code>browser_console_stop</code><code>browser_console_list</code><code>browser_pdf</code><code>browser_upload</code><code>browser_detect_editor</code><code>browser_history_search</code><code>browser_bookmarks_search</code><code>browser_downloads_list</code><code>browser_download_cancel</code><code>browser_audit</code><code>browser_check_links</code><code>browser_check_spelling</code><code>browser_visual_capture_baseline</code><code>browser_visual_compare</code><code>browser_visual_diff</code><code>browser_record_start</code><code>browser_record_stop</code><code>browser_record_list</code><code>browser_record_events</code><code>browser_record_replay</code><code>browser_css_scan</code><code>browser_css_copy</code><code>browser_css_edit</code><code>browser_css_extract</code><code>browser_css_unused</code><code>browser_inspect_start</code><code>browser_inspect_stop</code><code>browser_inspect_mode</code><code>browser_inspect_status</code><code>browser_fullpage_capture</code><code>browser_screenshot_annotate</code><code>browser_screenshot_crop</code><code>browser_screenshot_export</code><code>browser_screenshot_history</code><code>browser_md_view</code><code>browser_md_diff</code><code>browser_vault_save</code><code>browser_vault_load</code><code>browser_vault_list</code><code>browser_vault_delete</code><code>browser_codegen_start</code><code>browser_codegen_stop</code><code>browser_codegen_export</code><code>browser_codegen_status</code><code>browser_dom_compress</code><code>browser_dom_delta</code><code>browser_firewall_set_policy</code><code>browser_firewall_check</code><code>browser_firewall_get_policy</code><code>browser_shadow_start</code><code>browser_shadow_stop</code><code>browser_shadow_compare</code><code>browser_license_check</code><code>browser_license_activate</code><code>browser_license_collect</code><code>browser_license_recover</code><code>browser_license_release</code><code>browser_timetravel_snapshot</code><code>browser_timetravel_list</code><code>browser_timetravel_inspect</code><code>browser_timetravel_export</code><code>browser_manifest_generate</code><code>browser_manifest_validate</code>
+    <code>browser_health</code><code>browser_list_tabs</code><code>browser_navigate</code><code>browser_close_tab</code><code>browser_switch_tab</code><code>browser_back</code><code>browser_forward</code><code>browser_reload</code><code>browser_wait</code><code>browser_read_page</code><code>browser_snapshot</code><code>browser_click</code><code>browser_fill</code><code>browser_hover</code><code>browser_type</code><code>browser_press</code><code>browser_select</code><code>browser_scroll</code><code>browser_screenshot</code><code>browser_evaluate</code><code>browser_network_start</code><code>browser_network_stop</code><code>browser_network_list</code><code>browser_console_start</code><code>browser_console_stop</code><code>browser_console_list</code><code>browser_pdf</code><code>browser_upload</code><code>browser_detect_editor</code><code>browser_history_search</code><code>browser_bookmarks_search</code><code>browser_downloads_list</code><code>browser_download_cancel</code><code>browser_audit</code><code>browser_check_links</code><code>browser_check_spelling</code><code>browser_visual_capture_baseline</code><code>browser_visual_compare</code><code>browser_visual_diff</code><code>browser_record_start</code><code>browser_record_stop</code><code>browser_record_list</code><code>browser_record_events</code><code>browser_record_replay</code><code>browser_css_scan</code><code>browser_css_copy</code><code>browser_css_edit</code><code>browser_css_extract</code><code>browser_css_unused</code><code>browser_inspect_start</code><code>browser_inspect_stop</code><code>browser_inspect_mode</code><code>browser_inspect_status</code><code>browser_fullpage_capture</code><code>browser_screenshot_annotate</code><code>browser_screenshot_crop</code><code>browser_screenshot_export</code><code>browser_screenshot_history</code><code>browser_md_view</code><code>browser_md_diff</code><code>browser_vault_save</code><code>browser_vault_load</code><code>browser_vault_list</code><code>browser_vault_delete</code><code>browser_codegen_start</code><code>browser_codegen_stop</code><code>browser_codegen_export</code><code>browser_codegen_status</code><code>browser_dom_compress</code><code>browser_dom_delta</code><code>browser_firewall_set_policy</code><code>browser_firewall_check</code><code>browser_firewall_get_policy</code><code>browser_shadow_start</code><code>browser_shadow_stop</code><code>browser_shadow_compare</code><code>browser_license_check</code><code>browser_license_activate</code><code>browser_license_collect</code><code>browser_license_recover</code><code>browser_license_release</code><code>browser_timetravel_snapshot</code><code>browser_timetravel_list</code><code>browser_timetravel_inspect</code><code>browser_timetravel_export</code><code>browser_manifest_generate</code><code>browser_manifest_validate</code><code>browser_react_detect</code><code>browser_react_tree</code><code>browser_react_inspect</code><code>browser_react_highlight</code><code>browser_cache_clear</code><code>browser_hard_reload</code><code>browser_form_fill</code><code>browser_color_pick</code><code>browser_color_sample</code><code>browser_color_palette</code><code>browser_color_history</code>
   </div>
   <h2>Risk tiers</h2>
   <p>Every tool carries a risk classification that drives the approval gate.</p>
@@ -68,7 +99,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.1.0</strong> — 87 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
