@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Compare — T3rnel Browser vs other MCP browser tools</title>
-<meta name="description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use and CSS Scan, feature by feature.">
-<meta name="keywords" content="chrome devtools mcp alternative, playwright mcp comparison, mcp-chrome vs, browser use alternative, css scan alternative, gofullpage alternative, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Claude Desktop">
+<meta name="description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, CSS Scan, color pickers, React debuggers, form fillers and cache clearers, feature by feature.">
+<meta name="keywords" content="chrome devtools mcp alternative, playwright mcp comparison, mcp-chrome vs, browser use alternative, css scan alternative, gofullpage alternative, Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Compare — T3rnel Browser vs other MCP browser tools">
-<meta property="og:description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use and CSS Scan, feature by feature.">
+<meta property="og:description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, CSS Scan, color pickers, React debuggers, form fillers and cache clearers, feature by feature.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/compare.html">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
@@ -33,7 +33,7 @@
 <meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Compare — T3rnel Browser vs other MCP browser tools">
-<meta name="twitter:description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, mcp-chrome, Browser Use and CSS Scan, feature by feature.">
+<meta name="twitter:description" content="How T3rnel Browser compares with Chrome DevTools MCP, Playwright MCP, CSS Scan, color pickers, React debuggers, form fillers and cache clearers, feature by feature.">
 <meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
@@ -65,11 +65,6 @@
 </table>
 </div>
 
-  <div class="callout">
-    <h3>The honest read</h3>
-    <p>T3rnel does not beat these on being free, and never will — several are backed by Google and Microsoft, and they are good. It beats them on three things: a human can watch and stop what happens, credentials do not leak into a context window, and the agent does not have to re-authenticate into a fresh browser because it is already in yours.</p>
-    <p>If all you need is scripted automation in a throwaway browser, use Playwright MCP. It is excellent and it is free.</p>
-  </div>
 
   <h2>Versus CSS inspection tools</h2>
   <div class="scroll">
@@ -103,6 +98,62 @@
       <tr><th scope="row">Visual regression baselines</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
       <tr><th scope="row">Programmatic capture for agents</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
       <tr><th scope="row">Local-only, no account</th><td class="us">Yes</td><td>Yes</td><td>Account for cloud</td><td>Yes</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Versus color picker extensions</h2>
+  <div class="scroll">
+  <table class="compare">
+    <thead><tr><th></th><th class="us">T3rnel</th><th>ColorZilla</th><th>Eye Dropper</th><th>Pika</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Eyedropper from any pixel</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><th scope="row">Palette and history</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Export hex / rgb / hsl / CSS var</th><td class="us">Yes</td><td>Yes</td><td>Partial</td><td>Yes</td></tr>
+      <tr><th scope="row">MCP access for agents</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Works in side panel, not a new tab</th><td class="us">Yes</td><td>Partial</td><td>No</td><td>No</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Versus React debugging extensions</h2>
+  <div class="scroll">
+  <table class="compare">
+    <thead><tr><th></th><th class="us">T3rnel</th><th>React DevTools</th><th>LocatorJS</th><th>Reactime</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Component tree</th><td class="us">Yes</td><td>Yes</td><td>Partial</td><td>Yes</td></tr>
+      <tr><th scope="row">Props and hooks inspection</th><td class="us">Yes</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+      <tr><th scope="row">Highlight element from component</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+      <tr><th scope="row">MCP access for agents</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Local-only, no account</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Versus form filler extensions</h2>
+  <div class="scroll">
+  <table class="compare">
+    <thead><tr><th></th><th class="us">T3rnel</th><th>Fake Filler</th><th>Form Filler</th><th>iMacros</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Detect visible form controls</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><th scope="row">Fill from JSON / agent instructions</th><td class="us">Yes</td><td>No</td><td>Partial</td><td>Partial</td></tr>
+      <tr><th scope="row">Human approval before submit</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">MCP access for agents</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Local-only, no account</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Account for cloud</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Versus cache clearing extensions</h2>
+  <div class="scroll">
+  <table class="compare">
+    <thead><tr><th></th><th class="us">T3rnel</th><th>Clear Cache</th><th>Cache Killer</th><th>Empty Cache Button</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Clear cache for current origin</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+      <tr><th scope="row">Hard reload current page</th><td class="us">Yes</td><td>Yes</td><td>Partial</td><td>Yes</td></tr>
+      <tr><th scope="row">Clear cookies / site data</th><td class="us">Yes</td><td>Partial</td><td>No</td><td>Partial</td></tr>
+      <tr><th scope="row">MCP access for agents</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+      <tr><th scope="row">Local-only, no account</th><td class="us">Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
     </tbody>
   </table>
   </div>

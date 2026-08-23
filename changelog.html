@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Changelog — T3rnel Browser</title>
 <meta name="description" content="Release history for T3rnel Browser.">
-<meta name="keywords" content="T3rnel Browser changelog, release notes, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Claude Desktop">
+<meta name="keywords" content="T3rnel Browser changelog, release notes, Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -67,7 +67,15 @@
       <li>Clear cache and hard-reload tools for the current origin.</li>
       <li>React debugging: component tree, props and hooks inspection.</li>
       <li>Form filling with field detection and structured value input.</li>
-      <li>Per-browser install dropdown on the site for Chrome, Brave, Edge, Opera, Chromium and Firefox.</li>
+    </ul>
+
+    <h3>Fixed</h3>
+    <ul>
+      <li>CSS extract returned empty output and Markdown view failed to save its state.</li>
+      <li>Replay missed clicks on elements that arrive late or that the page ignores.</li>
+      <li>Failed content actions were reported as successes.</li>
+      <li>The side panel could not approve actions the gate had refused.</li>
+      <li>Time-travel snapshots recorded a 0×0 viewport for every page.</li>
     </ul>
   </article>
 
