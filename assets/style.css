@@ -18,6 +18,8 @@ header.site{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;justify
 .store-cta{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;
   padding:8px 16px;border-radius:9px;font-weight:600;font-size:14px;white-space:nowrap}
 .store-cta:hover{filter:brightness(1.08)}
+select.store-cta{cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fff' d='M1 4h10L6 9 1 4z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;border:none}
+select.store-cta option{background:var(--panel);color:var(--ink)}
 .mark{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--accent);color:var(--accent-ink);font-size:13px;font-weight:700}
 header nav{display:flex;flex-wrap:wrap;gap:4px}
 header nav a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px;font-size:14.5px}

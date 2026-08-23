@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>T3rnel Browser — DevTools you can talk to</title>
-<meta name="description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 98 MCP tools in the browser you already use. All local.">
-<meta name="keywords" content="CSS inspector, copy CSS, full page screenshot, markdown viewer, MCP server, AI browser automation, visual regression, developer tools, Chrome extension, Brave extension, Edge extension, Firefox add-on">
+<meta name="description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 98 MCP tools in the browser you already use. Works with Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and any MCP client. All local.">
+<meta name="keywords" content="CSS inspector, copy CSS, full page screenshot, markdown viewer, MCP server, AI browser automation, visual regression, developer tools, Chrome extension, Brave extension, Edge extension, Firefox add-on, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Claude Desktop">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="T3rnel Browser — DevTools you can talk to">
-<meta property="og:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 98 MCP tools in the browser you already use. All local.">
+<meta property="og:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 98 MCP tools in the browser you already use. Works with Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and any MCP client. All local.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
@@ -33,27 +33,35 @@
 <meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="T3rnel Browser — DevTools you can talk to">
-<meta name="twitter:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 98 MCP tools in the browser you already use. All local.">
+<meta name="twitter:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 98 MCP tools in the browser you already use. Works with Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and any MCP client. All local.">
 <meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"T3rnel Browser","applicationCategory":"DeveloperApplication","operatingSystem":"Chrome, Brave, Edge, Opera, Chromium, Firefox","softwareVersion":"1.1.0","description":"A web development toolkit that inspects and automates web pages, exposing 98 tools over the Model Context Protocol.","url":"https://t3ratech.github.io/t3rnel-browser-plugin","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"29.99","priceCurrency":"USD"}],"publisher":{"@type":"Organization","name":"T3raTech Solutions (Pvt) Ltd","url":"https://t3ratech.co.zw","sameAs":["https://t3ratech.co.zw","https://github.com/t3ratech","https://www.linkedin.com/company/144492015","https://x.com/t3ratech","https://www.facebook.com/t3ratech","https://t3rnel.gumroad.com"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"T3rnel Browser","applicationCategory":"DeveloperApplication","operatingSystem":"Chrome, Brave, Edge, Opera, Chromium, Firefox","softwareVersion":"1.1.0","description":"A web development toolkit that inspects and automates web pages, exposing 98 tools over the Model Context Protocol to Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and any MCP client.","url":"https://t3ratech.github.io/t3rnel-browser-plugin","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"29.99","priceCurrency":"USD"}],"publisher":{"@type":"Organization","name":"T3raTech Solutions (Pvt) Ltd","url":"https://t3ratech.co.zw","sameAs":["https://t3ratech.co.zw","https://github.com/t3ratech","https://www.linkedin.com/company/144492015","https://x.com/t3ratech","https://www.facebook.com/t3ratech","https://t3rnel.gumroad.com"]}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
   <nav aria-label="Primary"><a href="index.html" aria-current="page">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
-  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install — free</a>
+  
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Edge</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Opera</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select>
 </header>
 <main id="main">
 
 <section class="hero">
   <p class="eyebrow">Version 1.1.0 · 98 tools · no servers</p>
   <h1>DevTools you can talk to,<br>and an agent runway you can trust.</h1>
-  <p class="lead">Inspect and copy CSS from any element. Capture full-page screenshots that handle sticky headers and lazy loading. Read Markdown as a document. Then hand the wheel to your AI assistant over MCP — driving the browser you are <em>already signed into</em>, with a human able to see and stop what it does.</p>
-  <p class="cta"><a class="button" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install for Chrome — free</a> <a class="button ghost" href="manual.html">Read the manual</a></p>
-  <p class="fine">Also runs on Brave, Edge and Chromium. Opera and Firefox are partly supported — <a href="#browsers">see what differs</a>.</p>
+  <p class="lead">Inspect and copy CSS from any element. Capture full-page screenshots that handle sticky headers and lazy loading. Read Markdown as a document. Then hand the wheel to Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ or any other MCP client — driving the browser you are <em>already signed into</em>, with a human able to see and stop what it does.</p>
+  <div class="cta">
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Edge</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Opera</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select> <a class="button ghost" href="manual.html">Read the manual</a></div>
+  <p class="fine">Chrome, Brave, Edge, Opera and Chromium use the same store package. Firefox is partly supported — <a href="#browsers">see what differs</a>.</p>
   <p class="fine">Free tier is genuinely useful forever. Pro is $29.99 once, three activations, no subscription.</p>
 </section>
 
@@ -78,19 +86,14 @@
 <section>
   <h2>What you get</h2>
   <div class="grid">
-    <a class="tile" href="features.html#css"><h3>CSS inspection</h3><p>Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.</p></a><a class="tile" href="features.html#screenshots"><h3>Full-page screenshots</h3><p>One click, the whole page, stitched — and it handles the real web rather than the ideal one.</p></a><a class="tile" href="features.html#markdown"><h3>Markdown viewer</h3><p>Read <code>.md</code> files as documents, including the ones your agent just wrote.</p></a><a class="tile" href="features.html#audit"><h3>Page audit and link checking</h3><p>Accessibility, spelling and links — reported honestly, including what could not be checked.</p></a><a class="tile" href="features.html#codegen"><h3>Record, replay and code export</h3><p>Click through a flow once. Get a maintainable test that runs in your CI without this extension.</p></a><a class="tile" href="features.html#agent"><h3>Agent safety</h3><p>The part that justifies the price: a valve between a language model and your logged-in browser.</p></a><a class="tile" href="features.html#vault"><h3>Encrypted identity vault</h3><p>Per-site credentials, encrypted on your device, never written in the clear.</p></a>
+    <a class="tile" href="features.html#css"><h3>CSS inspection</h3><p>Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.</p></a><a class="tile" href="features.html#screenshots"><h3>Full-page screenshots</h3><p>One click, the whole page, stitched — and it handles the real web rather than the ideal one.</p></a><a class="tile" href="features.html#markdown"><h3>Markdown viewer</h3><p>Read <code>.md</code> files as documents, including the ones your agent just wrote.</p></a><a class="tile" href="features.html#audit"><h3>Page audit and link checking</h3><p>Accessibility, spelling and links — reported honestly, including what could not be checked.</p></a><a class="tile" href="features.html#codegen"><h3>Record, replay and code export</h3><p>Click through a flow once. Get a maintainable test that runs in your CI without this extension.</p></a><a class="tile" href="features.html#agent"><h3>Agent safety</h3><p>The part that justifies the price: a valve between a language model and your logged-in browser.</p></a><a class="tile" href="features.html#vault"><h3>Encrypted identity vault</h3><p>Per-site credentials, encrypted on your device, never written in the clear.</p></a><a class="tile" href="features.html#color"><h3>Color picker</h3><p>Sample, save and compare colors from any pixel on the page, with palette export and history.</p></a><a class="tile" href="features.html#cache"><h3>Clear cache and hard reload</h3><p>Clear the cache for the current origin and hard-reload the page without digging through DevTools.</p></a><a class="tile" href="features.html#react"><h3>React debugging</h3><p>Inspect the React component tree, props and hooks on pages that use React.</p></a><a class="tile" href="features.html#forms"><h3>Form filling</h3><p>Fill forms from MCP instructions or the side panel, with field detection and structured values.</p></a>
   </div>
 </section>
 
-<section class="callout">
-  <h2>On claims</h2>
-  <p>Every feature on this site is shipped in the build you download, and each one has a test that fails if the claim stops being true. Where a capability has a real limit — a cross-origin stylesheet the browser will not let us read, a link status it will not let us see, a licence check a determined user can patch — this site says so on the page for that feature rather than in a footnote.</p>
-  <p>The security controls are described as mitigations, not guarantees. A tool that overstates its protection is worse than one that has none, because someone will rely on it.</p>
-</section>
 </main>
 <footer class="site">
   <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
-  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>

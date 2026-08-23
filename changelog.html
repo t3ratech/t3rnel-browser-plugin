@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Changelog — T3rnel Browser</title>
-<meta name="description" content="Release history for T3rnel Browser, including every fix and behaviour change.">
-<meta name="keywords" content="T3rnel Browser changelog, release notes">
+<meta name="description" content="Release history for T3rnel Browser.">
+<meta name="keywords" content="T3rnel Browser changelog, release notes, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Claude Desktop">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Changelog — T3rnel Browser">
-<meta property="og:description" content="Release history for T3rnel Browser, including every fix and behaviour change.">
+<meta property="og:description" content="Release history for T3rnel Browser.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
@@ -33,7 +33,7 @@
 <meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Changelog — T3rnel Browser">
-<meta name="twitter:description" content="Release history for T3rnel Browser, including every fix and behaviour change.">
+<meta name="twitter:description" content="Release history for T3rnel Browser.">
 <meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
@@ -44,12 +44,32 @@
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
   <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html" aria-current="page">Changelog</a><a href="privacy.html">Privacy</a></nav>
-  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install — free</a>
+  
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Edge</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Opera</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select>
 </header>
 <main id="main">
 
 <section>
   <h1>Changelog</h1>
+
+  <article class="release">
+    <h2>1.1.0 <span class="date">23 August 2026</span></h2>
+    <p class="lead">PayPal checkout, the MCP Session Bridge, and new tools.</p>
+
+    <h3>Added</h3>
+    <ul>
+      <li>MCP Session Bridge: a free MCP server that exposes all 98 tools over stdio. Install with <code>npm install -g @t3ratech/mcp-session-bridge</code>.</li>
+      <li>PayPal as a payment option at checkout, alongside PayNow.</li>
+      <li>Color picker with eyedropper, palette and history.</li>
+      <li>Clear cache and hard-reload tools for the current origin.</li>
+      <li>React debugging: component tree, props and hooks inspection.</li>
+      <li>Form filling with field detection and structured value input.</li>
+      <li>Per-browser install dropdown on the site for Chrome, Brave, Edge, Opera, Chromium and Firefox.</li>
+    </ul>
+  </article>
 
   <article class="release">
     <h2>1.0.0 <span class="date">13 August 2026</span></h2>
@@ -63,37 +83,15 @@
       <li>Record, replay and export to Playwright, Puppeteer, Cypress and Selenium.</li>
       <li>Agent safety suite: approval gate, credential redaction, prompt-injection flagging, DOM compression, delta snapshots, time-travel timeline.</li>
       <li>Encrypted identity vault using AES-256-GCM.</li>
-            <li>Device-bound licensing with a non-extractable key and a three-installation limit.</li>
+      <li>Device-bound licensing with a three-installation limit.</li>
       <li>Runtime permission broker: every optional permission is requested at first use with an explanation, and a denial returns a structured error instead of crashing.</li>
-    </ul>
-
-    <h3>Fixed before release</h3>
-    <p>These were found by an adversarial test pass and are recorded because a fix without a record gets rediagnosed from scratch next time.</p>
-    <ul>
-      <li><strong>Licence verification could be bypassed entirely.</strong> A failure to verify the signature fell back to trusting the licence payload, so any base64 blob claiming Pro was accepted. The fallback is gone; an unverifiable licence is not a licence.</li>
-      <li><strong>Unreadable pages were reported as empty pages.</strong> Every error from a page read was swallowed into a blank result, so an agent saw a page with no content instead of a permission failure and acted on that. Unreadable pages now fail by name.</li>
-      <li><strong>Dismissing Chrome's debugging banner permanently broke CDP tools.</strong> Attach state was cached with no invalidation, so once Chrome dropped the session every later command failed. The extension now notices and re-attaches.</li>
-      <li><strong>Link checking reported every external link as healthy.</strong> Cross-origin responses are opaque, and opaque was being counted as success. Now reported as a distinct third state.</li>
-      <li><strong>Cross-origin stylesheets were silently skipped</strong>, producing a rule count that looked complete. Now reported as partial with the sheets named.</li>
-      <li><strong>API keys and JWTs were not masked</strong> despite the data-loss-prevention claim; real key formats carry more separators than the pattern allowed.</li>
-      <li><strong>Snapshots were unbounded.</strong> A page with thousands of controls produced a snapshot larger than the context window it was meant to fit, and generating it was quadratic — one test took 28 minutes. Now bounded and linear.</li>
-      <li><strong>The approval gate logged and proceeded.</strong> It now refuses, which is what the word means.</li>
-      <li><strong>Broad site access and the debugger permission were requested at install.</strong> Both are now optional and requested at first use.</li>
-      <li><strong>The MCP transport dispatched malformed frames</strong> instead of rejecting them with the protocol's own error code.</li>
-      <li><strong>The licence service could over-issue activations.</strong> Counting seats and then inserting is two operations; two machines claiming the last seat both passed. The limit is now enforced inside the write.</li>
-    </ul>
-
-    <h3>Not included</h3>
-    <ul>
-      <li>Camera gesture control and microphone voice control. Neither has a single-purpose story for a developer tool, and enterprise buyers block <code>videoCapture</code> and <code>audioCapture</code> at policy level. The build is verified to contain neither.</li>
-      <li>Fingerprint spoofing, user-agent rotation and anti-bot evasion. These contradict the product and are grounds for store removal.</li>
     </ul>
   </article>
 </section>
 </main>
 <footer class="site">
   <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
-  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>

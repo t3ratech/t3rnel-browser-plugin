@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>T3rnel Browser — 98 MCP tools and install guide</title>
-<meta name="description" content="T3rnel Browser exposes 98 browser automation tools over MCP. Install the Chrome extension and the free MCP Session Bridge, then drive your logged-in browser with Claude, Cursor or Windsurf.">
-<meta name="keywords" content="MCP tools list, T3rnel Browser, browser automation tools, model context protocol browser, MCP Session Bridge install, chrome extension AI">
+<title>T3rnel MCP Session Bridge — 98 tools and install guide</title>
+<meta name="description" content="T3rnel MCP Session Bridge exposes 98 browser automation tools over stdio. Install the bridge and the T3rnel Browser extension, then drive your logged-in browser with Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and other MCP clients.">
+<meta name="keywords" content="MCP Session Bridge, MCP tools list, T3rnel Browser, browser automation tools, model context protocol server, install MCP bridge, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Claude Desktop">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -17,8 +17,8 @@
 <link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
-<meta property="og:title" content="T3rnel Browser — 98 MCP tools and install guide">
-<meta property="og:description" content="T3rnel Browser exposes 98 browser automation tools over MCP. Install the Chrome extension and the free MCP Session Bridge, then drive your logged-in browser with Claude, Cursor or Windsurf.">
+<meta property="og:title" content="T3rnel MCP Session Bridge — 98 tools and install guide">
+<meta property="og:description" content="T3rnel MCP Session Bridge exposes 98 browser automation tools over stdio. Install the bridge and the T3rnel Browser extension, then drive your logged-in browser with Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and other MCP clients.">
 <meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/tools.html">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
@@ -32,8 +32,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="T3rnel Browser — 98 MCP tools and install guide">
-<meta name="twitter:description" content="T3rnel Browser exposes 98 browser automation tools over MCP. Install the Chrome extension and the free MCP Session Bridge, then drive your logged-in browser with Claude, Cursor or Windsurf.">
+<meta name="twitter:title" content="T3rnel MCP Session Bridge — 98 tools and install guide">
+<meta name="twitter:description" content="T3rnel MCP Session Bridge exposes 98 browser automation tools over stdio. Install the bridge and the T3rnel Browser extension, then drive your logged-in browser with Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and other MCP clients.">
 <meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
@@ -44,27 +44,25 @@
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
   <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html" aria-current="page">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
-  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install — free</a>
+  
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Edge</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Opera</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select>
 </header>
 <main id="main">
 
 <section class="hero">
-  <h1>T3rnel Browser — 98 MCP tools for your real browser</h1>
+  <h1>T3rnel MCP Session Bridge — 98 browser tools over stdio</h1>
   <p class="lead">
-    T3rnel Browser is a Chrome, Brave, Edge and Chromium extension that turns any tab into an agentic surface. It exposes 98 browser-automation tools over the Model Context Protocol, so Claude, Cursor, Windsurf and any MCP client can read the page you are already signed into — with a human approval gate for high-risk actions.
+    The MCP Session Bridge is a free MCP server that exposes 98 browser-automation tools to Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ and other MCP clients. In extension mode it drives the browser you are already signed into through the T3rnel Browser extension. In standalone mode it launches its own browser and needs no extension at all.
   </p>
   <p>
-    Inspect CSS with hover-and-copy, capture full-page screenshots, convert pages to Markdown, record and replay interactions, run page audits, manage an encrypted local vault, and drive the browser through MCP — all without shipping session cookies to a cloud browser.
-  </p>
-
-  <h2>Install the extension</h2>
-  <p class="fine">Free from the Chrome Web Store. Brave, Edge and Chromium use the same package; Firefox and Opera are partly supported.</p>
-  <p>
-    <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install T3rnel Browser — free</a>
+    Your AI assistant can read the page you are already signed into, inspect CSS, capture screenshots, run audits, clear cache, fill forms, inspect React components and more — without a separate automation browser or re-authenticating.
   </p>
 
   <h2>Add the MCP Session Bridge</h2>
-  <p class="fine">The bridge is free. It serves the 98 <code>session_*</code> tools over stdio to any MCP client. Extension mode reaches your authenticated tabs through the T3rnel Browser extension; standalone mode launches its own browser and needs no extension or licence.</p>
+  <p class="fine">One install, version-agnostic, no licence required for the bridge itself.</p>
   <pre class="mcp-install"><code>npm install -g @t3ratech/mcp-session-bridge
 mcp-session-bridge --install</code></pre>
 
@@ -77,6 +75,14 @@ mcp-session-bridge --install</code></pre>
     }
   }
 }</code></pre>
+
+  <h2>Works with the T3rnel Browser extension</h2>
+  <p class="fine">The bridge is free and works out of the box. For the full set of advanced tools and features, get the T3rnel Browser extension and upgrade to Pro. Pro is a one-time purchase that unlocks additional capabilities directly inside the extension.</p>
+  <p>
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Edge</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Opera</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select></p>
 </section>
 
 <section>
@@ -100,7 +106,7 @@ mcp-session-bridge --install</code></pre>
 </main>
 <footer class="site">
   <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
-  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manual — installing, connecting and using T3rnel Browser</title>
 <meta name="description" content="How to install T3rnel Browser, connect it to an MCP client, grant permissions, activate Pro, and use each feature.">
-<meta name="keywords" content="T3rnel Browser manual, MCP client setup, claude desktop MCP, chrome extension install, licence activation">
+<meta name="keywords" content="T3rnel Browser manual, MCP client setup, claude desktop MCP, chrome extension install, licence activation, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Claude Desktop">
 <link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/manual.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -44,7 +44,11 @@
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
   <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html" aria-current="page">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
-  <a class="store-cta" href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Install — free</a>
+  
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Edge</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Opera</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select>
 </header>
 <main id="main">
 
@@ -53,8 +57,11 @@
 
   <h2>Install</h2>
   <ol>
-    <li>Install from the <a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a>. The same package
-      installs on Brave, Edge and Chromium.</li>
+    <li>
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Edge</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Opera</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select> Choose your browser's store. Chrome, Brave, Edge, Opera and Chromium share one package; Firefox support is partial.</li>
     <li>Pin the toolbar icon. Clicking it opens the side panel, which is the main surface.</li>
     <li>Nothing else is required. The free tier works immediately with no account.</li>
   </ol>
@@ -86,7 +93,7 @@
   <p>Declining is safe. The tool returns a <code>PERMISSION_REQUIRED</code> error naming what it needed and why, and every other feature keeps working.</p>
 
   <h2>Connect an MCP client</h2>
-  <p>Install the MCP Session Bridge, register its native messaging host once, and add it to your client's configuration. For a Claude Desktop-style config:</p>
+  <p>Install the MCP Session Bridge, register its native messaging host once, and add it to Claude, Cursor, VS Code, Windsurf, Antigravity, IntelliJ or any other MCP client. For a Claude Desktop-style config:</p>
   <pre><code>npm install -g @t3ratech/mcp-session-bridge
 mcp-session-bridge --install</code></pre>
   <pre><code>{
@@ -97,7 +104,7 @@ mcp-session-bridge --install</code></pre>
   }
 }</code></pre>
   <p>The extension then exposes all 98 tools against the tabs you are already signed into. Calls arriving this way are treated as untrusted: high-risk tools stop and ask before they run.</p>
-  <p>The bridge is free and needs no licence of its own. Without the extension installed it falls back to a standalone automation browser, which needs no licence either — set <code>T3RNEL_SESSION_MODE=standalone</code> to force that mode. The Pro tools remain gated by your T3rnel Browser licence in both cases.</p>
+  <p>The bridge is free and needs no licence of its own. Without the extension it falls back to a standalone automation browser. The full set of advanced tools and features is available through the T3rnel Browser extension's Pro tier.</p>
 
   <h2>The approval gate</h2>
   <p>By default, high-risk tools — clicking, filling, typing, evaluating JavaScript, uploading, and every vault operation — require your approval when the caller is an MCP client. The agent receives a refusal naming the exact action, for example:</p>
@@ -109,11 +116,11 @@ browser_click (selector=#place-order).</code></pre>
   <h2>Activate Pro</h2>
   <ol>
     <li>Open the side panel → Licence → Buy Pro, and enter your email.</li>
-    <li>Complete the PayNow checkout in the tab that opens.</li>
-    <li>Return to the extension and collect your licence key. <strong>Keep it.</strong> It is what activates your other machines.</li>
+    <li>Complete the PayNow or PayPal checkout in the tab that opens.</li>
+    <li>Return to the extension and collect your activation key. <strong>Keep it.</strong> It activates your other machines.</li>
     <li>On another machine, paste the key into Licence → Activate.</li>
   </ol>
-  <p>One licence covers three installations. Reinstalling on a machine that already has a slot does not consume another. Activation is the only time the extension contacts our server; every later start verifies your licence offline.</p>
+  <p>One licence covers three installations. Pro unlocks additional features directly inside the extension.</p>
 
   <h2>Troubleshooting</h2>
   <table>
@@ -131,7 +138,7 @@ browser_click (selector=#place-order).</code></pre>
 </main>
 <footer class="site">
   <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
-  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
