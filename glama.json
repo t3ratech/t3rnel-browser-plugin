@@ -1,0 +1,8 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": ["t3ratech"],
+  "license": "LicenseRef-Proprietary",
+  "npm": "@t3ratech/mcp-session-bridge",
+  "documentation": "https://t3ratech.github.io/t3rnel-browser-plugin/tools.html",
+  "website": "https://t3ratech.github.io/t3rnel-browser-plugin/"
+}
