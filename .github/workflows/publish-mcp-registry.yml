@@ -1,0 +1,47 @@
+# Publishes the MCP Session Bridge entry to the official Model Context Protocol registry.
+#
+# The registry authenticates a `io.github.<owner>/...` namespace by proving the workflow
+# runs in a repository that owner controls. GitHub Actions OIDC is that proof, and it is
+# the only method that needs no interactive browser step — `mcp-publisher login github`
+# is a device flow, and a device flow needs a human to type a code.
+name: Publish to MCP Registry
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Bridge version to publish (must already be on npm)"
+        required: true
+        default: "1.1.0"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      # The registry exchanges this token for a namespace grant. Without it the publish
+      # fails with "ACTIONS_ID_TOKEN_REQUEST_TOKEN environment variable not found".
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the registry publisher
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_amd64.tar.gz" \
+            | tar -xz mcp-publisher
+          chmod +x mcp-publisher
+
+      - name: Check the version is really on npm first
+        run: |
+          # A listing that points at a version the registry cannot install is worse than
+          # no listing, so this fails before anything is published.
+          npm view "@t3ratech/mcp-session-bridge@${{ inputs.version }}" version
+
+      - name: Validate the server manifest
+        run: ./mcp-publisher validate
+
+      - name: Authenticate
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish
+        run: ./mcp-publisher publish
