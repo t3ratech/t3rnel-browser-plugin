@@ -43,7 +43,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
-  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html" aria-current="page">Changelog</a><a href="privacy.html">Privacy</a></nav>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html" aria-current="page">Changelog</a><a href="privacy.html">Privacy</a><a href="about.html">About</a></nav>
   
 <select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
   <option value="" selected>Install — free</option>
@@ -56,17 +56,19 @@
   <h1>Changelog</h1>
 
   <article class="release">
-    <h2>1.1.0 <span class="date">23 August 2026</span></h2>
+    <h2>1.1.0 <span class="date">27 August 2026</span> <span class="tag">current</span></h2>
     <p class="lead">PayPal checkout, the MCP Session Bridge, and new tools.</p>
 
     <h3>Added</h3>
     <ul>
       <li>MCP Session Bridge: a free MCP server that exposes all 98 tools over stdio. Install with <code>npm install -g @t3ratech/mcp-session-bridge</code>.</li>
       <li>PayPal as a payment option at checkout, alongside PayNow.</li>
-      <li>Color picker with eyedropper, palette and history.</li>
+      <li>Color picker with eyedropper, palette and history — copy any colour as hex, <code>rgb()</code>, <code>hsl()</code> or a ready <code>--custom-property</code>.</li>
       <li>Clear cache and hard-reload tools for the current origin.</li>
       <li>React debugging: component tree, props and hooks inspection.</li>
-      <li>Form filling with field detection and structured value input.</li>
+      <li>Form filling that takes your own values: name a field by its <code>name</code>, its <code>id</code> or a CSS selector, and everything you do not name gets seeded test data.</li>
+      <li>CSS copy as a styled-components block, an Emotion <code>css</code> block, a CSS Modules class, SCSS, Less, or a JSX <code>style</code> object.</li>
+      <li>An About section in the side panel: version, contact, the free bridge, and the legal pages.</li>
     </ul>
 
     <h3>Fixed</h3>
@@ -76,6 +78,10 @@
       <li>Failed content actions were reported as successes.</li>
       <li>The side panel could not approve actions the gate had refused.</li>
       <li>Time-travel snapshots recorded a 0×0 viewport for every page.</li>
+      <li>An approval policy set in the panel was not enforced by the service worker until the extension restarted.</li>
+      <li>The panel said "<code>&lt;name&gt;</code> completed" instead of showing what a tool returned.</li>
+      <li>Visual diff could not read the data URL its own screenshot tool produced.</li>
+      <li>JavaScript evaluation reported a correct <code>null</code> result as a failure, and could not see the page's own globals.</li>
     </ul>
   </article>
 
@@ -99,10 +105,10 @@
 </main>
 <footer class="site">
   <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
-  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
-  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 23 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>
 </body>
 </html>

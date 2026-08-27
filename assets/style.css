@@ -80,6 +80,11 @@ tbody th{font-weight:550}
 .tier li{margin:.35em 0}
 .release{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
 .release h2{margin-top:0}
+/* The newest release carries a small "current" tag, so a reader can tell at a glance
+   which version they are running rather than inferring it from the dates. */
+.release h2 .tag{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;
+  background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
 .date{font-size:14px;font-weight:400;color:var(--muted);margin-left:10px}
 footer.site{border-top:1px solid var(--line);padding:28px 24px 48px;color:var(--muted);
   max-width:1080px;margin:0 auto;font-size:14px}

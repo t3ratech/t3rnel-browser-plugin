@@ -43,7 +43,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
-  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html" aria-current="page">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a></nav>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html" aria-current="page">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a><a href="about.html">About</a></nav>
   
 <select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
   <option value="" selected>Install — free</option>
@@ -74,20 +74,20 @@
     <thead><tr><th>Browser</th><th>Status</th><th>Notes</th></tr></thead>
     <tbody><tr><td><strong>Chrome</strong></td><td>Supported</td><td>Tested on Chrome for Testing 152.</td></tr><tr><td><strong>Brave</strong></td><td>Supported</td><td>Tested on Brave 148.</td></tr><tr><td><strong>Edge</strong></td><td>Supported</td><td>Tested on Edge 153.</td></tr><tr><td><strong>Chromium</strong></td><td>Supported</td><td>Tested on the current Chromium build.</td></tr><tr><td><strong>Opera</strong></td><td>Partly supported</td><td>No side panel: Opera implements neither sidePanel nor sidebarAction. The popup and the tools work; the docked panel cannot open.</td></tr><tr><td><strong>Firefox</strong></td><td>Partly supported</td><td>Manifest V3 with a sidebar. No debugger API, so network capture, console capture and PDF export are unavailable.</td></tr><tr><td><strong>Safari</strong></td><td>Planned</td><td>Manifest V3 is generated; the bundle is built with safari-web-extension-converter and distributed through the Mac App Store.</td></tr></tbody>
   </table>
-  <p class="fine">Every row marked Supported is covered by an automated suite that drives the
-    real docked side panel in that browser on every release.</p>
+  <p class="fine">Every supported browser is verified through the real docked side panel
+    on normal web pages. Manual acceptance comes before automated regression coverage.</p>
 
   <h2>Permissions</h2>
-  <p>Installing grants eight permissions — <code>activeTab</code>, <code>alarms</code>, <code>debugger</code>, <code>downloads</code>, <code>nativeMessaging</code>, <code>scripting</code>, <code>sidePanel</code>, <code>storage</code> and <code>tabs</code> — and access to <code>127.0.0.1</code> only, which reaches the optional local daemon and nothing on the web.</p>
+  <p>Installing grants <code>activeTab</code>, <code>alarms</code>, <code>debugger</code>, <code>downloads</code>, <code>nativeMessaging</code>, <code>scripting</code>, <code>sidePanel</code>, <code>storage</code> and <code>tabs</code>. Website access is not granted at install.</p>
+  <p>On first install, a setup page opens that asks for website access with a single toggle. This is the one permission the extension cannot work without — without it, the MCP bridge can list your tabs but can't click, fill, or read anything on them. Granting it during setup means every tool works from the start. If you skip it, you can grant it later from Settings, or a notification will prompt you the first time a tool call needs it.</p>
   <p><code>downloads</code> and <code>nativeMessaging</code> are declared at install because neither can work as an optional grant. <code>downloads</code> needs the gesture that the capture requesting it has already spent, and <code>nativeMessaging</code> is opened by the service worker at startup, where there is no gesture to spend at all. <code>nativeMessaging</code> lets the extension talk to a local companion program you install yourself, and to nothing else; with no such program installed it does nothing.</p>
   <p><code>debugger</code> is declared at install because Chrome does not allow it to be optional. Nothing attaches a debugger session until you start network capture, console capture or PDF export, and Chrome shows its own banner on the tab whenever one is active.</p>
   <p>Everything else is requested the first time you use the feature that needs it, with an explanation shown before the browser's own prompt:</p>
   <table>
     <thead><tr><th>Permission</th><th>Requested when</th></tr></thead>
     <tbody>
-      <tr><td>Site access</td><td>You inspect or automate a site. Grant one origin or all sites — your choice.</td></tr>
-      <tr><td><code>downloads</code></td><td>You export a capture or generated test code.</td></tr>
-      <tr><td><code>history</code>, <code>bookmarks</code></td><td>You enable history or bookmark search. Read-only.</td></tr>
+      <tr><td>Site access</td><td>During setup (recommended), or the first time a tool call needs it. Grant once and every tool works.</td></tr>
+      <tr><td><code>history</code>, <code>bookmarks</code>, <code>tabGroups</code>, <code>webNavigation</code>, <code>offscreen</code>, <code>browsingData</code></td><td>When you enable the feature that needs it. The explanation appears before the browser prompt.</td></tr>
     </tbody>
   </table>
   <p>Declining is safe. The tool returns a <code>PERMISSION_REQUIRED</code> error naming what it needed and why, and every other feature keeps working.</p>
@@ -103,22 +103,26 @@ mcp-session-bridge --install</code></pre>
     }
   }
 }</code></pre>
-  <p>The extension then exposes all 98 tools against the tabs you are already signed into. Calls arriving this way are treated as untrusted: high-risk tools stop and ask before they run.</p>
+  <p>The extension then exposes all 98 tools against the tabs you are already signed into. Calls arriving this way are treated as untrusted: tools that change pages stop and ask before they run.</p>
   <p>The bridge is free and needs no licence of its own. Without the extension it falls back to a standalone automation browser. The full set of advanced tools and features is available through the T3rnel Browser extension's Pro tier.</p>
 
   <h2>The approval gate</h2>
-  <p>By default, high-risk tools — clicking, filling, typing, evaluating JavaScript, uploading, and every vault operation — require your approval when the caller is an MCP client. The agent receives a refusal naming the exact action, for example:</p>
-  <pre><code>APPROVAL_REQUIRED: 'browser_click' is high risk and this profile
-requires confirmation before it runs. Requested action:
-browser_click (selector=#place-order).</code></pre>
+  <p>By default, tools that change pages — clicking, filling, typing, evaluating JavaScript, uploading, and every vault operation — require your approval when the caller is an MCP client. The agent receives a refusal naming the exact action, for example:</p>
+  <pre><code>APPROVAL_REQUIRED: 'browser_click' needs your OK before it runs.
+Requested action: browser_click (selector=#place-order).</code></pre>
   <p>Approve it in the side panel and the action runs once. The next one asks again. You can add specific tools to a never-ask list, mark extra tools always-ask, or pin whole origins as protected so anything aimed at them is gated regardless of risk.</p>
 
   <h2>Activate Pro</h2>
   <ol>
-    <li>Open the side panel → Licence → Buy Pro, and enter your email.</li>
-    <li>Complete the PayNow or PayPal checkout in the tab that opens.</li>
-    <li>Return to the extension and collect your activation key. <strong>Keep it.</strong> It activates your other machines.</li>
-    <li>On another machine, paste the key into Licence → Activate.</li>
+    <li>Open the side panel → Settings → <strong>Get Pro</strong>. A chooser opens with the two ways to pay:
+      <ul>
+        <li><strong>PayPal</strong> — Visa, Mastercard, American Express and a PayPal balance.</li>
+        <li><strong>PayNow</strong> — ZimSwitch, EcoCash, InnBucks, O'mari and Zimbabwean bank cards.</li>
+      </ul>
+    </li>
+    <li>Press Continue and complete the checkout in the tab that opens. Nothing is charged inside the extension.</li>
+    <li>Return to the extension. The key collects itself; <strong>keep it</strong> — it activates your other machines.</li>
+    <li>On another machine, paste the key into Settings → Enter licence key.</li>
   </ol>
   <p>One licence covers three installations. Pro unlocks additional features directly inside the extension.</p>
 
@@ -130,7 +134,7 @@ browser_click (selector=#place-order).</code></pre>
       <tr><td><code>APPROVAL_REQUIRED</code></td><td>Working as designed. Approve the action in the side panel.</td></tr>
       <tr><td>"could not read tab … at …"</td><td>The page is not readable — site access not granted, a restricted <code>chrome://</code> page, or the tab closed. The extension reports this rather than returning an empty page, because an empty page reads to an agent as a page with no content.</td></tr>
       <tr><td>CSS output marked partial</td><td>A cross-origin stylesheet cannot be read by any script. The named sheets were skipped; the rest of the output is complete.</td></tr>
-      <tr><td>Debugger banner dismissed, CDP tools failed</td><td>Fixed in 1.0.0 — the extension notices Chrome dropped the session and re-attaches automatically.</td></tr>
+      <tr><td>Debugger banner dismissed, CDP tools failed</td><td>Restart the tool. The extension notices a dropped session and re-attaches automatically.</td></tr>
       <tr><td><code>LICENSE_ACTIVATION_LIMIT_REACHED</code></td><td>All three installations are in use. Deactivate one, or contact support.</td></tr>
     </tbody>
   </table>
@@ -138,10 +142,10 @@ browser_click (selector=#place-order).</code></pre>
 </main>
 <footer class="site">
   <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
-  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
-  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 13 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 23 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>
 </body>
 </html>
