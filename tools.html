@@ -61,6 +61,39 @@
     Your AI assistant can read the page you are already signed into, inspect CSS, capture screenshots, run audits, clear cache, fill forms, inspect React components and more — without a separate automation browser or re-authenticating.
   </p>
 
+  <h2>The skill</h2>
+  <p>
+    Tools tell an agent <em>what</em> it can do. A skill tells it <em>when</em> — and, more
+    usefully, when not to. <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/signed-in-browser"><strong>signed-in-browser</strong></a>
+    is published alongside the bridge and installs into any client that reads skills.
+  </p>
+  <ul>
+    <li><strong>It says when not to use this.</strong> A public page should be fetched, not
+      driven through somebody's live browser. Reaching into a real session for a page you
+      could have requested is cost with no benefit.</li>
+    <li><strong>It leads with the risk.</strong> This is a real browser logged into real
+      accounts, so: read before you write, confirm anything irreversible in your own words
+      first, and never enter a credential the model generated.</li>
+    <li><strong>It says to verify.</strong> A click that resolves is not a click that
+      worked. Re-snapshot and assert what changed — most silent automation failures are a
+      selector that matched nothing and a caller that never looked.</li>
+  </ul>
+  <p class="fine">
+    On <a href="https://smithery.ai/skills/t3ratech-dev/signed-in-browser">Smithery</a>, or
+    drop <code>SKILL.md</code> into <code>~/.claude/skills/signed-in-browser/</code>.
+  </p>
+
+  <h2>Source and listings</h2>
+  <p>
+    The bridge is source-available at
+    <a href="https://github.com/t3ratech/mcp-session-bridge">github.com/t3ratech/mcp-session-bridge</a>
+    — the same source the npm package ships. It is listed on
+    <a href="https://www.npmjs.com/package/@t3ratech/mcp-session-bridge">npm</a>,
+    the official MCP registry as <code>io.github.t3ratech/mcp-session-bridge</code>, and
+    <a href="https://smithery.ai/servers/t3ratech-dev/mcp-session-bridge">Smithery</a>.
+    The extension itself is closed source and ships through the browser stores.
+  </p>
+
   <h2>Add the MCP Session Bridge</h2>
   <p class="fine">One install, version-agnostic, no licence required for the bridge itself.</p>
   <pre class="mcp-install"><code>npm install -g @t3ratech/mcp-session-bridge
@@ -94,7 +127,7 @@ mcp-session-bridge --install</code></pre>
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.1.0</strong> — 98 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.1.1</strong> — 98 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
