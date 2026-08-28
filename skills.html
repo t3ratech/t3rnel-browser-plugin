@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent skills — teaching an assistant when to drive your browser</title>
+<meta name="description" content="Free, open agent skills for T3rnel Browser and the MCP Session Bridge: signed-in-browser, publish-mcp-server and post-to-hacker-news. Install into Claude Code, Claude Desktop or any client that reads skills.">
+<meta name="keywords" content="agent skills, Claude skills, Claude Code skills, SKILL.md, MCP skills, browser automation skill, signed-in browser, Smithery skills, AI agent instructions">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/skills.html">
+<!--
+  The site has exactly one language and one region. Declaring that explicitly, with a
+  matching x-default, is what stops a crawler guessing at regional variants that do not
+  exist; a self-referential hreflang is valid and is the correct form for a single-locale
+  site. It must agree with the canonical above or both are ignored.
+-->
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/skills.html">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/skills.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T3rnel Browser">
+<meta property="og:title" content="Agent skills — teaching an assistant when to drive your browser">
+<meta property="og:description" content="Free, open agent skills for T3rnel Browser and the MCP Session Bridge: signed-in-browser, publish-mcp-server and post-to-hacker-news. Install into Claude Code, Claude Desktop or any client that reads skills.">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/skills.html">
+<!--
+  Without og:image a shared link renders as a bare line of text. Every social platform
+  and every chat client reads this tag, and an absolute URL is required: a relative path
+  resolves against the crawler, not against the page, so it silently fetches nothing.
+  1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
+  sizes get cropped differently by each network.
+-->
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agent skills — teaching an assistant when to drive your browser">
+<meta name="twitter:description" content="Free, open agent skills for T3rnel Browser and the MCP Session Bridge: signed-in-browser, publish-mcp-server and post-to-hacker-news. Install into Claude Code, Claude Desktop or any client that reads skills.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"T3rnel agent skills","url":"https://t3ratech.github.io/t3rnel-browser-plugin/skills.html","itemListElement":[{"@type":"ListItem","position":1,"name":"signed-in-browser","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/signed-in-browser"},{"@type":"ListItem","position":2,"name":"publish-mcp-server","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/publish-mcp-server"},{"@type":"ListItem","position":3,"name":"post-to-hacker-news","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/post-to-hacker-news"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="skills.html" aria-current="page">Agent skills</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a><a href="about.html">About</a></nav>
+  
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge — in review</option><option value="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera — in review</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox — in review</option>
+</select>
+</header>
+<main id="main">
+
+<section class="hero">
+  <h1>Agent skills</h1>
+  <p class="lead">
+    Tools tell an assistant <em>what</em> it can do. A skill tells it <em>when</em> — and,
+    more usefully, when not to. Ours are free, open, and written from the things that
+    actually went wrong.
+  </p>
+  <p>
+    A skill is a Markdown file an AI client reads before deciding how to approach a task.
+    These are published alongside the
+    <a href="https://github.com/t3ratech/mcp-session-bridge">MCP Session Bridge</a> and
+    work with Claude Code, Claude Desktop, and any other client that reads skills.
+  </p>
+</section>
+
+<section>
+  <h2>signed-in-browser</h2>
+  <p>
+    Working in a browser you are already signed into. The capability is the interesting
+    part, but the guidance is mostly about restraint.
+  </p>
+  <ul>
+    <li><strong>It says when not to use it.</strong> The first row of its decision table is
+      "public page, no login — use an ordinary headless browser". Reaching into a live
+      session for a page you could have fetched is cost with no benefit.</li>
+    <li><strong>It leads with the risk.</strong> This is a real browser logged into real
+      accounts, so a wrong click sends mail, cancels a subscription or moves money. Read
+      before you write; confirm anything irreversible first; never enter a credential the
+      model generated.</li>
+    <li><strong>It says to verify.</strong> A click that resolves is not a click that
+      worked. Most silent automation failures are a selector that matched nothing and a
+      caller that never looked.</li>
+  </ul>
+  <p class="fine">
+    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/signed-in-browser">Source</a>
+    · <a href="https://smithery.ai/skills/t3ratech-dev/signed-in-browser">On Smithery</a>
+  </p>
+
+  <h2>publish-mcp-server</h2>
+  <p>
+    Listing an MCP server on the public directories — Smithery, Glama, mcpservers.org and
+    awesome-mcp-servers. Every warning in it cost a failed submission to find: a
+    description limit nothing mentions until you submit, a required dropdown that a
+    careless read of the page misses entirely, and paid tiers sitting beside the free
+    submit button.
+  </p>
+  <p class="fine">
+    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/publish-mcp-server">Source</a>
+  </p>
+
+  <h2>post-to-hacker-news</h2>
+  <p>
+    Submitting to Hacker News, including Show HN: the title rules, the url-or-text choice,
+    how to tell a real submission from a silent failure, and the author comment a Show HN
+    needs to survive its first hour.
+  </p>
+  <p class="fine">
+    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/post-to-hacker-news">Source</a>
+  </p>
+</section>
+
+<section>
+  <h2>Install one</h2>
+  <p>Drop the folder into your client's skills directory. For Claude Code:</p>
+  <pre><code>git clone --depth=1 https://github.com/t3ratech/mcp-session-bridge /tmp/t3rnel-skills
+cp -r /tmp/t3rnel-skills/skills/signed-in-browser ~/.claude/skills/</code></pre>
+  <p>
+    Or, for a project rather than your whole account, use <code>.claude/skills/</code>
+    inside the repository. Skills are plain Markdown — read one before you install it,
+    which is advice we would give about anybody's.
+  </p>
+
+  <h2>Why we test them</h2>
+  <p>
+    A skill is an instruction another system follows without checking. One that names a
+    tool which no longer exists, or a limit that has moved, sends an agent down a path it
+    was written to rule out. So every <code>session_*</code> tool these name is asserted to
+    exist, every tool count they quote is compared against what the code actually serves,
+    and the specific traps are pinned by tests — they fail the build rather than mislead a
+    reader.
+  </p>
+  
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge — in review</option><option value="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera — in review</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox — in review</option>
+</select>
+</section>
+</main>
+<footer class="site">
+  <p><strong>T3rnel Browser 1.1.1</strong> — 98 tools, one extension, no servers.</p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
+  <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 23 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+</footer>
+</body>
+</html>
