@@ -37,7 +37,7 @@
 <meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"T3rnel agent skills","url":"https://t3ratech.github.io/t3rnel-browser-plugin/skills.html","itemListElement":[{"@type":"ListItem","position":1,"name":"signed-in-browser","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/signed-in-browser"},{"@type":"ListItem","position":2,"name":"publish-mcp-server","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/publish-mcp-server"},{"@type":"ListItem","position":3,"name":"post-to-hacker-news","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/post-to-hacker-news"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"T3rnel agent skills","url":"https://t3ratech.github.io/t3rnel-browser-plugin/skills.html","itemListElement":[{"@type":"ListItem","position":1,"name":"signed-in-browser","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/signed-in-browser"},{"@type":"ListItem","position":2,"name":"publish-mcp-server","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/publish-mcp-server"},{"@type":"ListItem","position":3,"name":"post-to-hacker-news","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/post-to-hacker-news"}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -86,7 +86,7 @@
       caller that never looked.</li>
   </ul>
   <p class="fine">
-    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/signed-in-browser">Source</a>
+    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/signed-in-browser">Source</a>
     · <a href="https://smithery.ai/skills/t3ratech-dev/signed-in-browser">On Smithery</a>
   </p>
 
@@ -99,7 +99,7 @@
     submit button.
   </p>
   <p class="fine">
-    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/publish-mcp-server">Source</a>
+    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/publish-mcp-server">Source</a>
   </p>
 
   <h2>post-to-hacker-news</h2>
@@ -109,7 +109,7 @@
     needs to survive its first hour.
   </p>
   <p class="fine">
-    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/skills/post-to-hacker-news">Source</a>
+    <a href="https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/post-to-hacker-news">Source</a>
   </p>
 </section>
 
@@ -117,7 +117,7 @@
   <h2>Install one</h2>
   <p>Drop the folder into your client's skills directory. For Claude Code:</p>
   <pre><code>git clone --depth=1 https://github.com/t3ratech/mcp-session-bridge /tmp/t3rnel-skills
-cp -r /tmp/t3rnel-skills/skills/signed-in-browser ~/.claude/skills/</code></pre>
+cp -r /tmp/t3rnel-skills/agent-skills/signed-in-browser ~/.claude/skills/</code></pre>
   <p>
     Or, for a project rather than your whole account, use <code>.claude/skills/</code>
     inside the repository. Skills are plain Markdown — read one before you install it,
