@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 98 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 103 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Changelog — T3rnel Browser">
 <meta name="twitter:description" content="Release history for T3rnel Browser.">
@@ -43,7 +43,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
-  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="skills.html">Agent skills</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html" aria-current="page">Changelog</a><a href="privacy.html">Privacy</a><a href="about.html">About</a></nav>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="products.html">Products</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="skills.html">Agent skills</a><a href="compare.html">Compare</a><a href="pricing.html">Pricing</a><a href="changelog.html" aria-current="page">Changelog</a><a href="privacy.html">Privacy</a><a href="about.html">About</a></nav>
   
 <select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
   <option value="" selected>Install — free</option>
@@ -56,12 +56,50 @@
   <h1>Changelog</h1>
 
   <article class="release">
-    <h2>1.1.1 <span class="date">27 August 2026</span> <span class="tag">current</span></h2>
+    <h2>1.2.0 <span class="date">2 September 2026</span> <span class="tag">current</span></h2>
+    <p class="lead">Twenty-four languages, light and dark, and a stop to infinite scrolling.</p>
+
+    <h3>Added</h3>
+    <ul>
+      <li><strong>24 languages.</strong> English, Mandarin Chinese, Hindi, Spanish, Standard Arabic, French, Bengali, Portuguese, Russian, Urdu, Indonesian, German, Japanese, Nigerian Pidgin, Egyptian Arabic, Marathi, Telugu, Vietnamese, Hausa, Swahili, Italian, Zulu, Shona and Ndebele. The panel picks your browser's language on first run; Settings has a picker if you want a different one. Arabic, Egyptian Arabic and Urdu lay the panel out right-to-left. Every language is complete — none falls back to English part-way through a screen.</li>
+      <li><strong>Light and dark.</strong> Settings &rarr; Appearance. &ldquo;Match the system&rdquo; follows your machine; choosing Light or Dark stops it following, so your choice is not undone the next time your OS switches.</li>
+      <li><strong>Stop infinite scrolling.</strong> A per-site toggle. Feeds that keep loading as you scroll stop at the end of what is already there, and a button appears to let one more batch through when you want it. The page's own loading code is never invoked rather than blocked mid-request, so turning it off leaves nothing half-finished.</li>
+    </ul>
+
+    <h3>Changed</h3>
+    <ul>
+      <li><strong>Payments moved to T3rnel WavePay</strong>, the shared gateway behind every T3raTech product. Prices, the licence, the three-device limit and your existing licence key are unchanged, and nothing needs re-activating.</li>
+      <li><strong>Checkout is PayNow</strong>, and now names what it takes: Visa, Mastercard, ZimSwitch, EcoCash, OneMoney, Telecash, InnBucks and O'mari, with the card marks drawn beside them. PayPal is no longer offered at checkout.</li>
+    </ul>
+  </article>
+
+  <article class="release">
+    <h2>1.1.1 <span class="date">28 August 2026</span></h2>
+    <p class="lead">Clear a form in one click.</p>
+
+    <h3>Added</h3>
+    <ul>
+      <li><strong>Clear form</strong> — empties every field in one click, from the panel or over MCP. Works on React and other framework-driven forms, keeps the hidden fields a page needs to submit, and leaves disabled fields alone.</li>
+    </ul>
+
+    <h3>Fixed</h3>
+    <ul>
+      <li>A reinstall no longer uses up one of your three Pro activations.</li>
+      <li>Fixed saving to the encrypted vault.</li>
+      <li>Fixed the approval queue showing a request waiting when none was.</li>
+      <li>Improved the run timeline, shadow testing, code export and DOM compression.</li>
+      <li>Improved the LLM firewall's per-site policies and secret masking.</li>
+      <li>Better compatibility with MCP clients.</li>
+    </ul>
+  </article>
+
+  <article class="release">
+    <h2>1.1.0 <span class="date">27 August 2026</span></h2>
     <p class="lead">PayPal checkout, the MCP Session Bridge, and new tools.</p>
 
     <h3>Added</h3>
     <ul>
-      <li>MCP Session Bridge: a free MCP server that exposes all 98 tools over stdio. Install with <code>npm install -g @t3ratech/mcp-session-bridge</code>.</li>
+      <li>MCP Session Bridge: a free MCP server that exposes all 102 tools over stdio. Install with <code>npm install -g @t3ratech/mcp-session-bridge</code>.</li>
       <li>PayPal as a payment option at checkout, alongside PayNow.</li>
       <li>Color picker with eyedropper, palette and history — copy any colour as hex, <code>rgb()</code>, <code>hsl()</code> or a ready <code>--custom-property</code>.</li>
       <li>Clear cache and hard-reload tools for the current origin.</li>
@@ -73,15 +111,10 @@
 
     <h3>Fixed</h3>
     <ul>
-      <li>CSS extract returned empty output and Markdown view failed to save its state.</li>
-      <li>Replay missed clicks on elements that arrive late or that the page ignores.</li>
-      <li>Failed content actions were reported as successes.</li>
-      <li>The side panel could not approve actions the gate had refused.</li>
-      <li>Time-travel snapshots recorded a 0×0 viewport for every page.</li>
-      <li>An approval policy set in the panel was not enforced by the service worker until the extension restarted.</li>
-      <li>The panel said "<code>&lt;name&gt;</code> completed" instead of showing what a tool returned.</li>
-      <li>Visual diff could not read the data URL its own screenshot tool produced.</li>
-      <li>JavaScript evaluation reported a correct <code>null</code> result as a failure, and could not see the page's own globals.</li>
+      <li>Improved Pro activation, which now survives a permission re-prompt.</li>
+      <li>The panel shows what a tool produced, not just that it finished.</li>
+      <li>An approval policy set in Settings is now enforced everywhere.</li>
+      <li>Improved colour copying, screenshot capture, replay and page audit.</li>
     </ul>
   </article>
 
@@ -104,7 +137,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.1.1</strong> — 98 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.2.0</strong> — 102 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
