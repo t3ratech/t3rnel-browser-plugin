@@ -4,11 +4,11 @@
 
 Documentation, manuals and release notes for the T3rnel Browser extension.
 
-- [Website](https://t3ratech.github.io/t3rnel-browser-plugin/)
+- [Website](https://browser.t3ratech.co.zw/)
 - [Chrome Web Store](https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd)
-- [Manual](https://t3ratech.github.io/t3rnel-browser-plugin/manual.html)
-- [Changelog](https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html)
-- [Privacy policy](https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html)
+- [Manual](https://browser.t3ratech.co.zw/manual.html)
+- [Changelog](https://browser.t3ratech.co.zw/changelog.html)
+- [Privacy policy](https://browser.t3ratech.co.zw/privacy.html)
 
 Support: <t3rnel@agentmail.to>
 

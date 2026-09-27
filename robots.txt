@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://t3ratech.github.io/t3rnel-browser-plugin/sitemap.xml
+Sitemap: https://browser.t3ratech.co.zw/sitemap.xml

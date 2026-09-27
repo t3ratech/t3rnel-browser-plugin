@@ -1,6 +1,6 @@
 # Privacy Policy — T3rnel Browser
 
-*Last updated 13 August 2026. Published at https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html*
+*Last updated 13 August 2026. Published at https://browser.t3ratech.co.zw/privacy.html*
 
 ## The short version
 
