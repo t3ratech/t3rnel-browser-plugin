@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agentsfirst.dev/.well-known/mcp-server-card.schema.json",
+  "name": "T3rnel Browser MCP Bridge",
+  "description": "The local MCP bridge that drives the user's real browser through the T3rnel Browser extension — 97 tools for navigation, input, reading, screenshots, recording, audits and session management.",
+  "version": "1.3.0",
+  "homepage": "https://browser.t3ratech.co.zw/",
+  "documentation": "https://browser.t3ratech.co.zw/manual.html",
+  "mcp": {
+    "endpoint": "stdio: npx -y @t3ratech/mcp-session-bridge",
+    "transport": "stdio (local bridge — no remote endpoint; the browser the user is on is the server)",
+    "protocolVersion": "2025-03-26",
+    "authentication": "pairing or auto-approve per the extension's Settings; a policy firewall may gate tools"
+  },
+  "tools": ["browser_navigate","browser_click","browser_fill","browser_read","browser_screenshot","browser_record","browser_audit","browser_tabs","browser_console"],
+  "verification": { "store": "https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd", "manual": "https://browser.t3ratech.co.zw/manual.html" }
+}

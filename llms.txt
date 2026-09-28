@@ -1,0 +1,20 @@
+# T3rnel Browser
+
+> DevTools you can talk to — a browser extension plus a local MCP session
+> bridge (`npx @t3ratech/mcp-session-bridge`) that lets any MCP-speaking agent
+> drive the browser the user already has: navigate, click, fill, read,
+> screenshot, record and audit, across Chrome, Edge, Opera, Brave and Firefox.
+> Real profile, real sessions, real extensions — not a clean-room profile.
+
+## Docs
+
+- [Manual](https://browser.t3ratech.co.zw/manual.html): install, bridge setup, tool-by-tool reference
+- [Tools](https://browser.t3ratech.co.zw/tools.html): the 97-tool surface
+- [Skills](https://browser.t3ratech.co.zw/skills.html): agent skill recipes over the tools
+- [Compare](https://browser.t3ratech.co.zw/compare.html): vs. Playwright/Puppeteer-style drivers
+
+## The install
+
+Extension from the user's browser store (links on products.html); the bridge
+is one `npx` away. First connect auto-approves by default; Settings can arm a
+pairing gate and an LLM firewall that denies tools by policy.
