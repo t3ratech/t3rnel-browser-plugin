@@ -6,20 +6,20 @@
 <title>Changelog — T3rnel Browser</title>
 <meta name="description" content="Release history for T3rnel Browser.">
 <meta name="keywords" content="T3rnel Browser changelog, release notes, Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang">
-<link rel="canonical" href="https://browser.t3ratech.co.zw/changelog.html">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
   matching x-default, is what stops a crawler guessing at regional variants that do not
   exist; a self-referential hreflang is valid and is the correct form for a single-locale
   site. It must agree with the canonical above or both are ignored.
 -->
-<link rel="alternate" hreflang="en" href="https://browser.t3ratech.co.zw/changelog.html">
-<link rel="alternate" hreflang="x-default" href="https://browser.t3ratech.co.zw/changelog.html">
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Changelog — T3rnel Browser">
 <meta property="og:description" content="Release history for T3rnel Browser.">
-<meta property="og:url" content="https://browser.t3ratech.co.zw/changelog.html">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/changelog.html">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
   and every chat client reads this tag, and an absolute URL is required: a relative path
@@ -27,17 +27,19 @@
   1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
   sizes get cropped differently by each network.
 -->
-<meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 102 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Changelog — T3rnel Browser">
 <meta name="twitter:description" content="Release history for T3rnel Browser.">
-<meta name="twitter:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-NBFP6LVCZTE",{anonymize_ip:true});</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -56,7 +58,39 @@
   <h1>Changelog</h1>
 
   <article class="release">
-    <h2>1.2.0 <span class="date">2 September 2026</span> <span class="tag">current</span></h2>
+    <h2>1.3.0 <span class="date">24 September 2026</span> <span class="tag">current</span></h2>
+
+    <h3>Added</h3>
+    <ul>
+      <li><strong>Pay for Pro on the setup page.</strong> Choosing Pro at install now shows an email field, the payment methods the payment gateway currently takes, and a Pay button. Checkout opens in a tab and Pro turns on by itself on the setup page once the payment clears — no trip to the pricing site.</li>
+      <li><strong>PayPal is back</strong> alongside PayNow in every chooser. The chooser shows exactly the methods the gateway reports at <code>/v2/providers</code>, so a method appears the moment the gateway can take it and is never offered while it cannot.</li>
+      <li><strong>Free-tier prompts.</strong> Every fifth tool use on Free shows an in-panel prompt, alternating between an upgrade to Pro (with Pay and the payment chooser in the prompt) and a request for a store rating that links to the store this browser installs from. A Pro-only tool used on Free shows the upgrade prompt at once, naming the tool. Each prompt features one of T3raTech's other products. Pro users see none.</li>
+      <li><strong><code>browser_viewport_set</code></strong> emulates a device or viewport through CDP, and <strong><code>browser_debugger_status</code></strong> reports who holds a debugger on each tab, with an optional attach→command→detach probe.</li>
+      <li><strong>No-install Session Bridge.</strong> Point your MCP client at <code>npx @t3ratech/mcp-session-bridge</code> and the extension finds it on its own over a local WebSocket — no global install, no <code>--install</code>, no native host manifest. With AI/MCP automation allowed — the default — the first connection is approved automatically: no pairing prompt, and no per-action prompts ever. Arming the approval gate in Settings is what brings back a one-time pairing ask for new bridges. Native messaging still works as a fallback for older bridge installs. <code>session_*</code> errors for extension-only tools now say the extension is missing and link to where to get it.</li>
+      <li><strong>Free or Pro, chosen on the install screen.</strong> The onboarding permissions screen offers both tiers side by side, and only shows what the choice needs: Free hides the optional-permission panel entirely; choosing Pro reveals it alongside an Activate card — paste a licence key and Pro turns on without leaving setup. The AI/MCP automation how-to collapses with its toggle.</li>
+      <li><strong>Tools tab, rebuilt for humans.</strong> The pane now lists the tools a person would actually click — colour picker, full-page capture, page audit, PDF export, cache tools, recorder, inspector, form fill and clear, scroll guard, React detect, vault, diffing, codegen — and a tool that needs an argument asks for it by name instead of failing on a missing field. Agent plumbing (click, hover, wait and friends) no longer crowds the list; it all still runs over the bridge. Tools that need what only an agent holds — a request id, selector, coordinates or policy document — or that return data meant for a model (accessibility snapshot, compressed DOM) are left to MCP.</li>
+      <li><strong>Growth surfaces in About.</strong> A Support section offers a share row — X, Facebook, LinkedIn, WhatsApp, Telegram, Reddit, Bluesky, Threads, Hacker News, Instagram, email and Copy link, each carrying the product site's link (the system share sheet did nothing on desktop Linux), a store rating link, a PayPal donate link, and a release-notes-by-email link — all outbound links, no new host access.</li>
+      <li><strong>Prices come from the payment gateway.</strong> The Pro price and any launch offer are read from WavePay's <code>/v2/pricing</code> — the side panel, popup, Pro prompt, onboarding page, paywall message and docs site all show what checkout will charge, and wording without a figure when the gateway has not answered. No price is typed into the extension, its 24 translations or the site any more. A launch promotion, when one runs, takes a promo code at checkout; codes are minted in the WavePay console and never ship in the bundle.</li>
+      <li><strong>Opt-in usage analytics.</strong> Local counters always record on-device and are shown in Settings. A toggle there shares anonymous aggregate counts — tool calls and days used, once a day — to T3raTech's own service, which forwards to Google Analytics 4. Off by default; nothing is sent while it is off; no page content, URL, argument or identity is ever included.</li>
+    </ul>
+
+    <h3>Fixed</h3>
+    <ul>
+      <li><strong>Markdown files view again.</strong> The auto-viewer for <code>.md</code>/<code>.markdown</code> pages is repaired, and a file you open without file-access granted now shows a one-line instruction instead of raw text.</li>
+      <li><strong>Toolbar icon on light themes.</strong> The icon was a white glyph on transparency — invisible on a light toolbar. It now carries a contrast plate that reads on both themes.</li>
+      <li><strong>Upgrade permission hole.</strong> Updating from 1.1.x with the bridge already connected could leave it approved but unable to reach any page: the new-permissions prompt appeared, and host access was still missing afterwards. The first bridge connection after update now re-requests it with one click.</li>
+      <li><strong>The perpetual test licence</strong> now works against the live licence service — the worker secret that enables it was never deployed. (<code>TEST_LICENSE_KEY</code>, test environments only.)</li>
+    </ul>
+
+    <h3>Changed</h3>
+    <ul>
+      <li><strong>Approval gate defaults to off, and nothing asks twice.</strong> Installing the extension — or leaving "Allow AI/MCP automation" ticked at setup — is consent to use it: a connecting bridge is paired silently and every MCP action runs without a prompt. Declining the box arms the gate: new bridges get a one-time pairing card and page-changing actions stop and ask. The full gate — ask before page-changing actions, ask before everything — stays in Settings for anyone who wants it.</li>
+      <li><strong>97 tools, 94 over MCP.</strong> Removed <code>browser_manifest_generate</code>, <code>browser_manifest_validate</code>, <code>browser_download_cancel</code>, <code>browser_color_history</code> and <code>browser_detect_editor</code>; <code>browser_license_collect</code>, <code>browser_license_recover</code> and <code>browser_license_release</code> remain in the panel but no longer appear to MCP clients. The bridge therefore stays under client tool-count limits.</li>
+    </ul>
+  </article>
+
+  <article class="release">
+    <h2>1.2.0 <span class="date">2 September 2026</span></h2>
     <p class="lead">Twenty-four languages, light and dark, and a stop to infinite scrolling.</p>
 
     <h3>Added</h3>
@@ -99,7 +133,7 @@
 
     <h3>Added</h3>
     <ul>
-      <li>MCP Session Bridge: a free MCP server that exposes all 102 tools over stdio. Install with <code>npm install -g @t3ratech/mcp-session-bridge</code>.</li>
+      <li>MCP Session Bridge: a free MCP server that exposes all 98 MCP tools over stdio. Install with <code>npm install -g @t3ratech/mcp-session-bridge</code>.</li>
       <li>PayPal as a payment option at checkout, alongside PayNow.</li>
       <li>Color picker with eyedropper, palette and history — copy any colour as hex, <code>rgb()</code>, <code>hsl()</code> or a ready <code>--custom-property</code>.</li>
       <li>Clear cache and hard-reload tools for the current origin.</li>
@@ -137,7 +171,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.2.0</strong> — 102 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.3.0</strong> — 97 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>

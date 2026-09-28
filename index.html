@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>T3rnel Browser — DevTools you can talk to</title>
-<meta name="description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 102 MCP tools and free agent skills in the browser you already use. Works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client. All local.">
+<meta name="description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 97 MCP tools and free agent skills in the browser you already use. Works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client. All local.">
 <meta name="keywords" content="CSS inspector, copy CSS, full page screenshot, markdown viewer, MCP server, agent skills, Claude skills, SKILL.md, AI browser automation, visual regression, developer tools, browser extension, Chrome extension, Brave extension, Edge extension, Opera extension, Firefox add-on, Safari extension, Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang">
-<link rel="canonical" href="https://browser.t3ratech.co.zw/">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
   matching x-default, is what stops a crawler guessing at regional variants that do not
   exist; a self-referential hreflang is valid and is the correct form for a single-locale
   site. It must agree with the canonical above or both are ignored.
 -->
-<link rel="alternate" hreflang="en" href="https://browser.t3ratech.co.zw/">
-<link rel="alternate" hreflang="x-default" href="https://browser.t3ratech.co.zw/">
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="T3rnel Browser — DevTools you can talk to">
-<meta property="og:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 102 MCP tools and free agent skills in the browser you already use. Works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client. All local.">
-<meta property="og:url" content="https://browser.t3ratech.co.zw/">
+<meta property="og:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 97 MCP tools and free agent skills in the browser you already use. Works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client. All local.">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
   and every chat client reads this tag, and an absolute URL is required: a relative path
@@ -27,17 +27,19 @@
   1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
   sizes get cropped differently by each network.
 -->
-<meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 102 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="T3rnel Browser — DevTools you can talk to">
-<meta name="twitter:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 102 MCP tools and free agent skills in the browser you already use. Works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client. All local.">
-<meta name="twitter:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta name="twitter:description" content="Inspect CSS, capture full pages, read Markdown, and hand your AI agent 97 MCP tools and free agent skills in the browser you already use. Works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client. All local.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"T3rnel Browser","applicationCategory":"DeveloperApplication","operatingSystem":"Chrome, Brave, Edge, Opera, Chromium, Firefox","softwareVersion":"1.2.0","description":"A web development toolkit that inspects and automates web pages, exposing 102 tools over the Model Context Protocol to Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client.","url":"https://browser.t3ratech.co.zw","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"29.99","priceCurrency":"USD"}],"publisher":{"@type":"Organization","name":"T3raTech Solutions (Pvt) Ltd","url":"https://t3ratech.co.zw","sameAs":["https://t3ratech.co.zw","https://github.com/t3ratech","https://www.linkedin.com/company/144492015","https://x.com/t3ratech","https://www.facebook.com/t3ratech","https://t3rnel.gumroad.com"]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"T3rnel Browser","applicationCategory":"DeveloperApplication","operatingSystem":"Chrome, Brave, Edge, Opera, Chromium, Firefox","softwareVersion":"1.3.0","description":"A web development toolkit that inspects and automates web pages, exposing 97 tools over the Model Context Protocol to Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client.","url":"https://t3ratech.github.io/t3rnel-browser-plugin","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"29.99","priceCurrency":"USD"}],"publisher":{"@type":"Organization","name":"T3raTech Solutions (Pvt) Ltd","url":"https://t3ratech.co.zw","sameAs":["https://t3ratech.co.zw","https://github.com/t3ratech","https://www.linkedin.com/company/144492015","https://x.com/t3ratech","https://www.facebook.com/t3ratech","https://t3rnel.gumroad.com"]}}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-NBFP6LVCZTE",{anonymize_ip:true});</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -53,7 +55,7 @@
 <main id="main">
 
 <section class="hero">
-  <p class="eyebrow">Version 1.2.0 · 102 tools · no servers</p>
+  <p class="eyebrow">Version 1.3.0 · 97 tools · no servers</p>
   <h1>DevTools you can talk to,<br>and an agent runway you can trust.</h1>
   <p class="lead">Inspect and copy CSS from any element. Capture full-page screenshots that handle sticky headers and lazy loading. Read Markdown as a document. Then hand the wheel to Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang or any other MCP client — driving the browser you are <em>already signed into</em>, with a human able to see and stop what it does.</p>
   <div class="cta">
@@ -86,13 +88,13 @@
 <section>
   <h2>What you get</h2>
   <div class="grid">
-    <a class="tile" href="features.html#css"><h3>CSS inspection</h3><p>Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.</p></a><a class="tile" href="features.html#screenshots"><h3>Full-page screenshots</h3><p>One click, the whole page, stitched — and it handles the real web rather than the ideal one.</p></a><a class="tile" href="features.html#markdown"><h3>Markdown viewer</h3><p>Read <code>.md</code> files as documents, including the ones your agent just wrote.</p></a><a class="tile" href="features.html#audit"><h3>Page audit and link checking</h3><p>Accessibility, spelling and links — reported honestly, including what could not be checked.</p></a><a class="tile" href="features.html#codegen"><h3>Record, replay and code export</h3><p>Click through a flow once. Get a maintainable test that runs in your CI without this extension.</p></a><a class="tile" href="features.html#agent"><h3>Agent safety</h3><p>The part that justifies the price: a valve between a language model and your logged-in browser.</p></a><a class="tile" href="features.html#vault"><h3>Encrypted identity vault</h3><p>Per-site credentials, encrypted on your device, never written in the clear.</p></a><a class="tile" href="features.html#color"><h3>Color picker</h3><p>Sample, save and compare colors from any pixel on the page, with palette export and history.</p></a><a class="tile" href="features.html#cache"><h3>Clear cache and hard reload</h3><p>Clear the cache for the current origin and hard-reload the page without digging through DevTools.</p></a><a class="tile" href="features.html#react"><h3>React debugging</h3><p>Inspect the React component tree, props and hooks on pages that use React.</p></a><a class="tile" href="features.html#forms"><h3>Form filling and clearing</h3><p>Fill forms from MCP instructions or the side panel, and empty them again, with field detection and structured values.</p></a>
+    <a class="tile" href="features.html#css"><h3>CSS inspection</h3><p>Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.</p></a><a class="tile" href="features.html#screenshots"><h3>Full-page screenshots</h3><p>One click, the whole page, stitched — and it handles the real web rather than the ideal one.</p></a><a class="tile" href="features.html#markdown"><h3>Markdown viewer</h3><p>Read <code>.md</code> files as documents, including the ones your agent just wrote.</p></a><a class="tile" href="features.html#audit"><h3>Page audit and link checking</h3><p>Accessibility, spelling and links — reported honestly, including what could not be checked.</p></a><a class="tile" href="features.html#codegen"><h3>Record, replay and code export</h3><p>Click through a flow once. Get a maintainable test that runs in your CI without this extension.</p></a><a class="tile" href="features.html#agent"><h3>Agent safety</h3><p>The part that justifies the price: a valve between a language model and your logged-in browser.</p></a><a class="tile" href="features.html#vault"><h3>Encrypted identity vault</h3><p>Per-site credentials, encrypted on your device, never written in the clear.</p></a><a class="tile" href="features.html#color"><h3>Color picker</h3><p>Sample and compare colors from any pixel on the page, with palette export.</p></a><a class="tile" href="features.html#cache"><h3>Clear cache and hard reload</h3><p>Clear the cache for the current origin and hard-reload the page without digging through DevTools.</p></a><a class="tile" href="features.html#react"><h3>React debugging</h3><p>Inspect the React component tree, props and hooks on pages that use React.</p></a><a class="tile" href="features.html#forms"><h3>Form filling and clearing</h3><p>Fill forms from MCP instructions or the side panel, and empty them again, with field detection and structured values.</p></a>
   </div>
 </section>
 
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.2.0</strong> — 102 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.3.0</strong> — 97 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>

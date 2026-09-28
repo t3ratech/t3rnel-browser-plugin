@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy — T3rnel Browser</title>
-<meta name="description" content="T3rnel Browser collects no data. What is stored, where it lives, and the only three cases where it makes a network request.">
+<meta name="description" content="T3rnel Browser collects no data. What is stored, where it lives, and every case where it makes a network request.">
 <meta name="keywords" content="T3rnel Browser privacy policy, chrome extension privacy, no telemetry">
-<link rel="canonical" href="https://browser.t3ratech.co.zw/privacy.html">
+<link rel="canonical" href="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
   matching x-default, is what stops a crawler guessing at regional variants that do not
   exist; a self-referential hreflang is valid and is the correct form for a single-locale
   site. It must agree with the canonical above or both are ignored.
 -->
-<link rel="alternate" hreflang="en" href="https://browser.t3ratech.co.zw/privacy.html">
-<link rel="alternate" hreflang="x-default" href="https://browser.t3ratech.co.zw/privacy.html">
+<link rel="alternate" hreflang="en" href="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Privacy policy — T3rnel Browser">
-<meta property="og:description" content="T3rnel Browser collects no data. What is stored, where it lives, and the only three cases where it makes a network request.">
-<meta property="og:url" content="https://browser.t3ratech.co.zw/privacy.html">
+<meta property="og:description" content="T3rnel Browser collects no data. What is stored, where it lives, and every case where it makes a network request.">
+<meta property="og:url" content="https://t3ratech.github.io/t3rnel-browser-plugin/privacy.html">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
   and every chat client reads this tag, and an absolute URL is required: a relative path
@@ -27,17 +27,19 @@
   1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
   sizes get cropped differently by each network.
 -->
-<meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta property="og:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 102 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Privacy policy — T3rnel Browser">
-<meta name="twitter:description" content="T3rnel Browser collects no data. What is stored, where it lives, and the only three cases where it makes a network request.">
-<meta name="twitter:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta name="twitter:description" content="T3rnel Browser collects no data. What is stored, where it lives, and every case where it makes a network request.">
+<meta name="twitter:image" content="https://t3ratech.github.io/t3rnel-browser-plugin/assets/social-card.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZTE"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-NBFP6LVCZTE",{anonymize_ip:true});</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -54,10 +56,10 @@
 
 <section>
   <h1>Privacy policy</h1>
-  <p class="fine">Last updated 13 August 2026.</p>
+  <p class="fine">Last updated 24 September 2026.</p>
 
   <h2>The short version</h2>
-  <p>T3rnel Browser collects nothing. There is no account, no analytics, no telemetry, no error reporting and no tracking. We do not have a server that receives your browsing data, because we did not build one.</p>
+  <p>T3rnel Browser collects nothing by default. There is no account, no error reporting and no tracking, and there never has been a server that receives your browsing data. Since 1.3.0 there are two things you can opt into — an anonymous per-tool usage counter and a newsletter — and both are off until you say otherwise.</p>
 
   <h2>What is stored, and where</h2>
   <p>Everything the extension saves is stored locally in your browser, on your device:</p>
@@ -67,18 +69,30 @@
     <li>Recorded sessions and generated test code</li>
     <li>Vault entries, encrypted with a key derived from your master passphrase — the plaintext is never written</li>
     <li>Your licence entitlement, if you buy Pro</li>
+    <li>Local usage counters — how many tool calls, on how many days, which tools. Shown in Settings.</li>
+    <li>On the Free tier, a count of tool uses that decides when the next upgrade or rating prompt appears, and which T3raTech product it features</li>
   </ul>
-  <p>None of it is transmitted anywhere. Uninstalling the extension removes it.</p>
+  <p>None of it is transmitted anywhere on its own. Uninstalling the extension removes it.</p>
 
   <h2>When the extension makes a network request</h2>
-  <p>Three situations, all of them either initiated by you or obvious from the feature:</p>
+  <p>Seven situations, all either initiated by you, behind a switch you control, or read-only:</p>
   <table>
     <thead><tr><th>Situation</th><th>Where it goes</th><th>What is sent</th></tr></thead>
     <tbody>
       <tr>
         <td>Activating a Pro licence</td>
-        <td><code>t3rnel-license.t3ratech.workers.dev</code></td>
-        <td>Your licence key and a public key identifying the installation. Once, when you activate. The free tier never contacts it, and after activation your licence is verified offline.</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code></td>
+        <td>Your licence key and a public key identifying the installation. Once, when you activate. After activation your licence is verified offline.</td>
+      </tr>
+      <tr>
+        <td>Buying Pro</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code>, then PayNow or PayPal</td>
+        <td>The email address your licence key goes to and the payment method you chose — only when you press Pay. The payment itself happens on PayNow's or PayPal's own page.</td>
+      </tr>
+      <tr>
+        <td>Showing the payment methods on offer</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code></td>
+        <td>A read-only request for the list of available payment methods when a panel, the popup or the setup page opens. Nothing about you or your browsing is sent.</td>
       </tr>
       <tr>
         <td>Checking links on a page</td>
@@ -90,12 +104,27 @@
         <td>The endpoint you configured</td>
         <td>The page data or audio for that request, with your own API key. Off unless you turn it on and supply a key.</td>
       </tr>
+      <tr>
+        <td>Finding a local MCP bridge</td>
+        <td><code>127.0.0.1</code>, ports 17311–17318, on your own machine</td>
+        <td>A request to the bridge's local health endpoint. It never leaves your device.</td>
+      </tr>
+      <tr>
+        <td>Newsletter signup</td>
+        <td>Your own mail client</td>
+        <td>A <code>mailto:</code> compose window to our address — the extension sends nothing itself.</td>
+      </tr>
+      <tr>
+        <td>Opt-in usage counter</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code> and Google Analytics 4</td>
+        <td>Anonymous per-tool call counts — that a tool ran and how many times. Off by default; enabling it in Settings or onboarding is the only way anything is sent. No page content, URL, tool argument or identity is ever included.</td>
+      </tr>
     </tbody>
   </table>
-  <p>That is the complete list. The inspection and automation features — CSS, screenshots, Markdown, network and console capture, DOM snapshots, agent tools — send nothing anywhere.</p>
+  <p>That is the complete list. The inspection and automation features — CSS, screenshots, Markdown, network and console capture, DOM snapshots, agent tools — send nothing anywhere. The usage counter always records on-device regardless of the toggle; the toggle only controls whether the anonymous counts are ever reported off-device.</p>
 
   <h2>Payments</h2>
-  <p>Payment is handled by PayNow through T3rnel WavePay, our own payment gateway. We never see or store your payment details. The gateway stores a one-way hash of your licence key, a keyed hash of your email, and a fingerprint of each activated installation's public key. It stores no raw licence key after you collect it, no payment credential and no browsing data.</p>
+  <p>Payment is handled by PayNow or PayPal through T3rnel WavePay, our own payment gateway. We never see or store your payment details. The gateway stores a one-way hash of your licence key, a keyed hash of your email, and a fingerprint of each activated installation's public key. It stores no raw licence key after you collect it, no payment credential and no browsing data.</p>
 
   <h2>Permissions</h2>
   <p>The extension requests the minimum at install and asks for anything else at the moment you first use the feature that needs it, with an explanation. Declining is safe: the feature reports what it needed, and everything else keeps working. See the <a href="manual.html#permissions">manual</a> for the full table.</p>
@@ -107,7 +136,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.2.0</strong> — 102 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.3.0</strong> — 97 tools, one extension, no servers.</p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
