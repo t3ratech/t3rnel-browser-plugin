@@ -1,0 +1,12 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "T3rnel Browser",
+  "name_for_model": "t3rnel_browser",
+  "description_for_human": "DevTools you can talk to — drive your real browser through any MCP client.",
+  "description_for_model": "Local session-bridge API the browser extension attaches to. The agent surface is MCP over stdio (npx @t3ratech/mcp-session-bridge); this manifest documents the local HTTP control channel.",
+  "auth": { "type": "none", "instructions": "The bridge is loopback-only and pairing-gated by the extension; no remote credentials exist." },
+  "api": { "type": "openapi", "url": "https://browser.t3ratech.co.zw/openapi.json", "is_user_authenticated": false },
+  "logo_url": "https://browser.t3ratech.co.zw/assets/social-card.png",
+  "contact_email": "t3ratech.dev@gmail.com",
+  "legal_info_url": "https://browser.t3ratech.co.zw/privacy.html"
+}

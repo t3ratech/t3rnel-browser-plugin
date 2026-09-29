@@ -1,0 +1,23 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "T3rnel Browser Session Bridge (local)",
+    "version": "1.3.0",
+    "description": "The local bridge an agent runs (`npx -y @t3ratech/mcp-session-bridge`) to reach the user's real browser through the extension. It listens on 127.0.0.1 in the SESSION_BRIDGE_PORT range (17311-17318): /health answers liveness, /ws is the WebSocket control channel the extension attaches to. No remote API exists — the operator's browser is the server.",
+    "contact": { "email": "t3ratech.dev@gmail.com", "url": "https://browser.t3ratech.co.zw/manual.html" }
+  },
+  "servers": [{ "url": "http://127.0.0.1:17311", "description": "First port the bridge tries; scans the range until one binds" }],
+  "paths": {
+    "/health": {
+      "get": { "summary": "Liveness — the extension uses it for the pairing card", "security": [], "operationId": "health", "responses": { "200": { "description": "{ ok: true }" } } }
+    },
+    "/ws": {
+      "get": { "summary": "WebSocket upgrade — the extension attaches here; agent traffic is MCP-over-stdio upstream", "operationId": "ws", "responses": { "101": { "description": "Upgrade to the control channel" }, "400": { "description": "Not a websocket request" } } }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "pairing": { "type": "apiKey", "in": "header", "name": "x-t3rnel-bridge-token", "description": "Pairing token minted when the extension approves the bridge — auto-approved by default, prompt-gated when the operator arms the gate" }
+    }
+  }
+}
