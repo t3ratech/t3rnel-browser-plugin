@@ -58,7 +58,7 @@
   <h1>Changelog</h1>
 
   <article class="release">
-    <h2>1.3.0 <span class="date">24 September 2026</span> <span class="tag">current</span></h2>
+    <h2>1.3.0 <span class="date">1 October 2026</span> <span class="tag">current</span></h2>
 
     <h3>Added</h3>
     <ul>
@@ -76,16 +76,19 @@
 
     <h3>Fixed</h3>
     <ul>
+      <li><strong>Pro turns on even if the browser closes after you pay.</strong> The licence key used to be collected only by the page that started checkout, for about five minutes; closing the browser, a crash, or a dropped connection left a paid buyer on Free. The extension now finishes collecting by itself — on browser start, and every minute while a purchase is pending — and keeps a collected key until it has been activated, so a connection that drops in between cannot lose it. The payment email also carries the key as a backup.</li>
       <li><strong>Markdown files view again.</strong> The auto-viewer for <code>.md</code>/<code>.markdown</code> pages is repaired, and a file you open without file-access granted now shows a one-line instruction instead of raw text.</li>
       <li><strong>Toolbar icon on light themes.</strong> The icon was a white glyph on transparency — invisible on a light toolbar. It now carries a contrast plate that reads on both themes.</li>
       <li><strong>Upgrade permission hole.</strong> Updating from 1.1.x with the bridge already connected could leave it approved but unable to reach any page: the new-permissions prompt appeared, and host access was still missing afterwards. The first bridge connection after update now re-requests it with one click.</li>
-      <li><strong>The perpetual test licence</strong> now works against the live licence service — the worker secret that enables it was never deployed. (<code>TEST_LICENSE_KEY</code>, test environments only.)</li>
+      <li><strong>PayPal payments confirm on the first return.</strong> A buyer coming back from PayPal could be told no payment had been taken when it had; the gateway now reads the finished order back from PayPal before answering. A declined card can be retried in the same checkout and is never charged later without you, and the PayPal invoice reads "T3rnel Browser Pro".</li>
+      <li><strong>A receipt you can keep.</strong> The payment email is a branded receipt carrying your licence key as a backup — the extension still collects the key by itself.</li>
+      <li><strong>Promo codes typed with spaces or lowercase</strong> are accepted.</li>
     </ul>
 
     <h3>Changed</h3>
     <ul>
       <li><strong>Approval gate defaults to off, and nothing asks twice.</strong> Installing the extension — or leaving "Allow AI/MCP automation" ticked at setup — is consent to use it: a connecting bridge is paired silently and every MCP action runs without a prompt. Declining the box arms the gate: new bridges get a one-time pairing card and page-changing actions stop and ask. The full gate — ask before page-changing actions, ask before everything — stays in Settings for anyone who wants it.</li>
-      <li><strong>97 tools, 94 over MCP.</strong> Removed <code>browser_manifest_generate</code>, <code>browser_manifest_validate</code>, <code>browser_download_cancel</code>, <code>browser_color_history</code> and <code>browser_detect_editor</code>; <code>browser_license_collect</code>, <code>browser_license_recover</code> and <code>browser_license_release</code> remain in the panel but no longer appear to MCP clients. The bridge therefore stays under client tool-count limits.</li>
+      <li><strong>100 tools, 97 over MCP.</strong> Removed <code>browser_manifest_generate</code>, <code>browser_manifest_validate</code>, <code>browser_download_cancel</code>, <code>browser_color_history</code> and <code>browser_detect_editor</code>; <code>browser_license_collect</code>, <code>browser_license_recover</code> and <code>browser_license_release</code> remain in the panel but no longer appear to MCP clients. The bridge therefore stays under client tool-count limits.</li>
     </ul>
   </article>
 
