@@ -18,3 +18,49 @@
 Extension from the user's browser store (links on products.html); the bridge
 is one `npx` away. First connect auto-approves by default; Settings can arm a
 pairing gate and an LLM firewall that denies tools by policy.
+
+## Answers and guides
+
+- [FAQ](https://browser.t3ratech.co.zw/faq.html): what it is, whether it is free, which browsers, how agents connect, what it collects
+- [Guides index](https://browser.t3ratech.co.zw/guides.html): every page below in one list
+
+### Guides
+
+- [What an AI agent can do in your browser without asking](https://browser.t3ratech.co.zw/guide-agent-approval-and-risk.html)
+- [What T3rnel Browser stores and sends, in plain words](https://browser.t3ratech.co.zw/guide-privacy-in-plain-words.html)
+
+### Per feature
+
+- [How an AI agent uses CSS inspection](https://browser.t3ratech.co.zw/how-ai-agents-use-css-inspection.html)
+- [How an AI agent uses Full-page screenshots](https://browser.t3ratech.co.zw/how-ai-agents-use-full-page-screenshots.html)
+- [How an AI agent uses Markdown viewer](https://browser.t3ratech.co.zw/how-ai-agents-use-markdown-viewer.html)
+- [How an AI agent uses Page audit and link checking](https://browser.t3ratech.co.zw/how-ai-agents-use-page-audit-and-link-checking.html)
+- [How an AI agent uses Record, replay and code export](https://browser.t3ratech.co.zw/how-ai-agents-use-record-replay-and-code-export.html)
+- [How an AI agent uses Agent safety](https://browser.t3ratech.co.zw/how-ai-agents-use-agent-safety.html)
+- [How an AI agent uses Encrypted identity vault](https://browser.t3ratech.co.zw/how-ai-agents-use-encrypted-identity-vault.html)
+- [How an AI agent uses Color picker](https://browser.t3ratech.co.zw/how-ai-agents-use-color-picker.html)
+- [How an AI agent uses Clear cache and hard reload](https://browser.t3ratech.co.zw/how-ai-agents-use-clear-cache-and-hard-reload.html)
+- [How an AI agent uses React debugging](https://browser.t3ratech.co.zw/how-ai-agents-use-react-debugging.html)
+- [How an AI agent uses Form filling and clearing](https://browser.t3ratech.co.zw/how-ai-agents-use-form-filling-and-clearing.html)
+
+### Per browser
+
+- [Does T3rnel Browser work on Chrome?](https://browser.t3ratech.co.zw/t3rnel-browser-on-chrome.html)
+- [Does T3rnel Browser work on Brave?](https://browser.t3ratech.co.zw/t3rnel-browser-on-brave.html)
+- [Does T3rnel Browser work on Edge?](https://browser.t3ratech.co.zw/t3rnel-browser-on-edge.html)
+- [Does T3rnel Browser work on Chromium?](https://browser.t3ratech.co.zw/t3rnel-browser-on-chromium.html)
+- [Does T3rnel Browser work on Opera?](https://browser.t3ratech.co.zw/t3rnel-browser-on-opera.html)
+- [Does T3rnel Browser work on Firefox?](https://browser.t3ratech.co.zw/t3rnel-browser-on-firefox.html)
+- [Does T3rnel Browser work on Safari?](https://browser.t3ratech.co.zw/t3rnel-browser-on-safari.html)
+
+### Comparisons
+
+- [T3rnel Browser vs MCP browser automation tools](https://browser.t3ratech.co.zw/compare-mcp-browser-automation-tools.html)
+- [T3rnel Browser vs CSS inspection tools](https://browser.t3ratech.co.zw/compare-css-inspection-tools.html)
+- [T3rnel Browser vs screenshot extensions](https://browser.t3ratech.co.zw/compare-screenshot-extensions.html)
+- [T3rnel Browser vs color picker extensions](https://browser.t3ratech.co.zw/compare-color-picker-extensions.html)
+- [T3rnel Browser vs React debugging extensions](https://browser.t3ratech.co.zw/compare-react-debugging-extensions.html)
+- [T3rnel Browser vs form filler extensions](https://browser.t3ratech.co.zw/compare-form-filler-extensions.html)
+- [T3rnel Browser vs cache clearing extensions](https://browser.t3ratech.co.zw/compare-cache-clearing-extensions.html)
+
+- [AI summary](https://browser.t3ratech.co.zw/ai/summary.json), [AI FAQ](https://browser.t3ratech.co.zw/ai/faq.json), [AI service description](https://browser.t3ratech.co.zw/ai/service.json)

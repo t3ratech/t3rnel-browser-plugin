@@ -1,0 +1,66 @@
+{
+  "name": "T3rnel Browser",
+  "url": "https://browser.t3ratech.co.zw",
+  "version": "1.3.0",
+  "description": "T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into.",
+  "publisher": {
+    "name": "T3raTech Solutions (Pvt) Ltd",
+    "url": "https://t3ratech.co.zw",
+    "sameAs": [
+      "https://t3ratech.co.zw",
+      "https://github.com/t3ratech",
+      "https://www.linkedin.com/company/144492015",
+      "https://x.com/t3ratech",
+      "https://www.facebook.com/t3ratech",
+      "https://t3rnel.gumroad.com"
+    ]
+  },
+  "tools": {
+    "published": 97,
+    "risk": {
+      "low": 65,
+      "medium": 16,
+      "high": 14,
+      "conditional": 2
+    },
+    "pro": 30
+  },
+  "browsers": [
+    {
+      "name": "Chrome",
+      "status": "full"
+    },
+    {
+      "name": "Brave",
+      "status": "full"
+    },
+    {
+      "name": "Edge",
+      "status": "full"
+    },
+    {
+      "name": "Chromium",
+      "status": "full"
+    },
+    {
+      "name": "Opera",
+      "status": "partial"
+    },
+    {
+      "name": "Firefox",
+      "status": "partial"
+    },
+    {
+      "name": "Safari",
+      "status": "partial"
+    }
+  ],
+  "dateModified": "2026-10-09",
+  "links": {
+    "faq": "https://browser.t3ratech.co.zw/faq.html",
+    "guides": "https://browser.t3ratech.co.zw/guides.html",
+    "llms": "https://browser.t3ratech.co.zw/llms.txt",
+    "openapi": "https://browser.t3ratech.co.zw/openapi.json",
+    "agents": "https://browser.t3ratech.co.zw/agents.json"
+  }
+}

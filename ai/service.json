@@ -1,0 +1,31 @@
+{
+  "name": "T3rnel Browser",
+  "type": "browser extension + local MCP session bridge",
+  "interfaces": [
+    {
+      "kind": "mcp",
+      "transport": "stdio",
+      "install": "npx -y @t3ratech/mcp-session-bridge",
+      "tools": 97
+    },
+    {
+      "kind": "markdown",
+      "url": "https://browser.t3ratech.co.zw/llms.txt"
+    }
+  ],
+  "approvalGate": {
+    "default": "off",
+    "modes": [
+      "off",
+      "high",
+      "all"
+    ],
+    "risk": {
+      "low": 65,
+      "medium": 16,
+      "high": 14,
+      "conditional": 2
+    }
+  },
+  "privacy": "collects nothing by default; local-only storage; two opt-in features"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "T3rnel Browser FAQ",
+  "url": "https://browser.t3ratech.co.zw/faq.html",
+  "dateModified": "2026-10-09",
+  "questions": [
+    {
+      "question": "What is T3rnel Browser?",
+      "answer": "T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#what-is-t3rnel-browser"
+    },
+    {
+      "question": "Is T3rnel Browser free?",
+      "answer": "Yes, there is a free tier with no account, no time limit and no trial: hover CSS inspection, full-page capture, the Markdown viewer, network and console capture, audits and the base MCP tools. Pro is a one-time purchase ($29.99 once), not a subscription, and unlocks 30 further tools plus the larger features.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#is-it-free"
+    },
+    {
+      "question": "Which browsers does it run on?",
+      "answer": "Chrome, Brave, Edge and Chromium are fully supported. Opera, Firefox, Safari are partly supported — each lacks something specific, listed on its own page.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#which-browsers"
+    },
+    {
+      "question": "How do I connect my AI agent?",
+      "answer": "Add the MCP Session Bridge to your MCP client with command npx and args -y @t3ratech/mcp-session-bridge. The extension finds it on its own over a local WebSocket; there is no global install or native host manifest. It works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#how-do-i-connect-an-agent"
+    },
+    {
+      "question": "Does my agent have to ask before it clicks or fills a form?",
+      "answer": "Not by default. The approval gate ships off: installing the extension and allowing AI/MCP automation is the consent. You can arm it in Settings so page-changing tools ask first (mode high) or every mutation asks (mode all). Of the 97 tools, 65 are classed low risk, 16 medium and 14 high, and 2 depend on their arguments.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#does-the-agent-ask-before-acting"
+    },
+    {
+      "question": "What data does T3rnel Browser collect?",
+      "answer": "None by default. There is no account, no error reporting and no tracking. Settings, screenshots, recordings, vault entries and your licence are stored locally in your browser. Two things are opt-in and off until you enable them: an anonymous per-tool usage counter and a newsletter.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#what-data-does-it-collect"
+    },
+    {
+      "question": "Can my agent use the sites I am already signed into?",
+      "answer": "Yes. The tools run against your real browser tabs, so an agent acts with the sessions you already have, rather than a fresh headless browser with none. That is why the approval gate and the credential redaction on the base tools exist.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#can-it-use-my-logged-in-sessions"
+    },
+    {
+      "question": "How many tools does it have?",
+      "answer": "97 are offered to MCP clients. The registry holds three more licence tools that stay callable from the side panel only and are refused over MCP, so a model with a stolen session cannot run them.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#how-many-tools"
+    },
+    {
+      "question": "How does Pro licensing work?",
+      "answer": "Pro is one purchase, valid on three machines. Payment goes through PayNow (Visa, Mastercard, ZimSwitch, EcoCash, OneMoney, Telecash, InnBucks, O'mari); you never share card details with us. Activating contacts the WavePay licensing service once; after that your licence is verified offline.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#how-does-pro-licensing-work"
+    },
+    {
+      "question": "How does it compare with Chrome DevTools MCP and Playwright MCP?",
+      "answer": "Feature by feature on the comparison pages, dated and verified against publicly documented behaviour. The short version: those tools drive a browser; T3rnel Browser also inspects, captures, audits and exports from the one you are using.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#how-does-it-compare"
+    },
+    {
+      "question": "Where do these answers come from?",
+      "answer": "The site is generated from the extension's own registry and source: tool names and counts from the tool registry, risk levels from the approval gate, paid tools from the licensing module. A page cannot state a count the product does not ship.",
+      "url": "https://browser.t3ratech.co.zw/faq.html#where-is-the-source-of-truth"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — T3rnel Browser</title>
+<meta name="description" content="T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into.">
+<meta name="keywords" content="t3rnel browser faq, mcp browser extension, devtools for ai agents, is t3rnel browser free">
+<link rel="canonical" href="https://browser.t3ratech.co.zw/faq.html">
+<!--
+  The site has exactly one language and one region. Declaring that explicitly, with a
+  matching x-default, is what stops a crawler guessing at regional variants that do not
+  exist; a self-referential hreflang is valid and is the correct form for a single-locale
+  site. It must agree with the canonical above or both are ignored.
+-->
+<link rel="alternate" hreflang="en" href="https://browser.t3ratech.co.zw/faq.html">
+<link rel="alternate" hreflang="x-default" href="https://browser.t3ratech.co.zw/faq.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="T3rnel Browser">
+<meta property="og:title" content="FAQ — T3rnel Browser">
+<meta property="og:description" content="T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into.">
+<meta property="og:url" content="https://browser.t3ratech.co.zw/faq.html">
+<!--
+  Without og:image a shared link renders as a bare line of text. Every social platform
+  and every chat client reads this tag, and an absolute URL is required: a relative path
+  resolves against the crawler, not against the page, so it silently fetches nothing.
+  1200x630 is Facebook's recommended ratio and what summary_large_image expects; other
+  sizes get cropped differently by each network.
+-->
+<meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — T3rnel Browser">
+<meta name="twitter:description" content="T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into.">
+<meta name="twitter:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is T3rnel Browser?","acceptedAnswer":{"@type":"Answer","text":"T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into."}},{"@type":"Question","name":"Is T3rnel Browser free?","acceptedAnswer":{"@type":"Answer","text":"Yes, there is a free tier with no account, no time limit and no trial: hover CSS inspection, full-page capture, the Markdown viewer, network and console capture, audits and the base MCP tools. Pro is a one-time purchase ($29.99 once), not a subscription, and unlocks 30 further tools plus the larger features."}},{"@type":"Question","name":"Which browsers does it run on?","acceptedAnswer":{"@type":"Answer","text":"Chrome, Brave, Edge and Chromium are fully supported. Opera, Firefox, Safari are partly supported — each lacks something specific, listed on its own page."}},{"@type":"Question","name":"How do I connect my AI agent?","acceptedAnswer":{"@type":"Answer","text":"Add the MCP Session Bridge to your MCP client with command npx and args -y @t3ratech/mcp-session-bridge. The extension finds it on its own over a local WebSocket; there is no global install or native host manifest. It works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client."}},{"@type":"Question","name":"Does my agent have to ask before it clicks or fills a form?","acceptedAnswer":{"@type":"Answer","text":"Not by default. The approval gate ships off: installing the extension and allowing AI/MCP automation is the consent. You can arm it in Settings so page-changing tools ask first (mode high) or every mutation asks (mode all). Of the 97 tools, 65 are classed low risk, 16 medium and 14 high, and 2 depend on their arguments."}},{"@type":"Question","name":"What data does T3rnel Browser collect?","acceptedAnswer":{"@type":"Answer","text":"None by default. There is no account, no error reporting and no tracking. Settings, screenshots, recordings, vault entries and your licence are stored locally in your browser. Two things are opt-in and off until you enable them: an anonymous per-tool usage counter and a newsletter."}},{"@type":"Question","name":"Can my agent use the sites I am already signed into?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tools run against your real browser tabs, so an agent acts with the sessions you already have, rather than a fresh headless browser with none. That is why the approval gate and the credential redaction on the base tools exist."}},{"@type":"Question","name":"How many tools does it have?","acceptedAnswer":{"@type":"Answer","text":"97 are offered to MCP clients. The registry holds three more licence tools that stay callable from the side panel only and are refused over MCP, so a model with a stolen session cannot run them."}},{"@type":"Question","name":"How does Pro licensing work?","acceptedAnswer":{"@type":"Answer","text":"Pro is one purchase, valid on three machines. Payment goes through PayNow (Visa, Mastercard, ZimSwitch, EcoCash, OneMoney, Telecash, InnBucks, O'mari); you never share card details with us. Activating contacts the WavePay licensing service once; after that your licence is verified offline."}},{"@type":"Question","name":"How does it compare with Chrome DevTools MCP and Playwright MCP?","acceptedAnswer":{"@type":"Answer","text":"Feature by feature on the comparison pages, dated and verified against publicly documented behaviour. The short version: those tools drive a browser; T3rnel Browser also inspects, captures, audits and exports from the one you are using."}},{"@type":"Question","name":"Where do these answers come from?","acceptedAnswer":{"@type":"Answer","text":"The site is generated from the extension's own registry and source: tool names and counts from the tool registry, risk levels from the approval gate, paid tools from the licensing module. A page cannot state a count the product does not ship."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Overview","item":"https://browser.t3ratech.co.zw/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://browser.t3ratech.co.zw/faq.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://browser.t3ratech.co.zw/#organization","name":"T3raTech Solutions (Pvt) Ltd","url":"https://t3ratech.co.zw","sameAs":["https://t3ratech.co.zw","https://github.com/t3ratech","https://www.linkedin.com/company/144492015","https://x.com/t3ratech","https://www.facebook.com/t3ratech","https://t3rnel.gumroad.com"]}</script>
+<meta property="article:modified_time" content="2026-10-09">
+<meta property="og:updated_time" content="2026-10-09">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NBFP6LVCZT"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-NBFP6LVCZT",{anonymize_ip:true});</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <a class="brand" href="index.html"><span class="mark">T3</span> T3rnel Browser</a>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="products.html">Products</a><a href="features.html">Features</a><a href="manual.html">Manual</a><a href="shortcuts.html">Shortcuts</a><a href="tools.html">MCP tools</a><a href="skills.html">Agent skills</a><a href="compare.html">Compare</a><a href="faq.html" aria-current="page">FAQ</a><a href="guides.html">Guides</a><a href="pricing.html">Pricing</a><a href="changelog.html">Changelog</a><a href="privacy.html">Privacy</a><a href="about.html">About</a></nav>
+  
+<select class="store-cta" onchange="if(this.value){location.href=this.value}" aria-label="Install from your browser's store">
+  <option value="" selected>Install — free</option>
+  <option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Brave</option><option value="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge</option><option value="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera — in review</option><option value="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chromium</option><option value="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox</option>
+</select>
+</header>
+<main id="main">
+<section>
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Overview</a> › <span aria-current="page">FAQ</span></nav>
+<h1>Frequently asked questions</h1>
+<p class="lead" data-answer>T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into.</p>
+<p class="fine">Updated <time datetime="2026-10-09">2026-10-09</time> · T3rnel Browser 1.3.0</p>
+<h3 id="what-is-t3rnel-browser">What is T3rnel Browser?</h3>
+<p>T3rnel Browser is a browser extension that gives you DevTools-style tools — CSS inspection, full-page capture, a Markdown viewer, accessibility audits, network and console capture — and exposes 97 of them to your AI agent over MCP, against the tabs you are already signed into.</p>
+<h3 id="is-it-free">Is T3rnel Browser free?</h3>
+<p>Yes, there is a free tier with no account, no time limit and no trial: hover CSS inspection, full-page capture, the Markdown viewer, network and console capture, audits and the base MCP tools. Pro is a one-time purchase ($29.99 once), not a subscription, and unlocks 30 further tools plus the larger features.</p>
+<h3 id="which-browsers">Which browsers does it run on?</h3>
+<p>Chrome, Brave, Edge and Chromium are fully supported. Opera, Firefox, Safari are partly supported — each lacks something specific, listed on its own page.</p>
+<h3 id="how-do-i-connect-an-agent">How do I connect my AI agent?</h3>
+<p>Add the MCP Session Bridge to your MCP client with command npx and args -y @t3ratech/mcp-session-bridge. The extension finds it on its own over a local WebSocket; there is no global install or native host manifest. It works with Claude Code/Desktop, Cursor, VS Code, Windsurf, Antigravity, IntelliJ, Codex, Grok Build, Kimi Code/Desktop, JCode, Cline, OpenCode, Continue.dev, KiloCode, Roo Code, Aider, OpenClaw, Hermes, OpenFang and any MCP client.</p>
+<h3 id="does-the-agent-ask-before-acting">Does my agent have to ask before it clicks or fills a form?</h3>
+<p>Not by default. The approval gate ships off: installing the extension and allowing AI/MCP automation is the consent. You can arm it in Settings so page-changing tools ask first (mode high) or every mutation asks (mode all). Of the 97 tools, 65 are classed low risk, 16 medium and 14 high, and 2 depend on their arguments.</p>
+<h3 id="what-data-does-it-collect">What data does T3rnel Browser collect?</h3>
+<p>None by default. There is no account, no error reporting and no tracking. Settings, screenshots, recordings, vault entries and your licence are stored locally in your browser. Two things are opt-in and off until you enable them: an anonymous per-tool usage counter and a newsletter.</p>
+<h3 id="can-it-use-my-logged-in-sessions">Can my agent use the sites I am already signed into?</h3>
+<p>Yes. The tools run against your real browser tabs, so an agent acts with the sessions you already have, rather than a fresh headless browser with none. That is why the approval gate and the credential redaction on the base tools exist.</p>
+<h3 id="how-many-tools">How many tools does it have?</h3>
+<p>97 are offered to MCP clients. The registry holds three more licence tools that stay callable from the side panel only and are refused over MCP, so a model with a stolen session cannot run them.</p>
+<h3 id="how-does-pro-licensing-work">How does Pro licensing work?</h3>
+<p>Pro is one purchase, valid on three machines. Payment goes through PayNow (Visa, Mastercard, ZimSwitch, EcoCash, OneMoney, Telecash, InnBucks, O'mari); you never share card details with us. Activating contacts the WavePay licensing service once; after that your licence is verified offline.</p>
+<h3 id="how-does-it-compare">How does it compare with Chrome DevTools MCP and Playwright MCP?</h3>
+<p>Feature by feature on the comparison pages, dated and verified against publicly documented behaviour. The short version: those tools drive a browser; T3rnel Browser also inspects, captures, audits and exports from the one you are using.</p>
+<h3 id="where-is-the-source-of-truth">Where do these answers come from?</h3>
+<p>The site is generated from the extension's own registry and source: tool names and counts from the tool registry, risk levels from the approval gate, paid tools from the licensing module. A page cannot state a count the product does not ship.</p>
+<h2>Keep going</h2>
+<ul><li><a href="guides.html">Guides, comparisons and per-browser answers</a></li><li><a href="compare.html">Full comparison</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="manual.html">Manual</a></li></ul>
+</section>
+</main>
+<footer class="site">
+  <p><strong>T3rnel Browser 1.3.0</strong> — 97 tools, one extension, no servers.</p>
+  <p class="share"><button data-share type="button">Share…</button>
+    <a href="https://x.com/intent/post?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Ffaq.html&text=FAQ%20%E2%80%94%20T3rnel%20Browser" rel="noopener">X</a> ·
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Ffaq.html" rel="noopener">Facebook</a> ·
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Ffaq.html" rel="noopener">LinkedIn</a> ·
+    <a href="https://wa.me/?text=FAQ%20%E2%80%94%20T3rnel%20Browser%20https%3A%2F%2Fbrowser.t3ratech.co.zw%2Ffaq.html" rel="noopener">WhatsApp</a>
+  </p>
+  <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
+  <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
+  <p class="launched"><a href="https://fazier.com/launches/browser.t3ratech.co.zw" target="_blank" rel="noopener"><img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Launched on Fazier"></a></p>
+  <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
+  <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 23 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
+</footer>
+<script src="share.js" defer></script>
+</body>
+</html>

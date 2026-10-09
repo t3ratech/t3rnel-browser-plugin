@@ -1,0 +1,16 @@
+# https://browser.t3ratech.co.zw/.well-known/ai.txt — AI crawler and agent permissions
+# Mirrors the Content-Signal in robots.txt.
+
+User-Agent: *
+Allow: /
+
+Training: allowed
+Search-indexing: allowed
+Retrieval-and-citation: allowed
+Attribution: requested — cite https://browser.t3ratech.co.zw
+
+Llms: https://browser.t3ratech.co.zw/llms.txt
+Summary: https://browser.t3ratech.co.zw/ai/summary.json
+Faq: https://browser.t3ratech.co.zw/ai/faq.json
+Service: https://browser.t3ratech.co.zw/ai/service.json
+Contact: t3ratech.dev@gmail.com

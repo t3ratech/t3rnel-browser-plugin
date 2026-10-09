@@ -90,6 +90,8 @@ tbody th{font-weight:550}
   background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:600;
   letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
 .date{font-size:14px;font-weight:400;color:var(--muted);margin-left:10px}
+nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 12px}
+nav.crumbs a{color:var(--accent)}
 footer.site{border-top:1px solid var(--line);padding:28px 24px 48px;color:var(--muted);
   max-width:1080px;margin:0 auto;font-size:14px}
 footer.site a{color:var(--muted)}
