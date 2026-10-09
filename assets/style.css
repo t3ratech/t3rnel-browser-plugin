@@ -1,11 +1,26 @@
 :root{
   --bg:#fbfbfd; --panel:#fff; --ink:#16181d; --muted:#5b6270; --line:#e3e6ec;
-  --accent:#4f46e5; --accent-ink:#fff; --good:#0f7b4f; --code:#f4f5f8;
+  --accent:#4f46e5; --accent-ink:#fff; --good:#0f7b4f; --code:#f4f5f8; --focus:#4f46e5;
+  color-scheme:light;
+}
+/* Theme triad (docs/standards/site-quality.md §4): an explicit choice wins,
+   otherwise the OS preference applies. Same values in both dark blocks. */
+[data-theme="dark"]{
+  --bg:#0d0f14; --panel:#14171e; --ink:#eceef3; --muted:#9aa3b2; --line:#242833;
+  --accent:#8b85ff; --accent-ink:#0d0f14; --good:#4ade80; --code:#1a1e27; --focus:#a5a0ff;
+  color-scheme:dark;
 }
 @media (prefers-color-scheme:dark){
-  :root{ --bg:#0d0f14; --panel:#14171e; --ink:#eceef3; --muted:#9aa3b2; --line:#242833;
-         --accent:#8b85ff; --accent-ink:#0d0f14; --good:#4ade80; --code:#1a1e27; }
+  :root:not([data-theme="light"]){ --bg:#0d0f14; --panel:#14171e; --ink:#eceef3; --muted:#9aa3b2; --line:#242833;
+         --accent:#8b85ff; --accent-ink:#0d0f14; --good:#4ade80; --code:#1a1e27; --focus:#a5a0ff;
+         color-scheme:dark; }
 }
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+.theme-switch{display:inline-flex;align-items:center;gap:8px}
+.theme-switch [role=group]{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.theme-switch button{font:inherit;font-size:14px;color:var(--ink);background:var(--panel);border:0;padding:6px 12px;min-height:32px;cursor:pointer}
+.theme-switch button+button{border-left:1px solid var(--line)}
+.theme-switch button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
   font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -87,7 +102,7 @@ tbody th{font-weight:550}
 /* The newest release carries a small "current" tag, so a reader can tell at a glance
    which version they are running rather than inferring it from the dates. */
 .release h2 .tag{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:999px;
-  background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:600;
+  background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:600;
   letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
 .date{font-size:14px;font-weight:400;color:var(--muted);margin-left:10px}
 nav.crumbs{font-size:13px;color:var(--muted);margin:0 0 12px}

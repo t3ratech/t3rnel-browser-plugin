@@ -35,7 +35,10 @@
 <meta name="twitter:title" content="Agent skills — teaching an assistant when to drive your browser">
 <meta name="twitter:description" content="Free, open agent skills for T3rnel Browser and the MCP Session Bridge: signed-in-browser, publish-mcp-server and post-to-hacker-news. Install into Claude Code, Claude Desktop or any client that reads skills.">
 <meta name="twitter:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0f14" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="assets/style.css">
+<script>(function(){var t=null;try{t=localStorage.getItem("t3b-theme")}catch(e){}if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}})()</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🧭</text></svg>">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"T3rnel agent skills","url":"https://browser.t3ratech.co.zw/skills.html","itemListElement":[{"@type":"ListItem","position":1,"name":"signed-in-browser","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/signed-in-browser"},{"@type":"ListItem","position":2,"name":"publish-mcp-server","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/publish-mcp-server"},{"@type":"ListItem","position":3,"name":"post-to-hacker-news","url":"https://github.com/t3ratech/mcp-session-bridge/tree/main/agent-skills/post-to-hacker-news"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://browser.t3ratech.co.zw/#organization","name":"T3raTech Solutions (Pvt) Ltd","url":"https://t3ratech.co.zw","sameAs":["https://t3ratech.co.zw","https://github.com/t3ratech","https://www.linkedin.com/company/144492015","https://x.com/t3ratech","https://www.facebook.com/t3ratech","https://t3rnel.gumroad.com"]}</script>
@@ -155,10 +158,12 @@ cp -r /tmp/t3rnel-skills/agent-skills/signed-in-browser ~/.claude/skills/</code>
   </p>
   <p><a href="https://chromewebstore.google.com/detail/egpckhdpkoeimoekciejbmbbcackhdmd">Chrome Web Store</a> · <a href="https://addons.mozilla.org/en-US/firefox/addon/t3rnel-browser/">Firefox Add-ons</a> · <a href="https://microsoftedge.microsoft.com/addons/detail/t3rnel-browser/dnplmolfblplbeclnglmjamppekpbcjo">Edge Add-ons</a> · <a href="https://addons.opera.com/en/extensions/details/t3rnel-browser/">Opera Add-ons</a> · <a href="changelog.html">Changelog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="about.html">About</a> · <a href="mailto:t3rnel@agentmail.to">Report an issue</a></p>
   <nav class="social" aria-label="T3raTech elsewhere"><a href="https://t3ratech.co.zw" rel="me noopener">Website</a> · <a href="https://github.com/t3ratech" rel="me noopener">GitHub</a> · <a href="https://www.linkedin.com/company/144492015" rel="me noopener">LinkedIn</a> · <a href="https://x.com/t3ratech" rel="me noopener">X</a> · <a href="https://www.facebook.com/t3ratech" rel="me noopener">Facebook</a> · <a href="https://t3rnel.gumroad.com" rel="me noopener">Gumroad</a></nav>
-  <p class="launched"><a href="https://fazier.com/launches/browser.t3ratech.co.zw" target="_blank" rel="noopener"><img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Launched on Fazier"></a></p>
+  <p class="launched"><a href="https://fazier.com/launches/browser.t3ratech.co.zw" target="_blank" rel="noopener"><img src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" height="26" alt="Launched on Fazier"></a></p>
+  <div class="theme-switch"><span id="theme-label">Theme</span><div role="group" aria-labelledby="theme-label"><button type="button" data-theme-choice="system" aria-pressed="true">System</button><button type="button" data-theme-choice="light" aria-pressed="false">Light</button><button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button></div></div>
   <p class="fine">© T3raTech Solutions (Pvt) Ltd 2025. All rights reserved.</p>
   <p class="fine">All product names and brands are property of their respective owners. Comparisons are based on publicly documented features as of 23 August 2026 and are provided for information. No affiliation or endorsement is implied or claimed.</p>
 </footer>
 <script src="share.js" defer></script>
+<script src="assets/theme.js" defer></script>
 </body>
 </html>
