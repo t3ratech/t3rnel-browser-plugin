@@ -67,9 +67,9 @@
 
     <h3>Added</h3>
     <ul>
-      <li><strong>Accounts.</strong> Sign in with a provider the panel offers; the provider's verified email identifies you. Pro now belongs to the person, not to one browser's key: sign in on up to five browsers, in any mix of browsers and machines, and the plan is there. Signing out, or being signed out from another browser in Settings, frees the seat; a seat unseen for 30 days is reclaimed when an account is full.</li>
-      <li><strong>A monthly allowance for the free tools.</strong> A free account gets three uses a month of the free tools, counted by our service so that reinstalling or using a second browser does not reset it. The month is UTC and renews on the first. Pro tools stay Pro's: a free account is refused them by name and they never cost a use. Pro has no limit.</li>
-      <li><strong>Sign-in first.</strong> Setup starts with sign-in before the package choice and the permissions. The side panel and popup show a sign-in gate until an account is signed in, and Settings has an Account section with the email, the seats and sign-out.</li>
+      <li><strong>Accounts for the extension's own tools.</strong> Sign in with a provider the panel offers; the provider's verified email identifies you. Pro now belongs to the person, not to one browser's key: sign in on up to five browsers, in any mix of browsers and machines, and the plan is there. Signing out, or being signed out from another browser in Settings, frees the seat; a seat unseen for 30 days is reclaimed when an account is full.</li>
+      <li><strong>A monthly allowance for the free extension tools.</strong> A free account gets three uses a month of the free extension tools (the CSS tools, full-page capture, the auditor, the Markdown viewer and the like), counted by our service so that reinstalling or using a second browser does not reset it. The month is UTC and renews on the first. Pro tools stay Pro's: a free account is refused them by name and they never cost a use. Pro has no limit.</li>
+      <li><strong>Sign-in first.</strong> Setup starts with sign-in before the package choice and the permissions. The side panel and popup show a sign-in gate for the extension's tools until an account is signed in, and Settings has an Account section with the email, the seats and sign-out.</li>
       <li><strong>A licence key can be linked to your account</strong> from Settings, which files the licence under the account so every signed-in browser is Pro.</li>
       <li><strong>Usage analytics.</strong> One anonymous event per tool use and per button press — the tool or control, where it was used, how it ended, version, browser, plan — with no page content, address, argument, typed value or email. Firefox sends them only after you grant its technical-and-interaction data permission.</li>
       <li><strong><code>identity</code> permission</strong>, used only to open the provider's sign-in page and receive its redirect. It carries no install warning, so updating does not disable the extension.</li>
@@ -77,7 +77,8 @@
 
     <h3>Changed</h3>
     <ul>
-      <li>Every tool except <code>browser_health</code>, the licence tools and the status reads needs an account. A signed-out caller is told to sign in whatever the tool; a Pro licence key alone is not an account.</li>
+      <li><strong>Browser control is never limited.</strong> The tools an AI uses to drive a page — navigating, reading, snapshots, clicking, typing, selecting, scrolling, screenshots, evaluating, uploads, network and console capture, PDF, tabs, history, bookmarks and downloads, viewport emulation — need no account and are never counted, signed in or not, and nothing unlocks them because nothing locks them.</li>
+      <li>The extension's own tools need an account. A signed-out caller is told to sign in; a Pro licence key alone is not an account.</li>
       <li>Pro keeps working offline on its fourteen-day entitlement plus the grace period. If the service cannot be reached, a free account fails closed and the tool does not run.</li>
       <li>The usage-statistics switch is gone: analytics are part of the product. Firefox's manifest declares the verified email as required data and usage analytics as optional.</li>
       <li>Recovering a key by email and releasing a device seat are replaced by the account: a purchase is found by the verified email, and a browser is signed out from Settings.</li>

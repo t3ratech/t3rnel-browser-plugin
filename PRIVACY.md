@@ -4,8 +4,9 @@
 
 ## The short version
 
-T3rnel Browser never sends your browsing data. From 1.4.0 it needs an account — you sign in
-with Google, GitHub, GitLab, Bitbucket or Microsoft — and it sends anonymous usage events:
+T3rnel Browser never sends your browsing data. From 1.4.0 the extension's own tools need an
+account — you sign in with a provider the panel offers; the browser-control tools an AI uses to
+drive a page need none — and it sends anonymous usage events:
 which tool or button was used, where, and how it ended. Those events carry no page content,
 no page address, no tool argument, nothing you typed and not your email address. There is
 no error reporting, and there never has been a server that receives your browsing data.
