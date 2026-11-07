@@ -10,7 +10,7 @@
     },
     {
       "question": "Is T3rnel Browser free?",
-      "answer": "Yes, there is a free tier with no account, no time limit and no trial: hover CSS inspection, full-page capture, the Markdown viewer, network and console capture, audits and the base MCP tools. Pro is a one-time purchase ($29.99 once), not a subscription, and unlocks 30 further tools plus the larger features.",
+      "answer": "Yes, with an account: a free account may use the free tools — hover CSS inspection, full-page capture, the Markdown viewer, network and console capture, audits and the base MCP tools — three times a month, with no end date and no trial. Pro removes the monthly limit and covers up to five signed-in browsers. Pro is a one-time purchase ($29.99 once), not a subscription, and unlocks 30 further tools plus the larger features, with no monthly limit.",
       "url": "https://browser.t3ratech.co.zw/faq.html#is-it-free"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "question": "What data does T3rnel Browser collect?",
-      "answer": "None by default. There is no account, no error reporting and no tracking. Settings, screenshots, recordings, vault entries and your licence are stored locally in your browser. Two things are opt-in and off until you enable them: an anonymous per-tool usage counter and a newsletter.",
+      "answer": "Never your browsing data. The extension needs an account and sends anonymous usage events: which tool or button was used, where and how it ended, never page content, addresses, arguments or typed values. There is no error reporting. Settings, screenshots, recordings, vault entries and your licence are stored locally in your browser.",
       "url": "https://browser.t3ratech.co.zw/faq.html#what-data-does-it-collect"
     },
     {

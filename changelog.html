@@ -63,37 +63,30 @@
   <h1>Changelog</h1>
 
   <article class="release">
-    <h2>1.3.0 <span class="date">1 October 2026</span> <span class="tag">current</span></h2>
+    <h2>1.4.0 <span class="date">7 November 2026</span> <span class="tag">current</span></h2>
 
     <h3>Added</h3>
     <ul>
-      <li><strong>Pay for Pro on the setup page.</strong> Choosing Pro at install now shows an email field, the payment methods the payment gateway currently takes, and a Pay button. Checkout opens in a tab and Pro turns on by itself on the setup page once the payment clears — no trip to the pricing site.</li>
-      <li><strong>PayPal is back</strong> alongside PayNow in every chooser. The chooser shows exactly the methods the gateway reports at <code>/v2/providers</code>, so a method appears the moment the gateway can take it and is never offered while it cannot.</li>
-      <li><strong>Free-tier prompts.</strong> Every fifth tool use on Free shows an in-panel prompt, alternating between an upgrade to Pro (with Pay and the payment chooser in the prompt) and a request for a store rating that links to the store this browser installs from. A Pro-only tool used on Free shows the upgrade prompt at once, naming the tool. Each prompt features one of T3raTech's other products. Pro users see none.</li>
-      <li><strong><code>browser_viewport_set</code></strong> emulates a device or viewport through CDP, and <strong><code>browser_debugger_status</code></strong> reports who holds a debugger on each tab, with an optional attach→command→detach probe.</li>
-      <li><strong>No-install Session Bridge.</strong> Point your MCP client at <code>npx @t3ratech/mcp-session-bridge</code> and the extension finds it on its own over a local WebSocket — no global install, no <code>--install</code>, no native host manifest. With AI/MCP automation allowed — the default — the first connection is approved automatically: no pairing prompt, and no per-action prompts ever. Arming the approval gate in Settings is what brings back a one-time pairing ask for new bridges. Native messaging still works as a fallback for older bridge installs. <code>session_*</code> errors for extension-only tools now say the extension is missing and link to where to get it.</li>
-      <li><strong>Free or Pro, chosen on the install screen.</strong> The onboarding permissions screen offers both tiers side by side, and only shows what the choice needs: Free hides the optional-permission panel entirely; choosing Pro reveals it alongside an Activate card — paste a licence key and Pro turns on without leaving setup. The AI/MCP automation how-to collapses with its toggle.</li>
-      <li><strong>Tools tab, rebuilt for humans.</strong> The pane now lists the tools a person would actually click — colour picker, full-page capture, page audit, PDF export, cache tools, recorder, inspector, form fill and clear, scroll guard, React detect, vault, diffing, codegen — and a tool that needs an argument asks for it by name instead of failing on a missing field. Agent plumbing (click, hover, wait and friends) no longer crowds the list; it all still runs over the bridge. Tools that need what only an agent holds — a request id, selector, coordinates or policy document — or that return data meant for a model (accessibility snapshot, compressed DOM) are left to MCP.</li>
-      <li><strong>Growth surfaces in About.</strong> A Support section offers a share row — X, Facebook, LinkedIn, WhatsApp, Telegram, Reddit, Bluesky, Threads, Hacker News, Instagram, email and Copy link, each carrying the product site's link (the system share sheet did nothing on desktop Linux), a store rating link, a PayPal donate link, and a release-notes-by-email link — all outbound links, no new host access.</li>
-      <li><strong>Prices come from the payment gateway.</strong> The Pro price and any launch offer are read from WavePay's <code>/v2/pricing</code> — the side panel, popup, Pro prompt, onboarding page, paywall message and docs site all show what checkout will charge, and wording without a figure when the gateway has not answered. No price is typed into the extension, its 24 translations or the site any more. A launch promotion, when one runs, takes a promo code at checkout; codes are minted in the WavePay console and never ship in the bundle.</li>
-      <li><strong>Opt-in usage analytics.</strong> Local counters always record on-device and are shown in Settings. A toggle there shares anonymous aggregate counts — tool calls and days used, once a day — to T3raTech's own service, which forwards to Google Analytics 4. Off by default; nothing is sent while it is off; no page content, URL, argument or identity is ever included.</li>
-    </ul>
-
-    <h3>Fixed</h3>
-    <ul>
-      <li><strong>Pro turns on even if the browser closes after you pay.</strong> The licence key used to be collected only by the page that started checkout, for about five minutes; closing the browser, a crash, or a dropped connection left a paid buyer on Free. The extension now finishes collecting by itself — on browser start, and every minute while a purchase is pending — and keeps a collected key until it has been activated, so a connection that drops in between cannot lose it. The payment email also carries the key as a backup.</li>
-      <li><strong>Markdown files view again.</strong> The auto-viewer for <code>.md</code>/<code>.markdown</code> pages is repaired, and a file you open without file-access granted now shows a one-line instruction instead of raw text.</li>
-      <li><strong>Toolbar icon on light themes.</strong> The icon was a white glyph on transparency — invisible on a light toolbar. It now carries a contrast plate that reads on both themes.</li>
-      <li><strong>Upgrade permission hole.</strong> Updating from 1.1.x with the bridge already connected could leave it approved but unable to reach any page: the new-permissions prompt appeared, and host access was still missing afterwards. The first bridge connection after update now re-requests it with one click.</li>
-      <li><strong>PayPal payments confirm on the first return.</strong> A buyer coming back from PayPal could be told no payment had been taken when it had; the gateway now reads the finished order back from PayPal before answering. A declined card can be retried in the same checkout and is never charged later without you, and the PayPal invoice reads "T3rnel Browser Pro".</li>
-      <li><strong>A receipt you can keep.</strong> The payment email is a branded receipt carrying your licence key as a backup — the extension still collects the key by itself.</li>
-      <li><strong>Promo codes typed with spaces or lowercase</strong> are accepted.</li>
+      <li><strong>Accounts.</strong> Sign in with a provider the panel offers; the provider's verified email identifies you. Pro now belongs to the person, not to one browser's key: sign in on up to five browsers, in any mix of browsers and machines, and the plan is there. Signing out, or being signed out from another browser in Settings, frees the seat; a seat unseen for 30 days is reclaimed when an account is full.</li>
+      <li><strong>A monthly allowance for the free tools.</strong> A free account gets three uses a month of the free tools, counted by our service so that reinstalling or using a second browser does not reset it. The month is UTC and renews on the first. Pro tools stay Pro's: a free account is refused them by name and they never cost a use. Pro has no limit.</li>
+      <li><strong>Sign-in first.</strong> Setup starts with sign-in before the package choice and the permissions. The side panel and popup show a sign-in gate until an account is signed in, and Settings has an Account section with the email, the seats and sign-out.</li>
+      <li><strong>A licence key can be linked to your account</strong> from Settings, which files the licence under the account so every signed-in browser is Pro.</li>
+      <li><strong>Usage analytics.</strong> One anonymous event per tool use and per button press — the tool or control, where it was used, how it ended, version, browser, plan — with no page content, address, argument, typed value or email. Firefox sends them only after you grant its technical-and-interaction data permission.</li>
+      <li><strong><code>identity</code> permission</strong>, used only to open the provider's sign-in page and receive its redirect. It carries no install warning, so updating does not disable the extension.</li>
     </ul>
 
     <h3>Changed</h3>
     <ul>
-      <li><strong>Approval gate defaults to off, and nothing asks twice.</strong> Installing the extension — or leaving "Allow AI/MCP automation" ticked at setup — is consent to use it: a connecting bridge is paired silently and every MCP action runs without a prompt. Declining the box arms the gate: new bridges get a one-time pairing card and page-changing actions stop and ask. The full gate — ask before page-changing actions, ask before everything — stays in Settings for anyone who wants it.</li>
-      <li><strong>97 tools over MCP.</strong> Removed <code>browser_manifest_generate</code>, <code>browser_manifest_validate</code>, <code>browser_download_cancel</code>, <code>browser_color_history</code> and <code>browser_detect_editor</code>; <code>browser_license_collect</code>, <code>browser_license_recover</code> and <code>browser_license_release</code> remain in the panel but no longer appear to MCP clients. The bridge therefore stays under client tool-count limits.</li>
+      <li>Every tool except <code>browser_health</code>, the licence tools and the status reads needs an account. A signed-out caller is told to sign in whatever the tool; a Pro licence key alone is not an account.</li>
+      <li>Pro keeps working offline on its fourteen-day entitlement plus the grace period. If the service cannot be reached, a free account fails closed and the tool does not run.</li>
+      <li>The usage-statistics switch is gone: analytics are part of the product. Firefox's manifest declares the verified email as required data and usage analytics as optional.</li>
+      <li>Recovering a key by email and releasing a device seat are replaced by the account: a purchase is found by the verified email, and a browser is signed out from Settings.</li>
+      <li><code>browser_license_check</code> and the panel notes describe the free plan as three uses a month of the free tools, with the Pro tools Pro-only.</li>
+    </ul>
+
+    <h3>Fixed</h3>
+    <ul>
+      <li>The capability list a free account sees, the locked Pro tiles and the Pro notes in all 24 languages agree with what the tools enforce.</li>
     </ul>
   </article>
 
@@ -179,7 +172,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.3.0</strong> — 97 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.4.0</strong> — 97 tools, one extension, your pages stay on your machine.</p>
   <p class="share"><button data-share type="button">Share…</button>
     <a href="https://x.com/intent/post?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fchangelog.html&text=Changelog%20%E2%80%94%20T3rnel%20Browser" rel="noopener">X</a> ·
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fchangelog.html" rel="noopener">Facebook</a> ·

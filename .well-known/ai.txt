@@ -13,4 +13,4 @@ Llms: https://browser.t3ratech.co.zw/llms.txt
 Summary: https://browser.t3ratech.co.zw/ai/summary.json
 Faq: https://browser.t3ratech.co.zw/ai/faq.json
 Service: https://browser.t3ratech.co.zw/ai/service.json
-Contact: t3ratech.dev@gmail.com
+Contact: support@t3ratech.co.zw

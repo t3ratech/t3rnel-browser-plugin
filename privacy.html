@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy — T3rnel Browser</title>
-<meta name="description" content="T3rnel Browser collects no data. What is stored, where it lives, and every case where it makes a network request.">
-<meta name="keywords" content="T3rnel Browser privacy policy, chrome extension privacy, no telemetry">
+<meta name="description" content="T3rnel Browser never sends your browsing data. What is stored, where it lives, what an account and usage events send, and every case where it makes a network request.">
+<meta name="keywords" content="T3rnel Browser privacy policy, chrome extension privacy, sign-in, usage events">
 <link rel="canonical" href="https://browser.t3ratech.co.zw/privacy.html">
 <!--
   The site has exactly one language and one region. Declaring that explicitly, with a
@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="T3rnel Browser">
 <meta property="og:title" content="Privacy policy — T3rnel Browser">
-<meta property="og:description" content="T3rnel Browser collects no data. What is stored, where it lives, and every case where it makes a network request.">
+<meta property="og:description" content="T3rnel Browser never sends your browsing data. What is stored, where it lives, what an account and usage events send, and every case where it makes a network request.">
 <meta property="og:url" content="https://browser.t3ratech.co.zw/privacy.html">
 <!--
   Without og:image a shared link renders as a bare line of text. Every social platform
@@ -33,7 +33,7 @@
 <meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Privacy policy — T3rnel Browser">
-<meta name="twitter:description" content="T3rnel Browser collects no data. What is stored, where it lives, and every case where it makes a network request.">
+<meta name="twitter:description" content="T3rnel Browser never sends your browsing data. What is stored, where it lives, what an account and usage events send, and every case where it makes a network request.">
 <meta name="twitter:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
 <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0d0f14" media="(prefers-color-scheme: dark)">
@@ -61,10 +61,10 @@
 
 <section>
   <h1>Privacy policy</h1>
-  <p class="fine">Last updated 1 October 2026.</p>
+  <p class="fine">Last updated 7 November 2026.</p>
 
   <h2>The short version</h2>
-  <p>T3rnel Browser collects nothing by default. There is no account, no error reporting and no tracking, and there never has been a server that receives your browsing data. Since 1.3.0 there are two things you can opt into — an anonymous per-tool usage counter and a newsletter — and both are off until you say otherwise.</p>
+  <p>T3rnel Browser never sends your browsing data. From 1.4.0 it needs an account — you sign in with a provider the panel offers — and it sends anonymous usage events: which tool or button was used, where, and how it ended. Those events carry no page content, no page address, no tool argument, nothing you typed and not your email address. There is no error reporting, and there never has been a server that receives your browsing data.</p>
 
   <h2>What is stored, and where</h2>
   <p>Everything the extension saves is stored locally in your browser, on your device:</p>
@@ -74,16 +74,32 @@
     <li>Recorded sessions and generated test code</li>
     <li>Vault entries, encrypted with a key derived from your master passphrase — the plaintext is never written</li>
     <li>Your licence entitlement, if you buy Pro</li>
+    <li>Your signed-in account as the service last reported it — an opaque account id, your email, the sign-in methods linked to it, your plan and this browser's seat — and the usage events waiting to be sent</li>
     <li>Local usage counters — how many tool calls, on how many days, which tools. Shown in Settings.</li>
     <li>On the Free tier, a count of tool uses that decides when the next upgrade or rating prompt appears, and which T3raTech product it features</li>
   </ul>
-  <p>None of it is transmitted anywhere on its own. Uninstalling the extension removes it.</p>
+  <p>Your content — pages, captures, recordings, vault entries, settings — is never transmitted. What is transmitted is listed below. Uninstalling the extension removes everything stored here.</p>
 
   <h2>When the extension makes a network request</h2>
-  <p>Ten situations, all either initiated by you, behind a switch you control, part of a purchase or licence you started, or read-only:</p>
+  <p>These situations, each part of signing in, of your account, of a purchase or licence you started, initiated by you, or read-only:</p>
   <table>
     <thead><tr><th>Situation</th><th>Where it goes</th><th>What is sent</th></tr></thead>
     <tbody>
+      <tr>
+        <td>Signing in</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code>, and the sign-in provider's own page</td>
+        <td>The method you chose. The provider's page opens in a browser-controlled window; the provider gives the service a one-time authorisation code, the service reads your verified email from the provider, and sends back your account, plan and seat. The extension never sees your provider password or token. A public key identifying this browser, and a label such as "Chrome on Linux", are filed as your seat.</td>
+      </tr>
+      <tr>
+        <td>Keeping your account current</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code></td>
+        <td>A signature from this browser's key, about every six hours while the browser is open. Signing out, or being signed out from another browser, releases the seat.</td>
+      </tr>
+      <tr>
+        <td>Counting a free use</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code></td>
+        <td>On a Free account, the name of the tool and a signature from this browser's key, once per call of a free tool. The service keeps the monthly count, so reinstalling does not reset it. A Pro account is not counted.</td>
+      </tr>
       <tr>
         <td>Activating a Pro licence</td>
         <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code></td>
@@ -130,13 +146,16 @@
         <td>A <code>mailto:</code> compose window to our address — the extension sends nothing itself.</td>
       </tr>
       <tr>
-        <td>Opt-in usage counter</td>
-        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code> and Google Analytics 4</td>
-        <td>Anonymous per-tool call counts — that a tool ran and how many times. Off by default; enabling it in Settings or onboarding is the only way anything is sent. No page content, URL, tool argument or identity is ever included.</td>
+        <td>Usage events</td>
+        <td><code>t3rnel-wavepay-production.t3ratech.workers.dev</code>, which forwards to Google Analytics 4</td>
+        <td>One event per tool use and per button press: the name of the tool or control (<code>quick:fullpage</code>, <code>section:settings</code>), where it was used, how it ended, how long it took, the extension version, the browser, your plan, and an opaque account id so one person's browsers read as one. Never page content, a page address, a tool argument, anything typed into a field, or your email address; the service drops any value that looks like an address or a long number. On Chromium browsers this is part of the product and has no switch. On Firefox it is sent only after you grant Firefox's technical-and-interaction data permission.</td>
       </tr>
     </tbody>
   </table>
-  <p>That is the complete list. The inspection and automation features — CSS, screenshots, Markdown, network and console capture, DOM snapshots, agent tools — send nothing anywhere. The usage counter always records on-device regardless of the toggle; the toggle only controls whether the anonymous counts are ever reported off-device.</p>
+  <p>That is the complete list. The inspection and automation features — CSS, screenshots, Markdown, network and console capture, DOM snapshots, agent tools — send nothing from the page they ran on; the only thing that leaves is the usage event naming the tool. Local usage counters also record on-device and are shown in Settings.</p>
+
+  <h2>Your account</h2>
+  <p>The service keeps your verified email, the sign-in methods linked to it, one record per signed-in browser (label, method, when it was first and last seen — up to five) and a count of free tool uses for the month. It keeps no provider password and no provider token.</p>
 
   <h2>Payments</h2>
   <p>Payment is handled by PayNow or PayPal through T3rnel WavePay, our own payment gateway. We never see or store your payment details. The gateway stores a one-way hash of your licence key, a keyed hash of your email, your email address encrypted (so the payment receipt — which carries your licence key as a backup copy — and any key recovery reach you), and a fingerprint of each activated installation's public key. It stores no raw licence key after you collect it, no payment credential and no browsing data. Paid-purchase records are kept for accounting; abandoned and failed checkouts are deleted after 90 days.</p>
@@ -151,7 +170,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.3.0</strong> — 97 tools, one extension, no servers.</p>
+  <p><strong>T3rnel Browser 1.4.0</strong> — 97 tools, one extension, your pages stay on your machine.</p>
   <p class="share"><button data-share type="button">Share…</button>
     <a href="https://x.com/intent/post?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fprivacy.html&text=Privacy%20policy%20%E2%80%94%20T3rnel%20Browser" rel="noopener">X</a> ·
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fprivacy.html" rel="noopener">Facebook</a> ·

@@ -27,5 +27,5 @@
       "conditional": 2
     }
   },
-  "privacy": "collects nothing by default; local-only storage; two opt-in features"
+  "privacy": "never sends browsing data; local-only storage; an account and anonymous usage events"
 }
