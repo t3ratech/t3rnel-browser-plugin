@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — your AI, already signed in. It drives the browser you already use, with 97 tools for CSS, capture and audits built in.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How an AI agent uses Agent safety — T3rnel Browser">
 <meta name="twitter:description" content="The part that justifies the price: a valve between a language model and your logged-in browser.">
@@ -66,7 +66,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Overview</a> › <a href="guides.html">Guides</a> › <span aria-current="page">Agent safety</span></nav>
 <h1>How an AI agent uses Agent safety</h1>
 <p class="lead" data-answer>The part that justifies the price: a valve between a language model and your logged-in browser.</p>
-<p class="fine">Updated <time datetime="2026-10-09">2026-10-09</time> · T3rnel Browser 1.4.0</p>
+<p class="fine">Updated <time datetime="2026-10-09">2026-10-09</time> · T3rnel Browser 1.4.1</p>
 <h2>What the agent can do</h2>
 <ul><li><strong>An approval gate that refuses.</strong> Tools that change pages return <code>APPROVAL_REQUIRED</code> naming the exact action requested. Nothing runs until you approve, and an approval covers one action — not every future one.</li><li><strong>Credential redaction that stays useful.</strong> Password and token-like values never reach the model, but the field's length does, so an agent can confirm a fill landed without seeing the value. Redaction that hides everything makes verification impossible, and an agent that cannot verify retries and double-submits.</li><li><strong>Prompt-injection flagging with coverage.</strong> Page text is scanned for instruction-override patterns and reported as suspected, along with how many characters were examined. A clean verdict over zero characters reads exactly like a passing scan, so the two are never conflated.</li><li><strong>Delta snapshots.</strong> After the first snapshot, only the structural difference is sent. This is where the token bill actually goes.</li><li><strong>Time travel.</strong> Every step keeps a compressed DOM snapshot, console and network deltas, and the exact tool arguments. When a run goes wrong at step 42, scrub to 41.</li></ul>
 <h2>The tools</h2>
@@ -86,7 +86,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.4.0</strong> — 97 tools, one extension, your pages stay on your machine.</p>
+  <p><strong>T3rnel Browser 1.4.1</strong> — 97 tools, one extension, your pages stay on your machine.</p>
   <p class="share"><button data-share type="button">Share…</button>
     <a href="https://x.com/intent/post?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fhow-ai-agents-use-agent-safety.html&text=How%20an%20AI%20agent%20uses%20Agent%20safety%20%E2%80%94%20T3rnel%20Browser" rel="noopener">X</a> ·
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fhow-ai-agents-use-agent-safety.html" rel="noopener">Facebook</a> ·

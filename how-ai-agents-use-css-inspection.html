@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — your AI, already signed in. It drives the browser you already use, with 97 tools for CSS, capture and audits built in.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How an AI agent uses CSS inspection — T3rnel Browser">
 <meta name="twitter:description" content="Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.">
@@ -66,7 +66,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Overview</a> › <a href="guides.html">Guides</a> › <span aria-current="page">CSS inspection</span></nav>
 <h1>How an AI agent uses CSS inspection</h1>
 <p class="lead" data-answer>Hover any element and get its real, clean, copyable CSS — with the units the author actually wrote.</p>
-<p class="fine">Updated <time datetime="2026-10-09">2026-10-09</time> · T3rnel Browser 1.4.0</p>
+<p class="fine">Updated <time datetime="2026-10-09">2026-10-09</time> · T3rnel Browser 1.4.1</p>
 <h2>What the agent can do</h2>
 <ul><li>Walks the real cascade through <code>document.styleSheets</code> rather than dumping <code>getComputedStyle</code>, which flattens <code>%</code>, <code>em</code>, <code>rem</code> and <code>vh</code> to pixels and breaks responsiveness the moment you paste it.</li><li>Strips declarations overridden later in the cascade, drops browser defaults, collapses longhand to shorthand where safe, and deduplicates.</li><li>Collects matching <code>:hover</code>, <code>:focus</code>, <code>:active</code>, <code>::before</code>, <code>::after</code> and <code>::placeholder</code> rules, plus <code>@media</code> blocks and referenced <code>@keyframes</code>.</li><li>Copies as plain CSS, Tailwind classes, a styled-components block for the tag the element really is, an Emotion <code>css</code> block, a CSS Modules class, an SCSS or Less block, or a JSX <code>style</code> object with the property names React expects.</li><li>Reports a partial result honestly. A cross-origin stylesheet throws on <code>cssRules</code>; the output names the sheets it could not read instead of returning a rule count that looks complete and is not.</li></ul>
 <h2>The tools</h2>
@@ -86,7 +86,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.4.0</strong> — 97 tools, one extension, your pages stay on your machine.</p>
+  <p><strong>T3rnel Browser 1.4.1</strong> — 97 tools, one extension, your pages stay on your machine.</p>
   <p class="share"><button data-share type="button">Share…</button>
     <a href="https://x.com/intent/post?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fhow-ai-agents-use-css-inspection.html&text=How%20an%20AI%20agent%20uses%20CSS%20inspection%20%E2%80%94%20T3rnel%20Browser" rel="noopener">X</a> ·
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fhow-ai-agents-use-css-inspection.html" rel="noopener">Facebook</a> ·

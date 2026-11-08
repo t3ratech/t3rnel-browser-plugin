@@ -6,7 +6,7 @@
 
 ## What this is
 
-T3rnel Browser is "DevTools you can talk to" — a browser extension that turns
+T3rnel Browser is "your AI, already signed in" — a browser extension that turns
 the browser the user already has (real profile, real sessions, real
 extensions) into an automation surface any MCP-speaking agent can drive:
 navigate, click, fill, read, screenshot, record, audit, across Chrome, Edge,

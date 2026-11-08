@@ -1,6 +1,6 @@
 # T3rnel Browser
 
-> DevTools you can talk to — a browser extension plus a local MCP session
+> Your AI, already signed in — a browser extension plus a local MCP session
 > bridge (`npx @t3ratech/mcp-session-bridge`) that lets any MCP-speaking agent
 > drive the browser the user already has: navigate, click, fill, read,
 > screenshot, record and audit, across Chrome, Edge, Opera, Brave and Firefox.
@@ -28,6 +28,8 @@ pairing gate and an LLM firewall that denies tools by policy.
 
 - [What an AI agent can do in your browser without asking](https://browser.t3ratech.co.zw/guide-agent-approval-and-risk.html)
 - [What T3rnel Browser stores and sends, in plain words](https://browser.t3ratech.co.zw/guide-privacy-in-plain-words.html)
+- [Best CSS scan and inspection extensions for 2027: how to choose](https://browser.t3ratech.co.zw/guide-best-css-scan-extensions-2027.html)
+- [Let your AI work inside the browser you are already signed in to](https://browser.t3ratech.co.zw/guide-ai-in-your-signed-in-browser.html)
 
 ### Per feature
 

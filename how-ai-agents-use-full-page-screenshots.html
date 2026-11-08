@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — your AI, already signed in. It drives the browser you already use, with 97 tools for CSS, capture and audits built in.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How an AI agent uses Full-page screenshots — T3rnel Browser">
 <meta name="twitter:description" content="One click, the whole page, stitched — and it handles the real web rather than the ideal one.">
@@ -66,7 +66,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Overview</a> › <a href="guides.html">Guides</a> › <span aria-current="page">Full-page screenshots</span></nav>
 <h1>How an AI agent uses Full-page screenshots</h1>
 <p class="lead" data-answer>One click, the whole page, stitched — and it handles the real web rather than the ideal one.</p>
-<p class="fine">Updated <time datetime="2026-10-09">2026-10-09</time> · T3rnel Browser 1.4.0</p>
+<p class="fine">Updated <time datetime="2026-10-09">2026-10-09</time> · T3rnel Browser 1.4.1</p>
 <h2>What the agent can do</h2>
 <ul><li>Snapshots the scroll position first and restores it at the end, including when the capture fails part-way.</li><li>Injects a capture stylesheet that disables animations and transitions, so frames are stable rather than smeared.</li><li>Detects fixed and sticky elements by computed position and hides all but their first-viewport occurrence, so a sticky header appears once instead of every 800 pixels.</li><li>Pre-scrolls the full height to trigger lazy loading and <code>IntersectionObserver</code> content, then returns to the top.</li><li>Dismisses cookie banners and overlay modals heuristically, with an undo so nothing you wanted captured disappears silently.</li><li>Captures at <code>devicePixelRatio</code> through a token-bucket limiter that stays inside Chrome's <code>captureVisibleTab</code> rate limit, then stitches on an <code>OffscreenCanvas</code>.</li><li>Annotate, crop, and export as PNG, JPG, WebP or paginated PDF.</li></ul>
 <h2>The tools</h2>
@@ -86,7 +86,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.4.0</strong> — 97 tools, one extension, your pages stay on your machine.</p>
+  <p><strong>T3rnel Browser 1.4.1</strong> — 97 tools, one extension, your pages stay on your machine.</p>
   <p class="share"><button data-share type="button">Share…</button>
     <a href="https://x.com/intent/post?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fhow-ai-agents-use-full-page-screenshots.html&text=How%20an%20AI%20agent%20uses%20Full-page%20screenshots%20%E2%80%94%20T3rnel%20Browser" rel="noopener">X</a> ·
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fhow-ai-agents-use-full-page-screenshots.html" rel="noopener">Facebook</a> ·

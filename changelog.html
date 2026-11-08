@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://browser.t3ratech.co.zw/assets/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="T3rnel Browser — DevTools you can talk to. Inspect CSS, capture full pages, read Markdown, and hand 97 tools to your AI agent.">
+<meta property="og:image:alt" content="T3rnel Browser — your AI, already signed in. It drives the browser you already use, with 97 tools for CSS, capture and audits built in.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Changelog — T3rnel Browser">
 <meta name="twitter:description" content="Release history for T3rnel Browser.">
@@ -63,31 +63,23 @@
   <h1>Changelog</h1>
 
   <article class="release">
-    <h2>1.4.0 <span class="date">7 November 2026</span> <span class="tag">current</span></h2>
+    <h2>1.4.1 <span class="date">8 November 2026</span> <span class="tag">current</span></h2>
 
     <h3>Added</h3>
     <ul>
-      <li><strong>Accounts for the extension's own tools.</strong> Sign in with a provider the panel offers; the provider's verified email identifies you. Pro now belongs to the person, not to one browser's key: sign in on up to five browsers, in any mix of browsers and machines, and the plan is there. Signing out, or being signed out from another browser in Settings, frees the seat; a seat unseen for 30 days is reclaimed when an account is full.</li>
-      <li><strong>A monthly allowance for the free extension tools.</strong> A free account gets three uses a month of the free extension tools (the CSS tools, full-page capture, the auditor, the Markdown viewer and the like), counted by our service so that reinstalling or using a second browser does not reset it. The month is UTC and renews on the first. Pro tools stay Pro's: a free account is refused them by name and they never cost a use. Pro has no limit.</li>
-      <li><strong>Sign-in first.</strong> Setup starts with sign-in before the package choice and the permissions. The side panel and popup show a sign-in gate for the extension's tools until an account is signed in, and Settings has an Account section with the email, the seats and sign-out.</li>
-      <li><strong>A licence key can be linked to your account</strong> from Settings, which files the licence under the account so every signed-in browser is Pro.</li>
-      <li><strong>Usage analytics.</strong> One anonymous event per tool use and per button press — the tool or control, where it was used, how it ended, version, browser, plan — with no page content, address, argument, typed value or email. Firefox sends them only after you grant its technical-and-interaction data permission.</li>
-      <li><strong><code>identity</code> permission</strong>, used only to open the provider's sign-in page and receive its redirect. It carries no install warning, so updating does not disable the extension.</li>
+      <li><strong>Sign in with Google and GitLab</strong>, beside GitHub. The setup page and the panel list exactly the providers the account service reports, each with its own logo (GitHub, GitLab, Google) instead of a letter on a purple tile.</li>
     </ul>
 
     <h3>Changed</h3>
     <ul>
-      <li><strong>Browser control is never limited.</strong> The tools an AI uses to drive a page — navigating, reading, snapshots, clicking, typing, selecting, scrolling, screenshots, evaluating, uploads, network and console capture, PDF, tabs, history, bookmarks and downloads, viewport emulation — need no account and are never counted, signed in or not, and nothing unlocks them because nothing locks them.</li>
-      <li>The extension's own tools need an account. A signed-out caller is told to sign in; a Pro licence key alone is not an account.</li>
-      <li>Pro keeps working offline on its fourteen-day entitlement plus the grace period. If the service cannot be reached, a free account fails closed and the tool does not run.</li>
-      <li>The usage-statistics switch is gone: analytics are part of the product. Firefox's manifest declares the verified email as required data and usage analytics as optional.</li>
-      <li>Recovering a key by email and releasing a device seat are replaced by the account: a purchase is found by the verified email, and a browser is signed out from Settings.</li>
-      <li><code>browser_license_check</code> and the panel notes describe the free plan as three uses a month of the free tools, with the Pro tools Pro-only.</li>
+      <li><strong>A Pro account is not offered Pro again.</strong> Once you are signed in and already Pro, setup no longer shows the plan cards, the Get Pro payment form, the promo code or the "Already bought Pro?" licence box; the permission choices stay, because the Pro tools need them.</li>
+      <li>The sign-in buttons are styled in the side panel and popup, not only on the setup page.</li>
     </ul>
 
     <h3>Fixed</h3>
     <ul>
-      <li>The capability list a free account sees, the locked Pro tiles and the Pro notes in all 24 languages agree with what the tools enforce.</li>
+      <li><strong>GitLab sign-in</strong> no longer ends in "The requested scope is invalid, unknown, or malformed": the account service asks GitLab for the one scope its application grants and reads the signed-in user from GitLab's user endpoint, accepting only an address GitLab has confirmed.</li>
+      <li><strong>Google sign-in</strong> no longer stops at <code>redirect_uri_mismatch</code>: the account service's callback is registered on the Google client.</li>
     </ul>
   </article>
 
@@ -173,7 +165,7 @@
 </section>
 </main>
 <footer class="site">
-  <p><strong>T3rnel Browser 1.4.0</strong> — 97 tools, one extension, your pages stay on your machine.</p>
+  <p><strong>T3rnel Browser 1.4.1</strong> — 97 tools, one extension, your pages stay on your machine.</p>
   <p class="share"><button data-share type="button">Share…</button>
     <a href="https://x.com/intent/post?url=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fchangelog.html&text=Changelog%20%E2%80%94%20T3rnel%20Browser" rel="noopener">X</a> ·
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbrowser.t3ratech.co.zw%2Fchangelog.html" rel="noopener">Facebook</a> ·
